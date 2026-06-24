@@ -5,7 +5,7 @@ interface Props {
 	title?: string;
 }
 
-const { title = "Retro Shirt Quiz - World Cup" } = Astro.props;
+const { title = 'Retro Shirt Quiz — Mundiales de Fútbol' } = Astro.props;
 ---
 
 <!doctype html>
@@ -13,41 +13,41 @@ const { title = "Retro Shirt Quiz - World Cup" } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-		<meta name="theme-color" content="#060908" />
-		
-		<!-- SEO Meta Tags -->
+		<meta name="theme-color" content="#06120c" />
+
 		<title>{title}</title>
-		<meta name="description" content="Quiz interactivo de camisetas históricas de los Mundiales de Fútbol con fotos reales. ¡Adivina el equipo o el año!" />
+		<meta name="description" content="El quiz definitivo de camisetas históricas del Mundial. 50 leyendas, 3 modos de juego, récords y pistas. ¿Cuántas reconoces?" />
 		<meta name="robots" content="index, follow" />
-		
-		<!-- Open Graph / Facebook -->
+
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
-		<meta property="og:description" content="Quiz interactivo de camisetas históricas de los Mundiales de Fútbol con fotos reales. ¡Adivina el equipo o el año!" />
+		<meta property="og:description" content="Adivina la selección o el año de 50 camisetas legendarias de los Mundiales." />
 		<meta property="og:image" content="/icon-512.png" />
 
-		<!-- PWA Web Manifest & Icons -->
 		<link rel="manifest" href="/manifest.json" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="apple-touch-icon" href="/icon-512.png" />
-		
+
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		<meta name="apple-mobile-web-app-title" content="Quiz Camisetas" />
+		<meta name="apple-mobile-web-app-title" content="Retro Shirt Quiz" />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	</head>
 	<body>
+		<div class="scene" aria-hidden="true">
+			<div class="scene__orb scene__orb--green"></div>
+			<div class="scene__orb scene__orb--gold"></div>
+			<div class="scene__lines"></div>
+		</div>
+
 		<slot />
 
-		<!-- PWA Service Worker Registration -->
 		<script is:inline>
 			if ('serviceWorker' in navigator) {
 				window.addEventListener('load', () => {
-					navigator.serviceWorker.register('/sw.js')
-						.then((reg) => console.log('Service Worker registrado con éxito:', reg.scope))
-						.catch((err) => console.error('Fallo al registrar el Service Worker:', err));
+					navigator.serviceWorker.register('/sw.js').catch(() => {});
 				});
 			}
 		</script>

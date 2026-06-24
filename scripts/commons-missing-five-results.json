@@ -1,0 +1,53 @@
+﻿{
+  "generatedAt": "2026-06-24",
+  "userAgent": "quiz-camisetas/1.0 (educational)",
+  "specialFilePathTests": {
+    "Kit_body_URU1930.png": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Kit_body_URU1930.png",
+    "Kit_body_bra50.png": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Kit_body_bra50.png",
+    "Kit_body_ger54h.png": "https://upload.wikimedia.org/wikipedia/commons/9/97/Kit_body_ger54h.png",
+    "Kit_body_ned74a.png": "https://upload.wikimedia.org/wikipedia/commons/0/00/Kit_body_ned74a.png",
+    "Kit_body_ger90h.png": "https://upload.wikimedia.org/wikipedia/commons/8/80/Kit_body_ger90h.png"
+  },
+  "missingShirts": {
+    "Italy 1934 (blue home)": {
+      "exactKitBody": null,
+      "bestFallback": {
+        "title": "File:Kit body PDC ITA.png",
+        "uploadUrl": "https://upload.wikimedia.org/wikipedia/commons/9/99/Kit_body_PDC_ITA.png",
+        "note": "No ita34/ITA1934 Kit body on Commons; generic ITA template only"
+      }
+    },
+    "Italy 1938 (black away)": {
+      "exactKitBody": null,
+      "bestFallback": {
+        "title": "File:Kit body laced black.png",
+        "uploadUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Kit_body_laced_black.png",
+        "note": "No ita38/ITA1938 Kit body on Commons; generic black kit body"
+      }
+    },
+    "West Germany 1974 (white, green collar)": {
+      "exactKitBody": null,
+      "bestFallback": {
+        "title": "File:Kit body frg78h.png",
+        "uploadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Kit_body_frg78h.png",
+        "note": "No frg74/ger74 Kit body; closest FRG national home kit is 1978"
+      }
+    },
+    "East Germany 1974 (blue)": {
+      "exactKitBody": null,
+      "bestFallback": {
+        "title": "File:Kit body ddr1990h.png",
+        "uploadUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Kit_body_ddr1990h.png",
+        "note": "No gdr74/ddr74 Kit body; closest GDR home kit body is 1990"
+      }
+    },
+    "Zaire 1974 (green)": {
+      "exactKitBody": null,
+      "bestFallback": {
+        "title": "File:Kit body collar green.png",
+        "uploadUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Kit_body_collar_green.png",
+        "note": "No zai74/cod74/Zaire Kit body on Commons; generic green kit body"
+      }
+    }
+  }
+}

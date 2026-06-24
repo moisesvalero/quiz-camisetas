@@ -16,8 +16,8 @@
     "color": "Azul",
     "desc": "Camiseta azul con cuello polo y el escudo de los Saboya en el pecho.",
     "filename": "1934_FIFA_World_Cup_-_Italy_v_Spain_-_Gianpiero_Combi_and_Ricardo_Zamora.jpg",
-    "image": "/shirts/2.jpg",
-    "original_image": "/shirts/2.jpg"
+    "image": "/shirts/2.png",
+    "original_image": "/shirts/2.png"
   },
   {
     "id": 3,
@@ -26,8 +26,8 @@
     "color": "Negro",
     "desc": "Camiseta negra utilizada por orden política contra Francia en los cuartos de final.",
     "filename": "Italy_1938_squad.jpg",
-    "image": "/shirts/3.jpg",
-    "original_image": "/shirts/3.jpg"
+    "image": "/shirts/3.png",
+    "original_image": "/shirts/3.png"
   },
   {
     "id": 4,
@@ -136,8 +136,8 @@
     "color": "Azul",
     "desc": "Camiseta azul de la RDA que venció a la RFA en su único enfrentamiento mundialista.",
     "filename": "Sparwasser_Jürgen_1974.jpg",
-    "image": "/shirts/14.jpg",
-    "original_image": "/shirts/14.jpg"
+    "image": "/shirts/14.png",
+    "original_image": "/shirts/14.png"
   },
   {
     "id": 15,
@@ -146,8 +146,8 @@
     "color": "Verde",
     "desc": "Camiseta verde con un leopardo amarillo en el pecho, primera participación del país africano.",
     "filename": "Zaire_1974_World_Cup.jpg",
-    "image": "/shirts/15.jpg",
-    "original_image": "/shirts/15.jpg"
+    "image": "/shirts/15.png",
+    "original_image": "/shirts/15.png"
   },
   {
     "id": 16,

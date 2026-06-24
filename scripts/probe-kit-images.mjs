@@ -49,8 +49,14 @@ function candidates(shirt) {
   const k = TEAM[shirt.team] ?? shirt.team.slice(0, 3).toLowerCase();
   const yy = String(shirt.year).slice(-2);
   const y4 = String(shirt.year);
+  const K = k.toUpperCase();
   return [
-    shirt.filename,
+    `Kit_body_${K}${y4}.png`,
+    `Kit_body_${K}${y4}h.png`,
+    `Kit_body_${K}${y4}a.png`,
+    `Kit_body_${k}${yy}a.png`,
+    `Kit_body_${k}${yy}h.png`,
+    `Kit_body_${k}${yy}home.png`,
     `Kit body ${k}${yy}a.png`,
     `Kit body ${k}${yy}home.png`,
     `Kit body ${k}${yy}gk.png`,

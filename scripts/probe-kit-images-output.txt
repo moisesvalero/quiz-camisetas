@@ -1,0 +1,50 @@
+1	Uruguay	1930	FAIL
+2	Italia	1934	1934_FIFA_World_Cup_-_Italy_v_Spain_-_Gianpiero_Combi_and_Ricardo_Zamora.jpg
+3	Italia	1938	FAIL
+4	Uruguay	1950	FAIL
+5	Brasil	1950	Camiseta_Brasil_1950_A74276520241123.jpg
+6	Alemania Federal	1954	FAIL
+7	Hungría	1954	FAIL
+8	Brasil	1958	Kit body bra58h.png
+9	Inglaterra	1966	Eng1966_football_shirt.jpeg
+10	Brasil	1970	Brazil1970-01.jpg
+11	Perú	1970	Kit body per70h.png
+12	Países Bajos	1974	Netherlands_national_football_shirt.jpg
+13	Alemania Federal	1974	FAIL
+14	Alemania Oriental	1974	FAIL
+15	Zaire	1974	FAIL
+16	Argentina	1978	FAIL
+17	Francia	1978	FAIL
+18	Italia	1982	FAIL
+19	Brasil	1982	FAIL
+20	Argentina	1986	FAIL
+21	Argentina	1986	Blade_Steve_Hodge_Maradona_Jersey.jpg
+22	Dinamarca	1986	FAIL
+23	México	1986	FAIL
+24	Alemania Federal	1990	FAIL
+25	Inglaterra	1990	FAIL
+26	Camerún	1990	FAIL
+27	Colombia	1990	FAIL
+28	Brasil	1994	FAIL
+29	Alemania	1994	FAIL
+30	Estados Unidos	1994	FAIL
+31	Nigeria	1994	FAIL
+32	Italia	1994	FAIL
+33	Francia	1998	FAIL
+34	Croacia	1998	The_1998_Croatia's_football_away_jersey.jpg
+35	México	1998	FAIL
+36	Jamaica	1998	FAIL
+37	Brasil	1998	FAIL
+38	Camerún	2002	Cameroon2002-01.jpg
+39	Senegal	2002	FAIL
+40	Corea del Sur	2002	FAIL
+41	Brasil	2002	FAIL
+42	Italia	2006	FAIL
+43	Francia	2006	FAIL
+44	Alemania	2006	FAIL
+45	España	2010	Adidas_2010_FIFA_World_Cup_Spain_shirt.JPG
+46	Alemania	2014	FAIL
+47	Nigeria	2018	FAIL
+48	Croacia	2018	FAIL
+49	Francia	2018	FAIL
+50	Argentina	2022	FAIL

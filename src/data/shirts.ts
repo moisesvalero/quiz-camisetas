@@ -50,10 +50,13 @@ export const shirts: Shirt[] = shirtsData as Shirt[];
 export async function searchShirtImageUrl(team: string, year: number): Promise<string | null> {
   const meta = TEAM_META[team];
   const en = meta?.en ?? team;
+  const kit = meta?.code3.toLowerCase() ?? team.slice(0, 3).toLowerCase();
+  const yy = String(year).slice(-2);
   const queries = [
+    `intitle:"Kit body ${kit}${yy}"`,
+    `intitle:"Kit_body_${kit}${yy}"`,
+    `intitle:"Kit body ${kit}" ${year}`,
     `Kit body ${en.toLowerCase()} ${year}`,
-    `${en} ${year} FIFA World Cup football`,
-    `${en} national football team ${year}`,
   ];
 
   for (const q of queries) {
@@ -83,8 +86,8 @@ export async function searchShirtImageUrl(team: string, year: number): Promise<s
       const title = p.title?.toLowerCase() ?? '';
       const url = p.imageinfo?.[0]?.url ?? '';
       if (!/\.(jpe?g|png|webp)$/i.test(url)) return false;
-      if (/\.pdf|stadium|magazine/.test(title)) return false;
-      return /kit|shirt|jersey|football|world|team|squad|national/.test(title);
+      if (!/kit[_ ]body/.test(title)) return false;
+      return true;
     });
 
     if (hit?.imageinfo?.[0]?.thumburl) return hit.imageinfo[0].thumburl;

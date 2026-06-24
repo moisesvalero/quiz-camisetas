@@ -1,11 +1,12 @@
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { resolve, dirname, extname } from 'node:path';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync, existsSync, statSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const shirtsPath = resolve(root, 'src/data/shirts.json');
 const urlsPath = resolve(root, 'scripts/shirt-image-urls.json');
 const outDir = resolve(root, 'public/shirts');
+const force = process.argv.includes('--force');
 
 mkdirSync(outDir, { recursive: true });
 
@@ -13,32 +14,37 @@ const shirts = JSON.parse(readFileSync(shirtsPath, 'utf8'));
 const urlMap = JSON.parse(readFileSync(urlsPath, 'utf8'));
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-function extFromUrl(url) {
-  const path = new URL(url).pathname.toLowerCase();
-  if (path.endsWith('.png')) return '.png';
-  if (path.endsWith('.jpeg')) return '.jpeg';
-  if (path.endsWith('.jpg')) return '.jpg';
-  if (path.endsWith('.webp')) return '.webp';
-  return '.jpg';
+if (force) {
+  for (const file of readdirSync(outDir)) {
+    if (/^\d+\.(png|jpe?g|webp)$/i.test(file)) unlinkSync(resolve(outDir, file));
+  }
+  console.log('Modo --force: assets locales anteriores eliminados');
 }
 
-async function download(url, dest, retries = 3) {
+
+async function download(url, dest, retries = 8) {
+  let lastStatus = 0;
   for (let i = 0; i < retries; i++) {
     try {
       const res = await fetch(url, {
         headers: { 'User-Agent': 'quiz-camisetas/1.0 (educational project)' },
         referrerPolicy: 'no-referrer',
       });
+      lastStatus = res.status;
       if (res.status === 429) {
-        await sleep(2000 * (i + 1));
+        await sleep(3000 * (i + 1));
         continue;
       }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      writeFileSync(dest, Buffer.from(await res.arrayBuffer()));
+      const buf = Buffer.from(await res.arrayBuffer());
+      if (buf.length < 40) throw new Error(`Respuesta vacía (${buf.length} bytes)`);
+      writeFileSync(dest, buf);
       return;
     } catch (err) {
-      if (i === retries - 1) throw err;
-      await sleep(1500 * (i + 1));
+      if (i === retries - 1) {
+        throw lastStatus === 429 ? new Error('HTTP 429 tras reintentos') : err;
+      }
+      await sleep(2000 * (i + 1));
     }
   }
 }
@@ -54,10 +60,17 @@ for (const shirt of shirts) {
     continue;
   }
 
-  const ext = extFromUrl(url);
-  const localName = `${shirt.id}${ext}`;
+  const localName = `${shirt.id}.png`;
   const localPath = resolve(outDir, localName);
   const publicPath = `/shirts/${localName}`;
+
+  if (!force && existsSync(localPath) && statSync(localPath).size > 100) {
+    shirt.image = publicPath;
+    shirt.original_image = publicPath;
+    console.log(`= ${shirt.id} ya existe`);
+    ok++;
+    continue;
+  }
 
   try {
     await download(url, localPath);
@@ -70,7 +83,7 @@ for (const shirt of shirts) {
     console.warn(`✗ ${shirt.id} ${err.message}`);
   }
 
-  await sleep(400);
+  await sleep(1200);
 }
 
 writeFileSync(shirtsPath, `${JSON.stringify(shirts, null, 2)}\n`);

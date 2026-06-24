@@ -1,22 +1,14 @@
 {
-  "name": "Quiz de Camisetas Históricas de los Mundiales",
-  "short_name": "Quiz Camisetas",
-  "description": "Adivina el equipo o el año de las camisetas de fútbol más legendarias con fotografías reales.",
+  "name": "Retro Shirt Quiz — Mundiales de Fútbol",
+  "short_name": "Retro Shirt Quiz",
+  "description": "El quiz definitivo de 50 camisetas legendarias del Mundial. Adivina la selección o el año.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#060908",
-  "theme_color": "#10b981",
+  "background_color": "#030806",
+  "theme_color": "#06120c",
   "orientation": "portrait",
   "icons": [
-    {
-      "src": "/icon-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "/icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
   ]
 }

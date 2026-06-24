@@ -11,7 +11,11 @@
     "preview": "astro preview",
     "astro": "astro",
     "resolve:images": "node scripts/resolve-shirt-images.mjs",
+    "resolve:kits": "node scripts/resolve-kit-only.mjs",
     "download:local": "node scripts/download-local-shirts.mjs",
+    "download:local:force": "node scripts/download-local-shirts.mjs --force",
+    "download:missing": "node scripts/download-missing-kits.mjs",
+    "fix:missing-shirts": "node scripts/fix-missing-shirts.mjs",
     "download:shirts": "node scripts/download-shirts.mjs",
     "fix:image-urls": "node scripts/fix-image-urls.mjs"
   },
