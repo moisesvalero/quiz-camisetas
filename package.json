@@ -17,13 +17,16 @@
     "download:missing": "node scripts/download-missing-kits.mjs",
     "fix:missing-shirts": "node scripts/fix-missing-shirts.mjs",
     "download:shirts": "node scripts/download-shirts.mjs",
-    "fix:image-urls": "node scripts/fix-image-urls.mjs"
+    "fix:image-urls": "node scripts/fix-image-urls.mjs",
+    "import:fka": "node scripts/import-fka.mjs",
+    "download:fka": "node scripts/download-fka-cdn.mjs"
   },
   "dependencies": {
     "astro": "^7.0.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "playwright": "^1.52.0",
     "typescript": "^6.0.3"
   }
 }
