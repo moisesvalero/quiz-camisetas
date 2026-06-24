@@ -8,7 +8,9 @@ Juego web gratuito, rápido y adictivo. Sin registro. Funciona en móvil, tablet
 
 ## 🎮 Juega ahora
 
-> **Demo en vivo:** tras el despliegue, la URL de producción aparecerá aquí y en los badges del repositorio.
+[![Jugar en Vercel](https://img.shields.io/badge/Jugar-quiz--camisetas.vercel.app-000?style=for-the-badge&logo=vercel&logoColor=white)](https://quiz-camisetas.vercel.app)
+
+**👉 [https://quiz-camisetas.vercel.app](https://quiz-camisetas.vercel.app)**
 
 Abre el enlace, elige tu modo y empieza a sumar puntos. Cada acierto cuenta. Cada fallo resta una vida.
 

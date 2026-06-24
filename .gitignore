@@ -22,3 +22,12 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# vercel
+.vercel/
+
+# agent logs
+_agent_cmd_log.txt
+deploy-result.txt
+VERCEL_URL.txt
+.vercel
