@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "team": "Uruguay",
+    "year": 1930,
+    "color": "Celeste",
+    "desc": "Camiseta celeste clásica con cordones, la primera campeona del mundo.",
+    "filename": "Uruguay_1930_champion_team.jpg",
+    "image": "/shirts/1.png",
+    "original_image": "/shirts/1.png"
+  },
+  {
+    "id": 2,
+    "team": "Italia",
+    "year": 1934,
+    "color": "Azul",
+    "desc": "Camiseta azul con cuello polo y el escudo de los Saboya en el pecho.",
+    "filename": "1934_FIFA_World_Cup_-_Italy_v_Spain_-_Gianpiero_Combi_and_Ricardo_Zamora.jpg",
+    "image": "/shirts/2.jpg",
+    "original_image": "/shirts/2.jpg"
+  },
+  {
+    "id": 3,
+    "team": "Italia",
+    "year": 1938,
+    "color": "Negro",
+    "desc": "Camiseta negra utilizada por orden política contra Francia en los cuartos de final.",
+    "filename": "Italy_1938_squad.jpg",
+    "image": "/shirts/3.jpg",
+    "original_image": "/shirts/3.jpg"
+  },
+  {
+    "id": 4,
+    "team": "Uruguay",
+    "year": 1950,
+    "color": "Celeste",
+    "desc": "La camiseta del 'Maracanazo', con cuello redondo blanco.",
+    "filename": "Uruguay_1950_squad.jpg",
+    "image": "/shirts/4.png",
+    "original_image": "/shirts/4.png"
+  },
+  {
+    "id": 5,
+    "team": "Brasil",
+    "year": 1950,
+    "color": "Blanco",
+    "desc": "Camiseta blanca con detalles del cuello en azul, retirada tras el Maracanazo.",
+    "filename": "Camiseta_Brasil_1950_A74276520241123.jpg",
+    "image": "/shirts/5.png",
+    "original_image": "/shirts/5.png"
+  },
+  {
+    "id": 6,
+    "team": "Alemania Federal",
+    "year": 1954,
+    "color": "Blanco",
+    "desc": "Camiseta blanca con cordones en el cuello, la del 'Milagro de Berna'.",
+    "filename": "Wunder_von_Bern_Endspiel_1.jpg",
+    "image": "/shirts/6.png",
+    "original_image": "/shirts/6.png"
+  },
+  {
+    "id": 7,
+    "team": "Hungría",
+    "year": 1954,
+    "color": "Rojo",
+    "desc": "Camiseta roja del 'Equipo de Oro' (Aranycsapat) liderado por Puskás.",
+    "filename": "Puskas_Ferenc_1954.jpg",
+    "image": "/shirts/7.png",
+    "original_image": "/shirts/7.png"
+  },
+  {
+    "id": 8,
+    "team": "Brasil",
+    "year": 1958,
+    "color": "Azul",
+    "desc": "Camiseta azul improvisada para la final, la del primer título de Pelé.",
+    "filename": "Pele_1958_World_Cup.jpg",
+    "image": "/shirts/8.png",
+    "original_image": "/shirts/8.png"
+  },
+  {
+    "id": 9,
+    "team": "Inglaterra",
+    "year": 1966,
+    "color": "Rojo",
+    "desc": "Camiseta roja con el escudo de los tres leones, campeona del mundo en casa.",
+    "filename": "Eng1966_football_shirt.jpeg",
+    "image": "/shirts/9.png",
+    "original_image": "/shirts/9.png"
+  },
+  {
+    "id": 10,
+    "team": "Brasil",
+    "year": 1970,
+    "color": "Amarillo",
+    "desc": "La icónica camiseta amarilla con cuello verde de Pelé, el primer mundial en color.",
+    "filename": "Brazil1970-01.jpg",
+    "image": "/shirts/10.png",
+    "original_image": "/shirts/10.png"
+  },
+  {
+    "id": 11,
+    "team": "Perú",
+    "year": 1970,
+    "color": "Blanco/Rojo",
+    "desc": "Camiseta blanca con una franja roja diagonal, uno de los diseños más elegantes de la historia.",
+    "filename": "Chumpitaz_Peru_1970.jpg",
+    "image": "/shirts/11.png",
+    "original_image": "/shirts/11.png"
+  },
+  {
+    "id": 12,
+    "team": "Países Bajos",
+    "year": 1974,
+    "color": "Naranja",
+    "desc": "La camiseta naranja de la 'Naranja Mecánica'. Cruyff usó una versión con 2 tiras en lugar de 3.",
+    "filename": "Netherlands_national_football_shirt.jpg",
+    "image": "/shirts/12.png",
+    "original_image": "/shirts/12.png"
+  },
+  {
+    "id": 13,
+    "team": "Alemania Federal",
+    "year": 1974,
+    "color": "Blanco",
+    "desc": "Camiseta blanca clásica con cuello y puños verdes, campeona del mundo en casa.",
+    "filename": "Franz_Beckenbauer_1974.jpg",
+    "image": "/shirts/13.png",
+    "original_image": "/shirts/13.png"
+  },
+  {
+    "id": 14,
+    "team": "Alemania Oriental",
+    "year": 1974,
+    "color": "Azul",
+    "desc": "Camiseta azul de la RDA que venció a la RFA en su único enfrentamiento mundialista.",
+    "filename": "Sparwasser_Jürgen_1974.jpg",
+    "image": "/shirts/14.jpg",
+    "original_image": "/shirts/14.jpg"
+  },
+  {
+    "id": 15,
+    "team": "Zaire",
+    "year": 1974,
+    "color": "Verde",
+    "desc": "Camiseta verde con un leopardo amarillo en el pecho, primera participación del país africano.",
+    "filename": "Zaire_1974_World_Cup.jpg",
+    "image": "/shirts/15.jpg",
+    "original_image": "/shirts/15.jpg"
+  },
+  {
+    "id": 16,
+    "team": "Argentina",
+    "year": 1978,
+    "color": "Celeste/Blanco",
+    "desc": "Camiseta de rayas celestes y blancas de campeón mundial de Mario Kempes.",
+    "filename": "Argentina_1978_rgalvan.jpg",
+    "image": "/shirts/16.png",
+    "original_image": "/shirts/16.png"
+  },
+  {
+    "id": 17,
+    "team": "Francia",
+    "year": 1978,
+    "color": "Verde/Blanco",
+    "desc": "Camiseta de rayas verdes y blancas del Club Atlético Kimberley, usada porque ambos equipos llevaron camisetas blancas.",
+    "filename": "Kimberley_shirt_1978.jpg",
+    "image": "/shirts/17.png",
+    "original_image": "/shirts/17.png"
+  },
+  {
+    "id": 18,
+    "team": "Italia",
+    "year": 1982,
+    "color": "Azul",
+    "desc": "Camiseta azul clásica de polo, con la que Paolo Rossi fue bota de oro y campeón.",
+    "filename": "Italy_1982_World_Cup_Zoff.jpg",
+    "image": "/shirts/18.png",
+    "original_image": "/shirts/18.png"
+  },
+  {
+    "id": 19,
+    "team": "Brasil",
+    "year": 1982,
+    "color": "Amarillo",
+    "desc": "Camiseta amarilla del legendario equipo de Sócrates, Zico y Falcão.",
+    "filename": "Zico_1982_Brazil_shirt.jpg",
+    "image": "/shirts/19.png",
+    "original_image": "/shirts/19.png"
+  },
+  {
+    "id": 20,
+    "team": "Argentina",
+    "year": 1986,
+    "color": "Celeste/Blanco",
+    "desc": "La clásica camiseta de franjas celestes y blancas del segundo título de Maradona.",
+    "filename": "Maradona_con_la_copa_86.jpg",
+    "image": "/shirts/20.png",
+    "original_image": "/shirts/20.png"
+  },
+  {
+    "id": 21,
+    "team": "Argentina",
+    "year": 1986,
+    "color": "Azul",
+    "desc": "La famosa camiseta azul de los goles de 'La Mano de Dios' y el 'Gol del Siglo' contra Inglaterra.",
+    "filename": "Blade_Steve_Hodge_Maradona_Jersey.jpg",
+    "image": "/shirts/21.png",
+    "original_image": "/shirts/21.png"
+  },
+  {
+    "id": 22,
+    "team": "Dinamarca",
+    "year": 1986,
+    "color": "Rojo/Blanco",
+    "desc": "La mítica camiseta de Hummel con diseño de mitades y finas rayas rojas y blancas.",
+    "filename": "Denmark_1986_World_Cup.jpg",
+    "image": "/shirts/22.png",
+    "original_image": "/shirts/22.png"
+  },
+  {
+    "id": 23,
+    "team": "México",
+    "year": 1986,
+    "color": "Verde",
+    "desc": "Camiseta verde clásica con cuello polo blanco de la selección anfitriona.",
+    "filename": "Hugo_Sanchez_1986.jpg",
+    "image": "/shirts/23.png",
+    "original_image": "/shirts/23.png"
+  },
+  {
+    "id": 24,
+    "team": "Alemania Federal",
+    "year": 1990,
+    "color": "Blanco",
+    "desc": "La icónica camiseta con las ondas tricolores de la bandera alemana.",
+    "filename": "Lothar_Matthäus_1990.jpg",
+    "image": "/shirts/24.png",
+    "original_image": "/shirts/24.png"
+  },
+  {
+    "id": 25,
+    "team": "Inglaterra",
+    "year": 1990,
+    "color": "Blanco",
+    "desc": "Camiseta blanca Umbro con un patrón geométrico sutil en el tejido, la del mundial de Gazza.",
+    "filename": "Paul_Gascoigne_1990.jpg",
+    "image": "/shirts/25.png",
+    "original_image": "/shirts/25.png"
+  },
+  {
+    "id": 26,
+    "team": "Camerún",
+    "year": 1990,
+    "color": "Verde",
+    "desc": "Camiseta verde con un león amarillo gigante impreso en el pecho, la de Roger Milla.",
+    "filename": "Roger_Milla_1990.jpg",
+    "image": "/shirts/26.png",
+    "original_image": "/shirts/26.png"
+  },
+  {
+    "id": 27,
+    "team": "Colombia",
+    "year": 1990,
+    "color": "Rojo",
+    "desc": "Camiseta roja con rayas amarillas y azules en los hombros, usada por Valderrama.",
+    "filename": "Carlos_Valderrama_1990.jpg",
+    "image": "/shirts/27.png",
+    "original_image": "/shirts/27.png"
+  },
+  {
+    "id": 28,
+    "team": "Brasil",
+    "year": 1994,
+    "color": "Amarillo",
+    "desc": "Camiseta amarilla con tres escudos de la CBF sutilmente grabados en el pecho.",
+    "filename": "Romario_1994_World_Cup.jpg",
+    "image": "/shirts/28.png",
+    "original_image": "/shirts/28.png"
+  },
+  {
+    "id": 29,
+    "team": "Alemania",
+    "year": 1994,
+    "color": "Blanco",
+    "desc": "Camiseta blanca con rombos tricolores (negro, rojo, amarillo) en los hombros.",
+    "filename": "Jürgen_Klinsmann_1994.jpg",
+    "image": "/shirts/29.png",
+    "original_image": "/shirts/29.png"
+  },
+  {
+    "id": 30,
+    "team": "Estados Unidos",
+    "year": 1994,
+    "color": "Azul (Denim)",
+    "desc": "La extravagante camiseta de estrellas de imitación denim vaquero usada por los anfitriones.",
+    "filename": "Alexi_Lalas_1994.jpg",
+    "image": "/shirts/30.png",
+    "original_image": "/shirts/30.png"
+  },
+  {
+    "id": 31,
+    "team": "Nigeria",
+    "year": 1994,
+    "color": "Verde/Blanco",
+    "desc": "Camiseta con un patrón tribal verde y blanco, el debut de las Super Águilas.",
+    "filename": "Rashidi_Yekini_1994.jpg",
+    "image": "/shirts/31.png",
+    "original_image": "/shirts/31.png"
+  },
+  {
+    "id": 32,
+    "team": "Italia",
+    "year": 1994,
+    "color": "Azul",
+    "desc": "Camiseta azul con pequeños escudos de la federación grabados en la tela, la de Roberto Baggio.",
+    "filename": "Roberto_Baggio_1994.jpg",
+    "image": "/shirts/32.png",
+    "original_image": "/shirts/32.png"
+  },
+  {
+    "id": 33,
+    "team": "Francia",
+    "year": 1998,
+    "color": "Azul",
+    "desc": "Camiseta azul con una gran franja roja y tres líneas blancas, campeona del mundo con Zidane.",
+    "filename": "Zinedine_Zidane_1998.jpg",
+    "image": "/shirts/33.png",
+    "original_image": "/shirts/33.png"
+  },
+  {
+    "id": 34,
+    "team": "Croacia",
+    "year": 1998,
+    "color": "Azul/Cuadros",
+    "desc": "Camiseta azul visitante con un patrón ajedrezado en un costado, de Davor Suker.",
+    "filename": "The_1998_Croatia's_football_away_jersey.jpg",
+    "image": "/shirts/34.png",
+    "original_image": "/shirts/34.png"
+  },
+  {
+    "id": 35,
+    "team": "México",
+    "year": 1998,
+    "color": "Verde",
+    "desc": "La mítica camiseta verde de la marca Aba Sport con el calendario azteca sublimado.",
+    "filename": "Cuauhtemoc_Blanco_1998.jpg",
+    "image": "/shirts/35.png",
+    "original_image": "/shirts/35.png"
+  },
+  {
+    "id": 36,
+    "team": "Jamaica",
+    "year": 1998,
+    "color": "Amarillo",
+    "desc": "Camiseta amarilla con estampados étnicos negro y verde en los hombros de los 'Reggae Boyz'.",
+    "filename": "Jamaica_1998_football_team.jpg",
+    "image": "/shirts/36.png",
+    "original_image": "/shirts/36.png"
+  },
+  {
+    "id": 37,
+    "team": "Brasil",
+    "year": 1998,
+    "color": "Amarillo",
+    "desc": "Camiseta amarilla con rayas verdes en las mangas y hombros, la de la final de Ronaldo.",
+    "filename": "Ronaldo_1998_World_Cup.jpg",
+    "image": "/shirts/37.png",
+    "original_image": "/shirts/37.png"
+  },
+  {
+    "id": 38,
+    "team": "Camerún",
+    "year": 2002,
+    "color": "Verde",
+    "desc": "La famosa camiseta sin mangas que fue prohibida por la FIFA tras la Copa de África.",
+    "filename": "Cameroon2002-01.jpg",
+    "image": "/shirts/38.png",
+    "original_image": "/shirts/38.png"
+  },
+  {
+    "id": 39,
+    "team": "Senegal",
+    "year": 2002,
+    "color": "Blanco",
+    "desc": "Camiseta blanca con detalles verdes y amarillos de la selección revelación de África.",
+    "filename": "El_Hadji_Diouf_2002.jpg",
+    "image": "/shirts/39.png",
+    "original_image": "/shirts/39.png"
+  },
+  {
+    "id": 40,
+    "team": "Corea del Sur",
+    "year": 2002,
+    "color": "Rojo",
+    "desc": "Camiseta roja brillante de la anfitriona semifinalista del mundial.",
+    "filename": "Ahn_Jung-hwan_2002.jpg",
+    "image": "/shirts/40.png",
+    "original_image": "/shirts/40.png"
+  },
+  {
+    "id": 41,
+    "team": "Brasil",
+    "year": 2002,
+    "color": "Amarillo",
+    "desc": "Camiseta amarilla con paneles de ventilación verdes, la del pentacampeonato.",
+    "filename": "Ronaldo_2002_World_Cup_final.jpg",
+    "image": "/shirts/41.png",
+    "original_image": "/shirts/41.png"
+  },
+  {
+    "id": 42,
+    "team": "Italia",
+    "year": 2006,
+    "color": "Azul",
+    "desc": "Camiseta azul ajustada Puma de campeones del mundo en Alemania contra Francia.",
+    "filename": "Fabio_Cannavaro_2006.jpg",
+    "image": "/shirts/42.png",
+    "original_image": "/shirts/42.png"
+  },
+  {
+    "id": 43,
+    "team": "Francia",
+    "year": 2006,
+    "color": "Blanco",
+    "desc": "Camiseta blanca visitante con un gradiente en el pecho, la del último partido de Zidane.",
+    "filename": "Zidane_2006_World_Cup.jpg",
+    "image": "/shirts/43.png",
+    "original_image": "/shirts/43.png"
+  },
+  {
+    "id": 44,
+    "team": "Alemania",
+    "year": 2006,
+    "color": "Blanco",
+    "desc": "Camiseta blanca con costuras negras, rojas y amarillas de la anfitriona.",
+    "filename": "Michael_Ballack_2006.jpg",
+    "image": "/shirts/44.png",
+    "original_image": "/shirts/44.png"
+  },
+  {
+    "id": 45,
+    "team": "España",
+    "year": 2010,
+    "color": "Rojo",
+    "desc": "La camiseta roja clásica de Adidas de los campeones del mundo del 'Iniesta de mi vida'.",
+    "filename": "Adidas_2010_FIFA_World_Cup_Spain_shirt.JPG",
+    "image": "/shirts/45.png",
+    "original_image": "/shirts/45.png"
+  },
+  {
+    "id": 46,
+    "team": "Alemania",
+    "year": 2014,
+    "color": "Blanco",
+    "desc": "Camiseta blanca con una franja en V roja y negra en el pecho, la campeona del histórico 7-1.",
+    "filename": "Philipp_Lahm_2014.jpg",
+    "image": "/shirts/46.png",
+    "original_image": "/shirts/46.png"
+  },
+  {
+    "id": 47,
+    "team": "Nigeria",
+    "year": 2018,
+    "color": "Verde/Blanco",
+    "desc": "Diseño rompedor con cuerpo verde y blanco en zigzag y mangas en blanco y negro.",
+    "filename": "Nigeria_2018_kit.png",
+    "image": "/shirts/47.png",
+    "original_image": "/shirts/47.png"
+  },
+  {
+    "id": 48,
+    "team": "Croacia",
+    "year": 2018,
+    "color": "Rojo/Blanco",
+    "desc": "Camiseta de cuadros rojos y blancos gigantes, subcampeona del mundo con Luka Modric.",
+    "filename": "Luka_Modric_2018.jpg",
+    "image": "/shirts/48.png",
+    "original_image": "/shirts/48.png"
+  },
+  {
+    "id": 49,
+    "team": "Francia",
+    "year": 2018,
+    "color": "Azul",
+    "desc": "Camiseta azul oscuro con sutiles ondas en las mangas, la campeona en Rusia de Mbappé.",
+    "filename": "Kylian_Mbappe_2018.jpg",
+    "image": "/shirts/49.png",
+    "original_image": "/shirts/49.png"
+  },
+  {
+    "id": 50,
+    "team": "Argentina",
+    "year": 2022,
+    "color": "Celeste/Blanco",
+    "desc": "La camiseta celeste y blanca del tercer título mundial de Messi en Qatar.",
+    "filename": "Lionel_Messi_2022.jpg",
+    "image": "/shirts/50.png",
+    "original_image": "/shirts/50.png"
+  }
+]

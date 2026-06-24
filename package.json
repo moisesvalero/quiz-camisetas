@@ -1,0 +1,25 @@
+{
+  "name": "quiz-camisetas",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "resolve:images": "node scripts/resolve-shirt-images.mjs",
+    "download:local": "node scripts/download-local-shirts.mjs",
+    "download:shirts": "node scripts/download-shirts.mjs",
+    "fix:image-urls": "node scripts/fix-image-urls.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^6.0.3"
+  }
+}

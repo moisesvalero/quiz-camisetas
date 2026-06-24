@@ -1,0 +1,1071 @@
+---
+// QuizGame.astro - Premium Interactive Quiz Component
+---
+
+<div class="quiz-game-wrapper">
+  <!-- Pantalla de Inicio -->
+  <div id="start-screen" class="glass-panel active">
+    <div class="header-logo animate-bounce-in">
+      <div class="logo-circle">
+        <img src="/favicon.svg" alt="Logo" class="logo-img" />
+      </div>
+      <h1 class="gold-text">Retro Shirt Quiz</h1>
+      <p class="subtitle">MUNDIALES DE FÚTBOL</p>
+    </div>
+
+    <div class="stats-overview">
+      <div class="stat-card">
+        <span class="stat-label">Récord</span>
+        <span id="global-high-score" class="stat-val gold-text">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Racha Máx</span>
+        <span id="global-max-streak" class="stat-val emerald-text">0</span>
+      </div>
+    </div>
+
+    <div class="mode-selection">
+      <h3>SELECCIONA MODO DE JUEGO</h3>
+      <button class="btn-mode btn-primary" data-mode="team">
+        <span class="btn-icon">⚽</span>
+        Adivinar Selección
+      </button>
+      <button class="btn-mode btn-primary" data-mode="year">
+        <span class="btn-icon">📅</span>
+        Adivinar Año
+      </button>
+      <button class="btn-mode btn-primary" data-mode="mixed">
+        <span class="btn-icon">⚡</span>
+        Modo Mixto (Ambos)
+      </button>
+    </div>
+    
+    <div class="pwa-install-container hidden" id="install-banner">
+      <button class="btn-secondary" id="btn-install">
+        📲 Instalar App (PWA)
+      </button>
+    </div>
+  </div>
+
+  <!-- Pantalla de Juego -->
+  <div id="game-screen" class="glass-panel hidden">
+    <!-- Barra Superior de Estado -->
+    <div class="game-header">
+      <button id="btn-home" class="btn-back">✕</button>
+      <div class="score-container">
+        <span class="score-label">PUNTOS</span>
+        <span id="current-score" class="score-val">0</span>
+      </div>
+      <div class="hearts-container">
+        <span class="heart active">❤️</span>
+        <span class="heart active">❤️</span>
+        <span class="heart active">❤️</span>
+      </div>
+    </div>
+
+    <!-- Barra de Racha y Progreso -->
+    <div class="progression-bar">
+      <div class="streak-badge hidden" id="streak-badge">
+        🔥 Racha: <span id="current-streak">0</span>
+      </div>
+      <div class="progress-indicator">
+        Pregunta <span id="question-index">1</span>
+      </div>
+    </div>
+
+    <!-- Tarjeta de la Camiseta -->
+    <div class="shirt-card" id="shirt-card">
+      <div class="image-wrapper">
+        <div class="image-skeleton" id="image-loader"></div>
+        <img id="shirt-image" src="" alt="Camiseta histórica" class="hidden" referrerpolicy="no-referrer" />
+      </div>
+      
+      <button class="btn-hint" id="btn-hint">
+        💡 Ver Pista
+      </button>
+      <div class="hint-text hidden" id="hint-box"></div>
+    </div>
+
+    <!-- Opciones de Respuesta -->
+    <div class="options-container" id="options-grid">
+      <!-- Generado dinámicamente -->
+    </div>
+  </div>
+
+  <!-- Modal de Feedback Histórico -->
+  <div id="feedback-modal" class="modal-overlay hidden">
+    <div class="modal-content glass-panel">
+      <div class="feedback-header">
+        <span id="feedback-icon"></span>
+        <h2 id="feedback-title"></h2>
+      </div>
+      <p id="correct-answer-reveal" class="correct-reveal-text"></p>
+      
+      <div class="history-context">
+        <h4>Historia de la Camiseta</h4>
+        <p id="shirt-description"></p>
+      </div>
+
+      <button id="btn-next" class="btn-primary">
+        Siguiente Camiseta
+        <span class="btn-icon">→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Pantalla Game Over -->
+  <div id="game-over-screen" class="glass-panel hidden">
+    <h2 class="gold-text">FIN DE JUEGO</h2>
+    <p class="game-over-subtitle" id="game-over-message"></p>
+
+    <div class="final-stats">
+      <div class="final-stat-row">
+        <span>Puntuación Final:</span>
+        <span id="final-score" class="gold-text font-display">0</span>
+      </div>
+      <div class="final-stat-row">
+        <span>Racha Máxima:</span>
+        <span id="final-streak" class="emerald-text font-display">0</span>
+      </div>
+      <div class="final-stat-row">
+        <span>Camisetas Descubiertas:</span>
+        <span id="final-guessed" class="font-display">0</span>
+      </div>
+    </div>
+
+    <div class="game-over-actions">
+      <button id="btn-retry" class="btn-primary">
+        🔄 Jugar de Nuevo
+      </button>
+      <button id="btn-menu" class="btn-secondary">
+        🏠 Menú Principal
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .quiz-game-wrapper {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  /* Start Screen */
+  .header-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .logo-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(255, 215, 0, 0.2) 100%);
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--accent-gold);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  }
+
+  .logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    letter-spacing: 0.3em;
+    margin-top: 0.2rem;
+  }
+
+  .stats-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .stat-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-val {
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+  }
+
+  .mode-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .mode-selection h3 {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-mode {
+    justify-content: flex-start;
+    padding-left: 2rem;
+  }
+
+  .btn-icon {
+    font-size: 1.2rem;
+  }
+
+  .pwa-install-container {
+    margin-top: 1.5rem;
+  }
+
+  /* Game Screen */
+  .game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-back {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: var(--transition-smooth);
+  }
+
+  .btn-back:hover {
+    color: var(--text-primary);
+  }
+
+  .score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .score-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+  }
+
+  .score-val {
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--accent-gold);
+  }
+
+  .hearts-container {
+    display: flex;
+    gap: 0.25rem;
+    font-size: 1.2rem;
+  }
+
+  .heart {
+    transition: var(--transition-smooth);
+    opacity: 0.2;
+  }
+
+  .heart.active {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.5));
+  }
+
+  .progression-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .streak-badge {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(245, 158, 11, 0.15) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-weight: 700;
+    color: #f59e0b;
+    animation: pulse 1.5s infinite;
+  }
+
+  .progress-indicator {
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  /* Shirt Card */
+  .shirt-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .image-wrapper {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.02) 25%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.02) 75%);
+    background-size: 200% 100%;
+    animation: shimer 1.5s infinite;
+  }
+
+  @keyframes shimer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    z-index: 1;
+    transition: var(--transition-smooth);
+  }
+
+  .btn-hint {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: 99px;
+    cursor: pointer;
+    margin-top: 0.75rem;
+    transition: var(--transition-smooth);
+  }
+
+  .btn-hint:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .hint-text {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.4;
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px dashed var(--border-active);
+    padding: 0.75rem;
+    border-radius: var(--radius-sm);
+    width: 100%;
+    animation: fadeIn 0.3s ease;
+  }
+
+  /* Options Grid */
+  .options-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .btn-option {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: var(--radius-md);
+    padding: 1.1rem;
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .btn-option:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(4px);
+  }
+
+  .btn-option:active {
+    transform: scale(0.99);
+  }
+
+  .btn-option.correct {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: var(--success);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  }
+
+  .btn-option.incorrect {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: var(--error);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+  }
+
+  .btn-option:disabled {
+    pointer-events: none;
+  }
+
+  /* Feedback Modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: var(--max-width);
+    animation: scaleUp 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.15) forwards;
+  }
+
+  @keyframes scaleUp {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .feedback-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #feedback-icon {
+    font-size: 2rem;
+  }
+
+  #feedback-title {
+    font-size: 1.5rem;
+  }
+
+  .correct-reveal-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: var(--accent-gold);
+  }
+
+  .history-context {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    max-height: 180px;
+    overflow-y: auto;
+  }
+
+  .history-context h4 {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .history-context p {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+
+  /* Game Over Screen */
+  #game-over-screen {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+  }
+
+  #game-over-screen h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .game-over-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  .final-stats {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .final-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .final-stat-row span:last-child {
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+
+  .game-over-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(5px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<!-- Lógica del Juego -->
+<script>
+  import shirtsData from '../data/shirts.json';
+  import type { Shirt } from '../data/shirts';
+  import { getShirtImageCandidates, searchShirtImageUrl } from '../data/shirts';
+
+  const shirts = shirtsData as Shirt[];
+
+  // Configuración y Estado del Juego
+  let currentMode = 'team'; // 'team' | 'year' | 'mixed'
+  let currentQuestionIndex = 0;
+  let score = 0;
+  let streak = 0;
+  let maxStreak = 0;
+  let lives = 3;
+  let currentShirt: any = null;
+  let selectedShirts: any[] = [];
+  let isAnswered = false;
+
+  // Elementos del DOM
+  const startScreen = document.getElementById('start-screen')!;
+  const gameScreen = document.getElementById('game-screen')!;
+  const feedbackModal = document.getElementById('feedback-modal')!;
+  const gameOverScreen = document.getElementById('game-over-screen')!;
+
+  const globalHighScoreLabel = document.getElementById('global-high-score')!;
+  const globalMaxStreakLabel = document.getElementById('global-max-streak')!;
+
+  const currentScoreLabel = document.getElementById('current-score')!;
+  const currentStreakLabel = document.getElementById('current-streak')!;
+  const streakBadge = document.getElementById('streak-badge')!;
+  const questionIndexLabel = document.getElementById('question-index')!;
+  const hearts = document.querySelectorAll('.heart');
+
+  const shirtCard = document.getElementById('shirt-card')!;
+  const shirtImage = document.getElementById('shirt-image') as HTMLImageElement;
+  const imageLoader = document.getElementById('image-loader')!;
+  const btnHint = document.getElementById('btn-hint')!;
+  const hintBox = document.getElementById('hint-box')!;
+
+  const optionsGrid = document.getElementById('options-grid')!;
+
+  const feedbackIcon = document.getElementById('feedback-icon')!;
+  const feedbackTitle = document.getElementById('feedback-title')!;
+  const correctAnswerReveal = document.getElementById('correct-answer-reveal')!;
+  const shirtDescription = document.getElementById('shirt-description')!;
+
+  const finalScore = document.getElementById('final-score')!;
+  const finalStreak = document.getElementById('final-streak')!;
+  const finalGuessed = document.getElementById('final-guessed')!;
+  const gameOverMessage = document.getElementById('game-over-message')!;
+
+  // Botones de acción
+  const btnHome = document.getElementById('btn-home')!;
+  const btnNext = document.getElementById('btn-next')!;
+  const btnRetry = document.getElementById('btn-retry')!;
+  const btnMenu = document.getElementById('btn-menu')!;
+
+  // --- AUDIO SYNTHESIS FEEDBACK (Web Audio API) ---
+  // Genera sonidos retro y satisfactorios sin dependencias de archivos de sonido.
+  function playSound(type: 'correct' | 'incorrect' | 'gameover' | 'hint') {
+    try {
+      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      
+      if (type === 'correct') {
+        // Sonido ascendente (Satisfacción)
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+        osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.08); // E5
+        osc.frequency.setValueAtTime(783.99, ctx.currentTime + 0.16); // G5
+        osc.frequency.setValueAtTime(1046.50, ctx.currentTime + 0.24); // C6
+        
+        gain.gain.setValueAtTime(0.15, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.45);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.45);
+      } else if (type === 'incorrect') {
+        // Sonido descendente y áspero (Fallo)
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(220.00, ctx.currentTime); // A3
+        osc.frequency.linearRampToValueAtTime(110.00, ctx.currentTime + 0.3);
+        
+        gain.gain.setValueAtTime(0.15, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.35);
+      } else if (type === 'hint') {
+        // Sonido suave e intrigante (Pista)
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(440.00, ctx.currentTime);
+        osc.frequency.setValueAtTime(554.37, ctx.currentTime + 0.1);
+        
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.25);
+      } else if (type === 'gameover') {
+        // Melodía melancólica (Game Over)
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(392.00, ctx.currentTime); // G4
+        osc.frequency.setValueAtTime(349.23, ctx.currentTime + 0.15); // F4
+        osc.frequency.setValueAtTime(311.13, ctx.currentTime + 0.3); // Eb4
+        osc.frequency.setValueAtTime(261.63, ctx.currentTime + 0.45); // C4
+        
+        gain.gain.setValueAtTime(0.15, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.8);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.8);
+      }
+    } catch (e) {
+      console.warn("Audio Context blocked or not supported:", e);
+    }
+  }
+
+  // --- LÓGICA DE INICIALIZACIÓN ---
+  function init() {
+    // Cargar récords locales
+    const localHighScore = localStorage.getItem('high_score') || '0';
+    const localMaxStreak = localStorage.getItem('max_streak') || '0';
+    globalHighScoreLabel.textContent = localHighScore;
+    globalMaxStreakLabel.textContent = localMaxStreak;
+  }
+
+  // --- CONTROL DE PWA ---
+  let deferredPrompt: any = null;
+  const installBanner = document.getElementById('install-banner')!;
+  const btnInstall = document.getElementById('btn-install')!;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBanner.classList.remove('hidden');
+  });
+
+  btnInstall.addEventListener('click', () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult: any) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the PWA install prompt');
+        }
+        deferredPrompt = null;
+        installBanner.classList.add('hidden');
+      });
+    }
+  });
+
+  // --- EVENT LISTENERS DE INICIO ---
+  document.querySelectorAll('.btn-mode').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const mode = (e.currentTarget as HTMLButtonElement).dataset.mode!;
+      startGame(mode);
+    });
+  });
+
+  // --- INICIAR JUEGO ---
+  function startGame(mode: string) {
+    currentMode = mode;
+    score = 0;
+    streak = 0;
+    maxStreak = 0;
+    lives = 3;
+    currentQuestionIndex = 0;
+    isAnswered = false;
+
+    // Barajar camisetas y seleccionar todas las disponibles (50)
+    selectedShirts = [...shirts].sort(() => 0.5 - Math.random());
+
+    updateHeartsUI();
+    currentScoreLabel.textContent = '0';
+    updateStreakUI();
+
+    startScreen.classList.add('hidden');
+    gameOverScreen.classList.add('hidden');
+    gameScreen.classList.remove('hidden');
+
+    loadNextQuestion();
+  }
+
+  // --- CARGAR PREGUNTA ---
+  function loadNextQuestion() {
+    isAnswered = false;
+    currentShirt = selectedShirts[currentQuestionIndex];
+    questionIndexLabel.textContent = `${currentQuestionIndex + 1}/${selectedShirts.length}`;
+
+    // Resetear pista
+    hintBox.classList.add('hidden');
+    hintBox.textContent = '';
+    btnHint.classList.remove('hidden');
+
+    // Cargar Imagen con Loader
+    imageLoader.classList.remove('hidden');
+    shirtImage.classList.add('hidden');
+    
+    const imageCandidates = getShirtImageCandidates(currentShirt);
+    let candidateIndex = 0;
+    let searchedCommons = false;
+
+    shirtImage.onload = null;
+    shirtImage.onerror = null;
+
+    shirtImage.onload = () => {
+      imageLoader.classList.add('hidden');
+      shirtImage.classList.remove('hidden');
+    };
+
+    shirtImage.onerror = () => {
+      candidateIndex += 1;
+      if (candidateIndex < imageCandidates.length) {
+        shirtImage.src = imageCandidates[candidateIndex];
+        return;
+      }
+
+      if (!searchedCommons) {
+        searchedCommons = true;
+        searchShirtImageUrl(currentShirt.team, currentShirt.year).then((url) => {
+          if (url) {
+            shirtImage.src = url;
+          } else {
+            imageLoader.classList.add('hidden');
+            shirtImage.classList.remove('hidden');
+            shirtImage.src = '/favicon.svg';
+          }
+        });
+        return;
+      }
+
+      imageLoader.classList.add('hidden');
+      shirtImage.classList.remove('hidden');
+      shirtImage.src = '/favicon.svg';
+    };
+    
+    const nextSrc = imageCandidates[0] ?? '/favicon.svg';
+    shirtImage.src = nextSrc;
+
+    // Generar opciones y distractores
+    generateOptions();
+  }
+
+  // --- GENERAR OPCIONES DE RESPUESTA ---
+  function generateOptions() {
+    optionsGrid.innerHTML = '';
+    
+    // Determinar qué estamos adivinando en esta pregunta
+    let questionType = currentMode;
+    if (currentMode === 'mixed') {
+      questionType = Math.random() > 0.5 ? 'team' : 'year';
+    }
+
+    let correctAnswer = '';
+    let allOptions: string[] = [];
+
+    if (questionType === 'team') {
+      correctAnswer = currentShirt.team;
+      // Obtener todos los equipos únicos
+      const uniqueTeams = Array.from(new Set(shirts.map(s => s.team)));
+      // Distractores
+      const distractors = uniqueTeams
+        .filter(t => t !== correctAnswer)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3);
+      
+      allOptions = [correctAnswer, ...distractors].sort(() => 0.5 - Math.random());
+    } else {
+      correctAnswer = currentShirt.year.toString();
+      // Obtener todos los años únicos
+      const uniqueYears = Array.from(new Set(shirts.map(s => s.year.toString())));
+      // Distractores
+      const distractors = uniqueYears
+        .filter(y => y !== correctAnswer)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3);
+      
+      allOptions = [correctAnswer, ...distractors].sort(() => 0.5 - Math.random());
+    }
+
+    allOptions.forEach(option => {
+      const button = document.createElement('button');
+      button.className = 'btn-option';
+      button.textContent = option;
+      button.dataset.value = option;
+      button.dataset.correct = (option === correctAnswer) ? 'true' : 'false';
+      button.dataset.type = questionType;
+
+      button.addEventListener('click', () => handleAnswerSelect(button));
+      optionsGrid.appendChild(button);
+    });
+  }
+
+  // --- MANEJAR SELECCIÓN DE RESPUESTA ---
+  function handleAnswerSelect(selectedButton: HTMLButtonElement) {
+    if (isAnswered) return;
+    isAnswered = true;
+
+    const isCorrect = selectedButton.dataset.correct === 'true';
+
+    // Deshabilitar todas las opciones
+    document.querySelectorAll('.btn-option').forEach(btn => {
+      const b = btn as HTMLButtonElement;
+      b.disabled = true;
+      if (b.dataset.correct === 'true') {
+        b.classList.add('correct');
+      }
+    });
+
+    if (isCorrect) {
+      // ÉXITO
+      selectedButton.classList.add('correct');
+      shirtCard.classList.add('animate-success');
+      setTimeout(() => shirtCard.classList.remove('animate-success'), 600);
+      
+      // Actualizar racha y score
+      streak++;
+      if (streak > maxStreak) maxStreak = streak;
+      
+      // Puntuación: base 100 pts + bonus por racha
+      const points = 100 + (streak * 10);
+      score += points;
+      currentScoreLabel.textContent = score.toString();
+      
+      updateStreakUI();
+      playSound('correct');
+
+      // Vibración de éxito en móviles
+      if (navigator.vibrate) navigator.vibrate([80]);
+
+      showFeedbackModal(true);
+    } else {
+      // ERROR
+      selectedButton.classList.add('incorrect');
+      shirtCard.classList.add('animate-shake');
+      setTimeout(() => shirtCard.classList.remove('animate-shake'), 400);
+
+      streak = 0;
+      updateStreakUI();
+      
+      lives--;
+      updateHeartsUI();
+      playSound('incorrect');
+
+      // Vibración de error en móviles (doble pulsación)
+      if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+
+      showFeedbackModal(false);
+    }
+  }
+
+  // --- MOSTRAR MODAL INFORMATIVO ---
+  function showFeedbackModal(isCorrect: boolean) {
+    if (isCorrect) {
+      feedbackIcon.textContent = '✅';
+      feedbackTitle.textContent = '¡Correcto!';
+      feedbackTitle.className = 'emerald-text';
+    } else {
+      feedbackIcon.textContent = '❌';
+      feedbackTitle.textContent = 'Incorrecto';
+      feedbackTitle.className = 'error-text';
+    }
+
+    correctAnswerReveal.innerHTML = `Es la camiseta de <span class="gold-text">${currentShirt.team}</span> del año <span class="gold-text">${currentShirt.year}</span>.`;
+    shirtDescription.textContent = currentShirt.desc;
+
+    setTimeout(() => {
+      feedbackModal.classList.remove('hidden');
+    }, 800);
+  }
+
+  // --- NAVEGACIÓN DESDE MODAL ---
+  btnNext.addEventListener('click', () => {
+    feedbackModal.classList.add('hidden');
+    
+    currentQuestionIndex++;
+    
+    // Condición de fin de juego (sin vidas o sin más preguntas)
+    if (lives <= 0 || currentQuestionIndex >= selectedShirts.length) {
+      endGame();
+    } else {
+      loadNextQuestion();
+    }
+  });
+
+  // --- FIN DE JUEGO ---
+  function endGame() {
+    playSound('gameover');
+    gameScreen.classList.add('hidden');
+    feedbackModal.classList.add('hidden');
+    gameOverScreen.classList.remove('hidden');
+
+    finalScore.textContent = score.toString();
+    finalStreak.textContent = maxStreak.toString();
+    finalGuessed.textContent = `${currentQuestionIndex}/${selectedShirts.length}`;
+
+    // Mensaje personalizado
+    if (lives <= 0) {
+      gameOverMessage.textContent = '¡Te has quedado sin corazones! Sigue intentándolo para batir tu récord.';
+    } else {
+      gameOverMessage.textContent = '¡Impresionante! Has completado todo el quiz de camisetas históricas.';
+    }
+
+    // Guardar récords locales
+    const localHighScore = parseInt(localStorage.getItem('high_score') || '0');
+    const localMaxStreak = parseInt(localStorage.getItem('max_streak') || '0');
+
+    if (score > localHighScore) {
+      localStorage.setItem('high_score', score.toString());
+      finalScore.innerHTML += ' <span class="new-record-badge">¡NUEVO RÉCORD!</span>';
+    }
+    if (maxStreak > localMaxStreak) {
+      localStorage.setItem('max_streak', maxStreak.toString());
+    }
+
+    init(); // Refrescar récords de la pantalla de inicio
+  }
+
+  // --- AYUDAS Y PISTAS ---
+  btnHint.addEventListener('click', () => {
+    playSound('hint');
+    hintBox.textContent = `Pista: Es una camiseta de color ${currentShirt.color.toLowerCase()}.`;
+    hintBox.classList.remove('hidden');
+    btnHint.classList.add('hidden');
+  });
+
+  // --- ACTUALIZACIÓN DE UI (CORAZONES Y RACHA) ---
+  function updateHeartsUI() {
+    hearts.forEach((heart, idx) => {
+      if (idx < lives) {
+        heart.classList.add('active');
+      } else {
+        heart.classList.remove('active');
+      }
+    });
+  }
+
+  function updateStreakUI() {
+    if (streak >= 3) {
+      currentStreakLabel.textContent = streak.toString();
+      streakBadge.classList.remove('hidden');
+    } else {
+      streakBadge.classList.add('hidden');
+    }
+  }
+
+  // --- ACCIONES DE MENÚS ---
+  btnHome.addEventListener('click', () => {
+    if (confirm('¿Estás seguro de que deseas salir del juego actual?')) {
+      gameScreen.classList.add('hidden');
+      startScreen.classList.remove('hidden');
+    }
+  });
+
+  btnMenu.addEventListener('click', () => {
+    gameOverScreen.classList.add('hidden');
+    startScreen.classList.remove('hidden');
+  });
+
+  btnRetry.addEventListener('click', () => {
+    startGame(currentMode);
+  });
+
+  // Inicializar récords al cargar
+  init();
+</script>
