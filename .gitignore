@@ -31,3 +31,7 @@ _agent_cmd_log.txt
 deploy-result.txt
 VERCEL_URL.txt
 .vercel
+
+# Stitch ZIPs
+*.zip
+*.zip:Zone.Identifier

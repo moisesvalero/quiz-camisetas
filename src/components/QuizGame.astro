@@ -2,891 +2,414 @@
 const SHIRT_COUNT = 50;
 ---
 
-<div class="quiz-game-wrapper">
+<div class="quiz-game-wrapper w-full min-h-screen">
   <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
 
-  <!-- INICIO -->
-  <div id="start-screen" class="glass-panel screen-enter">
-    <div class="hero-badge">⚽ {SHIRT_COUNT} camisetas legendarias</div>
+  <!-- ==================== PANTALLAS DE INICIO ==================== -->
+  <div id="start-screen" class="js-start-screen w-full">
+    <!-- MÓVIL (md:hidden) -->
+    <div class="md:hidden flex flex-col w-full max-w-md mx-auto px-4 pt-12 pb-8">
+      <header class="text-center mb-10 stagger-load">
+        <div class="inline-block bg-primary text-on-primary font-label-mono text-[11px] px-3 py-1 mb-4 border-[2px] border-black">
+          JERSEY PRO EDITION
+        </div>
+        <h1 class="font-display-xl-mobile text-display-xl-mobile leading-[1.1] tracking-tighter uppercase font-black text-primary italic">
+          RETRO<br/>SHIRT<br/><span class="text-outline border-b-4 border-primary">QUIZ</span>
+        </h1>
+      </header>
+      
+      <section class="grid grid-cols-2 gap-4 mb-8 stagger-load delay-1">
+        <div class="bento-card bento-card-shadow p-4 flex flex-col items-center justify-center">
+          <span class="font-label-mono text-[9px] text-secondary uppercase mb-1">Racha Maxima</span>
+          <div class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+            <span class="font-headline-md text-headline-md js-global-max-streak">0</span>
+          </div>
+        </div>
+        <div class="bento-card bento-card-shadow p-4 flex flex-col items-center justify-center">
+          <span class="font-label-mono text-[9px] text-secondary uppercase mb-1">Mejor Record</span>
+          <div class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-primary">emoji_events</span>
+            <span class="font-headline-md text-headline-md js-global-high-score">0</span>
+          </div>
+        </div>
+      </section>
 
-    <div class="header-logo animate-bounce-in">
-      <div class="logo-ring">
-        <div class="logo-circle">
-          <img src="/favicon.svg" alt="" class="logo-img" width="56" height="56" />
+      <section class="flex flex-col gap-4 flex-grow stagger-load delay-2">
+        <button class="bento-card bento-card-shadow text-left p-5 group relative overflow-hidden js-mode-button" data-mode="team">
+          <div class="flex justify-between items-start mb-2">
+            <div class="bg-primary text-on-primary p-2 border-[2px] border-black">
+              <span class="material-symbols-outlined text-[24px]">flag</span>
+            </div>
+            <span class="font-label-mono text-[12px] opacity-40">MODE 01</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md mb-1 uppercase">Adivinar Seleccion</h3>
+          <p class="font-body-md text-on-surface-variant leading-tight">Identifica el pais por sus equipaciones historicas mas iconicas.</p>
+          <div class="mt-4 flex items-center text-primary font-label-mono text-xs group-hover:translate-x-1 transition-transform">
+            PLAY NOW <span class="material-symbols-outlined ml-1">arrow_forward</span>
+          </div>
+        </button>
+        <button class="bento-card bento-card-shadow text-left p-5 group relative overflow-hidden js-mode-button" data-mode="year">
+          <div class="flex justify-between items-start mb-2">
+            <div class="bg-white text-primary p-2 border-[2px] border-black">
+              <span class="material-symbols-outlined text-[24px]">calendar_today</span>
+            </div>
+            <span class="font-label-mono text-[12px] opacity-40">MODE 02</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md mb-1 uppercase">Adivinar Año</h3>
+          <p class="font-body-md text-on-surface-variant leading-tight">¿En que mundial se uso esta camiseta? Pon a prueba tu memoria temporal.</p>
+          <div class="mt-4 flex items-center text-primary font-label-mono text-xs group-hover:translate-x-1 transition-transform">
+            PLAY NOW <span class="material-symbols-outlined ml-1">arrow_forward</span>
+          </div>
+        </button>
+        <button class="bento-card bento-card-shadow text-left p-5 group relative overflow-hidden bg-primary-container text-on-primary js-mode-button" data-mode="mixed">
+          <div class="flex justify-between items-start mb-2">
+            <div class="bg-white text-primary p-2 border-[2px] border-black">
+              <span class="material-symbols-outlined text-[24px]">shuffle</span>
+            </div>
+            <span class="font-label-mono text-[12px] opacity-40">MODE 03</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md mb-1 uppercase text-white">Modo Mixto</h3>
+          <p class="font-body-md text-on-primary-container leading-tight">El desafio definitivo. Seleccion y año mezclados de forma aleatoria.</p>
+          <div class="mt-4 flex items-center text-white font-label-mono text-xs group-hover:translate-x-1 transition-transform">
+            PLAY NOW <span class="material-symbols-outlined ml-1">bolt</span>
+          </div>
+        </button>
+      </section>
+
+      <footer class="mt-10 flex flex-col items-center gap-6 stagger-load delay-3">
+        <div class="flex flex-col items-center gap-3">
+          <div class="text-[11px] text-on-surface-variant opacity-60">
+            Desarrollado por <a href="https://github.com/moisesvalero" target="_blank" rel="noopener noreferrer" class="font-bold underline">Moisés Valero</a>
+          </div>
+          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=moi6%40outlook%2ecom&lc=ES&item_name=Retro%20Shirt%20Quiz&currency_code=EUR" target="_blank" rel="noopener noreferrer" class="btn-donate">
+            Apoya el proyecto ❤️
+          </a>
+        </div>
+        <p class="font-label-mono text-[9px] text-on-surface-variant opacity-40 uppercase tracking-widest text-center">
+          © 2026 JERSEY PRO • FIFA 2026 UNITY PULSE
+        </p>
+      </footer>
+    </div>
+
+    <!-- TABLET / ESCRITORIO (hidden md:block) -->
+    <div class="hidden md:block w-full max-w-5xl mx-auto px-12 pt-12 pb-24">
+      <section class="text-center mb-12 stagger-load">
+        <h1 class="font-display-xl text-7xl uppercase leading-none tracking-tighter italic mb-2">RETRO SHIRT QUIZ</h1>
+        <p class="font-label-mono text-label-mono text-secondary uppercase tracking-widest">Identifica las camisetas mas legendarias de los mundiales • 1930 - 2022</p>
+      </section>
+      
+      <div class="grid grid-cols-12 gap-4 stagger-load delay-1">
+        <button class="col-span-8 h-80 bg-primary border-2 border-primary p-8 flex flex-col justify-between text-left group cursor-pointer active:scale-95 transition-all bento-card js-mode-button" data-mode="mixed">
+          <div class="flex justify-between items-start w-full">
+            <span class="font-label-mono text-label-mono text-on-primary opacity-60 uppercase">Modo Principal: Mixto</span>
+            <span class="material-symbols-outlined text-on-primary text-5xl group-hover:rotate-12 transition-transform">play_circle</span>
+          </div>
+          <div>
+            <h2 class="font-headline-lg text-5xl text-on-primary uppercase leading-none mb-2">INICIAR JUEGO</h2>
+            <p class="font-body-lg text-on-primary opacity-80 max-w-md">Adivina la seleccion o el año de {SHIRT_COUNT} camisetas iconicas. ¿Cuantas reconoces?</p>
+          </div>
+        </button>
+        
+        <div class="col-span-4 h-80 bg-surface-container-lowest border-2 border-primary p-8 flex flex-col justify-between bento-card">
+          <span class="font-label-mono text-label-mono text-primary opacity-60 uppercase">Record General</span>
+          <div class="space-y-1">
+            <span class="font-display-xl text-6xl text-primary leading-none js-global-high-score">0</span>
+            <div class="flex items-center gap-2 text-primary">
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+              <span class="font-label-mono text-xs uppercase">Elite Récord</span>
+            </div>
+          </div>
+          <div class="w-full bg-surface-container h-1 mt-4">
+            <div class="bg-primary h-full w-[85%]"></div>
+          </div>
+        </div>
+        
+        <button class="col-span-4 h-64 bg-surface-container-lowest border-2 border-primary p-6 flex flex-col justify-between text-left bento-card group cursor-pointer js-mode-button" data-mode="team">
+          <div class="flex justify-between w-full">
+            <span class="material-symbols-outlined text-primary text-3xl">flag</span>
+            <span class="font-label-mono text-[10px] bg-primary text-on-primary px-2 py-1 uppercase">MODO 01</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-xl text-primary uppercase">ADIVINAR SELECCION</h3>
+            <p class="font-label-mono text-xs text-secondary mt-2">Identifica paises por sus diseños oficiales.</p>
+          </div>
+        </button>
+        
+        <div class="col-span-5 h-64 border-2 border-primary overflow-hidden relative bento-card">
+          <div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-10"></div>
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDc5fWk3FKkNOsEYWIluiqx_c38mP6oLTPQcyFQ6osOFxmB5FClK3lus55V9GoNcCWl3uR8icKV-oy0GM_l5Z5d5-FdbZ71zf-vxQ5hHdQT82VUrOoSsCKaq300OyXvAXAXQTMnX70CsExkY5VAH3Mnt5TMgSufKef9asrEFkk-RK-NPHwLIIy7Wq9YsgVikv4l2MUCRe6hzMGW8HKqK8YxRo-f-1_WsZbu2Wgd2VoSJB6R-eEA990Mum1alSr24hqrJJDOktWhLq-0')"></div>
+          <div class="absolute bottom-4 left-4 z-20 bg-primary text-on-primary p-2">
+            <span class="font-label-mono text-xs uppercase tracking-widest">Jersey Pro WC26</span>
+          </div>
+        </div>
+        
+        <button class="col-span-3 h-64 bg-surface-container-high border-2 border-primary p-6 flex flex-col items-center justify-center text-center bento-card cursor-pointer js-mode-button" data-mode="year">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4">calendar_today</span>
+          <h3 class="font-label-mono text-sm font-bold uppercase leading-tight">ADIVINAR<br/>AÑO</h3>
+          <p class="font-label-mono text-[10px] text-secondary mt-2">¿Que mundial fue?</p>
+        </button>
+        
+        <div class="col-span-12 border-2 border-primary p-6 flex items-center justify-between bg-surface-container-lowest bento-card">
+          <div class="flex items-center gap-8">
+            <div class="flex flex-col">
+              <span class="font-label-mono text-[10px] text-secondary uppercase">Desarrollador</span>
+              <a href="https://github.com/moisesvalero" target="_blank" rel="noopener noreferrer" class="font-headline-md text-lg underline">Moisés Valero</a>
+            </div>
+            <div class="h-8 w-[1px] bg-outline-variant"></div>
+            <div class="flex flex-col">
+              <span class="font-label-mono text-[10px] text-secondary uppercase">Proveedor de datos</span>
+              <a href="https://www.footballkitarchive.com/world-cup-kits-l308/" target="_blank" rel="noopener noreferrer" class="font-headline-md text-lg underline">Football Kit Archive</a>
+            </div>
+          </div>
+          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=moi6%40outlook%2ecom&lc=ES&item_name=Retro%20Shirt%20Quiz&currency_code=EUR" target="_blank" rel="noopener noreferrer" class="btn-donate">
+            Apoya el proyecto ❤️
+          </a>
         </div>
       </div>
-      <h1 class="gold-text title-main">Retro Shirt Quiz</h1>
-      <p class="subtitle">Mundiales de Fútbol · 1930 — 2022</p>
+    </div>
+  </div>
+
+  <!-- ==================== PANTALLAS DE JUEGO ==================== -->
+  <div id="game-screen" class="js-game-screen hidden w-full">
+    <!-- MÓVIL (md:hidden) -->
+    <div class="md:hidden flex flex-col w-full max-w-md mx-auto min-h-screen">
+      <header class="w-full px-4 pt-6 pb-2 flex flex-col gap-4 sticky top-0 bg-background z-20">
+        <div class="flex justify-between items-center">
+          <div class="flex flex-col">
+            <span class="font-label-mono text-label-mono text-secondary uppercase tracking-widest text-[9px]">RACHA</span>
+            <span class="font-headline-md text-headline-md text-primary js-current-streak">0</span>
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <span class="font-label-mono text-[9px] text-secondary uppercase tracking-wider">VIDAS</span>
+            <div class="flex gap-1">
+              <span class="material-symbols-outlined text-[#FF007A] text-[20px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
+              <span class="material-symbols-outlined text-[#FF007A] text-[20px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
+              <span class="material-symbols-outlined text-[#FF007A] text-[20px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            </div>
+          </div>
+          <div class="flex flex-col items-end">
+            <span class="font-label-mono text-label-mono text-secondary uppercase tracking-widest text-[9px]">PUNTOS</span>
+            <span class="font-headline-md text-headline-md text-primary js-current-score">0</span>
+          </div>
+        </div>
+        <div class="w-full h-3 bg-surface-container border-2 border-primary relative overflow-hidden">
+          <div class="h-full bg-neon-pink border-r-2 border-primary transition-all duration-300 js-progress-fill" style="width: 0%;"></div>
+        </div>
+      </header>
+      
+      <main class="flex-grow overflow-y-auto px-4 py-4 flex flex-col gap-5">
+        <section class="w-full aspect-[4/5] bg-white border-2 border-primary brutalist-button-shadow flex items-center justify-center p-6 relative overflow-hidden">
+          <div class="absolute -top-10 -right-10 w-40 h-40 bg-electric-turquoise opacity-20 rotate-12"></div>
+          <div class="w-full h-full relative z-10 flex items-center justify-center">
+            <div class="absolute inset-0 bg-white flex items-center justify-center js-image-loader">
+              <div class="w-10 h-10 border-4 border-black border-t-transparent animate-spin"></div>
+            </div>
+            <img class="w-full h-full object-contain hidden js-shirt-image" src="" alt="Camiseta retro del mundial" />
+          </div>
+          <div class="absolute bottom-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-mono text-[9px] tracking-widest js-question-type-badge">
+            SELECCION
+          </div>
+        </section>
+        
+        <div class="flex flex-col items-center">
+          <button class="js-btn-hint btn-hint" type="button">💡 Ver pista de color</button>
+          <div class="js-hint-box hint-text hidden"></div>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <span class="font-label-mono text-label-mono text-secondary flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[15px]">quiz</span> PREGUNTA <span class="js-question-index">1</span>
+          </span>
+          <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary uppercase leading-tight js-question-text">
+            ¿A que seleccion pertenece esta camiseta?
+          </h2>
+        </div>
+        
+        <div class="flex flex-col gap-3 pb-8 js-options-grid">
+           <!-- Opciones móviles -->
+        </div>
+      </main>
+      
+      <footer class="bg-primary text-on-primary py-4 px-6 flex justify-between items-center sticky bottom-0 z-20">
+        <button class="flex items-center gap-2 group js-btn-home">
+          <span class="material-symbols-outlined text-white">arrow_back</span>
+          <span class="font-label-mono text-label-mono text-white uppercase tracking-widest">Abandonar</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-electric-turquoise" style="font-variation-settings: 'FILL' 1;">bolt</span>
+          <span class="font-label-mono text-label-mono text-electric-turquoise js-streak-badge hidden">RACHA ACTIVA</span>
+        </div>
+      </footer>
     </div>
 
-    <p class="hero-tagline">Reconoce las camisetas más icónicas de la historia. Tres vidas. Racha infinita.</p>
+    <!-- TABLET / ESCRITORIO (hidden md:flex) -->
+    <div class="hidden md:flex flex-col w-full min-h-screen">
+      <header class="w-full h-20 flex items-center justify-between px-12 z-10 border-b-2 border-primary bg-white">
+        <div class="flex items-center gap-4">
+          <div class="bento-border bg-primary text-on-primary px-4 py-2 flex items-center gap-2">
+            <span class="material-symbols-outlined text-on-primary">local_fire_department</span>
+            <span class="font-label-mono text-label-mono">RACHA: <span class="js-current-streak">0</span></span>
+          </div>
+          <div class="bento-border bg-surface-container-lowest px-4 py-2">
+            <span class="font-label-mono text-label-mono text-primary uppercase font-bold">PREGUNTA <span class="js-question-index">1</span></span>
+          </div>
+          <div class="flex items-center gap-1.5 ml-2">
+            <span class="material-symbols-outlined text-[#FF007A] text-[26px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            <span class="material-symbols-outlined text-[#FF007A] text-[26px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            <span class="material-symbols-outlined text-[#FF007A] text-[26px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
+          </div>
+        </div>
+        <div class="hidden md:block font-display-xl text-primary font-black tracking-tighter text-[28px] italic">
+          RETRO SHIRT QUIZ
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="flex flex-col items-end">
+            <span class="font-label-mono text-xs uppercase opacity-60 tracking-widest">Puntos Actuales</span>
+            <span class="font-display-xl text-[40px] leading-none text-primary js-current-score">0</span>
+          </div>
+          <button class="bento-border bg-surface-container-lowest p-2 hover:bg-red-50 hover:text-red-600 transition-colors js-btn-home">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+      </header>
 
-    <div class="stats-overview">
-      <div class="stat-card">
-        <span class="stat-icon">🏆</span>
-        <span class="stat-label">Récord</span>
-        <span id="global-high-score" class="stat-val gold-text">0</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-icon">🔥</span>
-        <span class="stat-label">Racha máx</span>
-        <span id="global-max-streak" class="stat-val emerald-text">0</span>
-      </div>
+      <main class="flex-grow flex flex-col items-center justify-center px-12 pb-12 gap-6 relative z-10">
+        <div class="w-full max-w-4xl h-3 bento-border bg-surface-container-highest relative mt-6 mb-2">
+          <div class="absolute inset-y-0 left-0 bg-primary transition-all duration-300 js-progress-fill" style="width: 0%;"></div>
+          <div class="absolute -top-6 left-[0%] transform -translate-x-1/2 transition-all duration-300" id="soccer-indicator-tablet">
+            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-row items-center justify-center gap-12 w-full max-w-5xl">
+          <div class="w-1/2 flex justify-center">
+            <div class="bento-border bg-surface-container-lowest p-8 relative w-full aspect-square max-w-[400px] flex items-center justify-center group">
+              <div class="absolute top-4 left-4">
+                <span class="font-label-mono text-label-mono bg-primary text-on-primary px-3 py-1 js-question-type-badge">SELECCION</span>
+              </div>
+              <div class="w-full h-full flex items-center justify-center relative">
+                <div class="absolute inset-0 bg-white flex items-center justify-center js-image-loader">
+                  <div class="w-12 h-12 border-4 border-black border-t-transparent animate-spin"></div>
+                </div>
+                <img class="max-w-full max-h-full object-contain hidden js-shirt-image" src="" alt="Camiseta historica del mundial" />
+              </div>
+              <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-container -z-10"></div>
+            </div>
+          </div>
+          
+          <div class="w-1/2 flex flex-col gap-4">
+            <div class="mb-2">
+              <h2 class="font-headline-lg text-3xl text-primary uppercase tracking-tighter leading-none js-question-text">
+                ¿A que seleccion pertenece esta camiseta?
+              </h2>
+            </div>
+            <div class="mb-3 text-left">
+              <button class="js-btn-hint btn-hint !m-0" type="button">💡 Ver pista de color</button>
+              <div class="js-hint-box hint-text hidden !text-left"></div>
+            </div>
+            <div class="grid grid-cols-1 gap-4 js-options-grid">
+               <!-- Opciones tablet -->
+            </div>
+          </div>
+        </div>
+      </main>
+      
+      <footer class="w-full h-16 flex items-center justify-between px-12 border-t-2 border-primary bg-white z-10">
+        <p class="font-label-mono text-[10px] text-secondary">RETRO SHIRT QUIZ • DAYLIGHT UNITY PULSE EDITION</p>
+        <div class="flex items-center gap-4">
+          <span class="font-label-mono text-xs uppercase opacity-60">Racha de victorias</span>
+          <div class="w-12 h-8 bento-border bg-primary flex items-center justify-center text-on-primary">
+            <span class="font-display-xl text-lg js-current-streak">0</span>
+          </div>
+        </div>
+      </footer>
     </div>
+  </div>
 
-    <div class="mode-selection">
-      <h3>Elige tu desafío</h3>
-      <button class="mode-card" data-mode="team" type="button">
-        <span class="mode-card__icon">🌍</span>
-        <span class="mode-card__body">
-          <span class="mode-card__title">Adivinar Selección</span>
-          <span class="mode-card__desc">¿De qué país es esta camiseta?</span>
-        </span>
-        <span class="mode-card__arrow">→</span>
-      </button>
-      <button class="mode-card" data-mode="year" type="button">
-        <span class="mode-card__icon">📅</span>
-        <span class="mode-card__body">
-          <span class="mode-card__title">Adivinar Año</span>
-          <span class="mode-card__desc">¿En qué Mundial la usaron?</span>
-        </span>
-        <span class="mode-card__arrow">→</span>
-      </button>
-      <button class="mode-card mode-card--featured" data-mode="mixed" type="button">
-        <span class="mode-card__icon">⚡</span>
-        <span class="mode-card__body">
-          <span class="mode-card__title">Modo Mixto</span>
-          <span class="mode-card__desc">País o año — nunca sabes cuál toca</span>
-        </span>
-        <span class="mode-card__arrow">→</span>
-      </button>
-    </div>
+  <!-- ==================== PANTALLA GAME OVER (RESPONSIVA UNIFICADA) ==================== -->
+  <div id="game-over-screen" class="js-game-over-screen hidden bg-background text-on-background min-h-screen flex flex-col w-full">
+    <header class="bg-white border-b-2 border-primary w-full top-0 left-0 z-10 h-16 flex items-center justify-between px-6">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary">sports_soccer</span>
+        <h1 class="font-display-xl-mobile text-2xl uppercase tracking-tighter text-primary italic">RETRO SHIRT QUIZ</h1>
+      </div>
+    </header>
+    
+    <main class="flex-grow flex items-center justify-center p-6 md:p-12 relative z-10 w-full max-w-4xl mx-auto">
+      <div class="w-full space-y-8">
+        <div class="text-center stagger-load">
+          <p class="font-label-mono text-label-mono uppercase tracking-widest text-secondary mb-2">Resumen de Partida</p>
+          <h2 class="font-display-xl-mobile text-display-xl-mobile md:font-display-xl md:text-5xl uppercase italic js-game-over-message">Fin del Partido</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white brutalist-border p-6 flex flex-col items-center justify-center text-center brutalist-shadow">
+            <span class="font-label-mono text-label-mono uppercase text-secondary mb-4">Puntuación</span>
+            <div class="font-display-xl-mobile text-[48px] md:text-5xl text-primary js-final-score">0</div>
+            <div class="mt-4 px-3 py-1 bg-primary text-on-primary font-label-mono text-[11px] uppercase js-new-record-badge hidden">Nuevo Récord</div>
+          </div>
+          
+          <div class="bg-pulse-neon brutalist-border p-6 flex flex-col items-center justify-center text-center relative overflow-hidden brutalist-shadow">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+              <div class="w-full h-full" style="background-image: radial-gradient(circle, #fff 10%, transparent 10.5%); background-size: 20px 20px;"></div>
+            </div>
+            <span class="font-label-mono text-label-mono uppercase text-on-primary mb-4 relative z-10">Mejor Racha</span>
+            <div class="font-display-xl-mobile text-[48px] md:text-5xl text-on-primary relative z-10 js-final-streak">0</div>
+            <span class="material-symbols-outlined text-on-primary text-4xl mt-2 relative z-10" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+          </div>
+          
+          <div class="bg-white brutalist-border p-6 flex flex-col items-center justify-center text-center brutalist-shadow">
+            <span class="font-label-mono text-label-mono uppercase text-secondary mb-4">Descubiertas</span>
+            <div class="font-display-xl-mobile text-[48px] md:text-5xl text-primary js-final-guessed">0/50</div>
+            <div class="w-full bg-[#eeeeee] h-2 mt-6 brutalist-border overflow-hidden">
+              <div class="bg-primary h-full js-final-guessed-progress" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <span class="rank-badge js-rank-badge font-bold">Novato del banquillo</span>
+        </div>
 
-    <div class="pwa-install-container hidden" id="install-banner">
-      <button class="btn-secondary" id="btn-install" type="button">📲 Instalar en el móvil</button>
-    </div>
-
-    <footer class="app-footer">
-      <div>
-        Camisetas · <a href="https://www.footballkitarchive.com/world-cup-kits-l308/" target="_blank" rel="noopener noreferrer">Football Kit Archive</a>
+        <div class="flex flex-col md:flex-row gap-6">
+          <button class="flex-grow bg-primary text-on-primary font-headline-md text-lg uppercase py-5 brutalist-border brutalist-shadow button-shift flex items-center justify-center gap-3 js-btn-retry">
+            <span class="material-symbols-outlined text-white">replay</span>
+            <span class="text-white">Jugar de Nuevo</span>
+          </button>
+          <button class="flex-grow bg-white text-primary font-headline-md text-lg uppercase py-5 brutalist-border brutalist-shadow button-shift flex items-center justify-center gap-3 js-btn-menu">
+            <span class="material-symbols-outlined">home</span>
+            <span>Menú principal</span>
+          </button>
+        </div>
       </div>
-      <div class="footer-credits">
-        Desarrollado por <a href="https://github.com/moisesvalero" target="_blank" rel="noopener noreferrer">Moisés Valero</a>
-      </div>
-      <div class="footer-donate">
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=moi6%40outlook%2ecom&lc=ES&item_name=Retro%20Shirt%20Quiz&currency_code=EUR" target="_blank" rel="noopener noreferrer" class="btn-donate">
-          Apoya el proyecto ❤️
-        </a>
-      </div>
+    </main>
+    
+    <footer class="mt-auto py-8 text-center opacity-40">
+      <p class="font-label-mono text-[9px] uppercase tracking-[0.2em]">© FIFA 2026 • RETRO SHIRT QUIZ • OFFICIAL DIGITAL EXPERIENCE</p>
     </footer>
   </div>
 
-  <!-- JUEGO -->
-  <div id="game-screen" class="glass-panel hidden">
-    <div class="game-header">
-      <button id="btn-home" class="btn-icon-round" type="button" aria-label="Salir">✕</button>
-      <div class="score-container">
-        <span class="score-label">Puntos</span>
-        <span id="current-score" class="score-val">0</span>
+  <!-- ==================== MODAL DE FEEDBACK ==================== -->
+  <div id="feedback-modal" class="modal-overlay hidden js-feedback-modal" role="dialog" aria-modal="true">
+    <div class="modal-content bento-border brutalist-shadow bg-white p-6 max-w-sm w-full animate-bounce-in">
+      <div class="feedback-header flex items-center gap-3 mb-4">
+        <span id="feedback-icon" class="feedback-emoji text-3xl js-feedback-icon">🎉</span>
+        <h2 id="feedback-title" class="font-headline-md text-2xl uppercase js-feedback-title">¡Correcto!</h2>
       </div>
-      <div class="hearts-container" aria-label="Vidas restantes">
-        <span class="heart active"></span>
-        <span class="heart active"></span>
-        <span class="heart active"></span>
+      <p id="correct-answer-reveal" class="correct-reveal-text font-bold text-[#FF007A] mb-4 leading-snug js-correct-answer-reveal"></p>
+      <div class="history-context bg-gray-100 bento-border p-4 mb-6 max-h-40 overflow-y-auto">
+        <h4 class="font-label-mono text-xs text-secondary uppercase font-bold mb-2">Historia de la camiseta</h4>
+        <p id="shirt-description" class="text-sm leading-relaxed text-on-surface-variant js-shirt-description"></p>
       </div>
-    </div>
-
-    <div class="progress-block">
-      <div class="progress-meta">
-        <span class="streak-badge hidden" id="streak-badge">🔥 <span id="current-streak">0</span></span>
-        <span id="question-type-badge" class="question-badge">Selección</span>
-        <span class="progress-indicator">Pregunta <span id="question-index">1</span></span>
-      </div>
-      <div class="progress-track">
-        <div class="progress-fill" id="progress-fill"></div>
-      </div>
-    </div>
-
-    <div class="shirt-card" id="shirt-card">
-      <div class="shirt-card__label">Camiseta del día</div>
-      <div class="image-wrapper">
-        <div class="image-glow" aria-hidden="true"></div>
-        <div class="image-skeleton" id="image-loader"></div>
-        <img id="shirt-image" src="" alt="Camiseta histórica del Mundial" class="hidden" width="200" height="280" />
-      </div>
-      <button class="btn-hint" id="btn-hint" type="button">💡 Ver pista de color</button>
-      <div class="hint-text hidden" id="hint-box"></div>
-    </div>
-
-    <div class="options-container" id="options-grid"></div>
-  </div>
-
-  <!-- FEEDBACK -->
-  <div id="feedback-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
-    <div class="modal-content glass-panel">
-      <div class="feedback-header">
-        <span id="feedback-icon" class="feedback-emoji"></span>
-        <h2 id="feedback-title"></h2>
-      </div>
-      <p id="correct-answer-reveal" class="correct-reveal-text"></p>
-      <div class="history-context">
-        <h4>Historia de la camiseta</h4>
-        <p id="shirt-description"></p>
-      </div>
-      <button id="btn-next" class="btn-primary" type="button">
-        Siguiente camiseta <span class="btn-icon">→</span>
+      <button id="btn-next" class="w-full bg-primary text-on-primary font-headline-md text-lg uppercase py-4 bento-border brutalist-shadow button-shift flex items-center justify-center gap-2 js-btn-next">
+        <span class="text-white">Siguiente camiseta</span> <span class="material-symbols-outlined text-white">arrow_forward</span>
       </button>
-    </div>
-  </div>
-
-  <!-- GAME OVER -->
-  <div id="game-over-screen" class="glass-panel hidden">
-    <div id="rank-badge" class="rank-badge">Novato</div>
-    <h2 class="gold-text">Fin del partido</h2>
-    <p class="game-over-subtitle" id="game-over-message"></p>
-
-    <div class="final-stats">
-      <div class="final-stat-row">
-        <span>Puntuación</span>
-        <span id="final-score" class="gold-text font-display">0</span>
-      </div>
-      <div class="final-stat-row">
-        <span>Mejor racha</span>
-        <span id="final-streak" class="emerald-text font-display">0</span>
-      </div>
-      <div class="final-stat-row">
-        <span>Descubiertas</span>
-        <span id="final-guessed" class="font-display">0</span>
-      </div>
-    </div>
-
-    <div class="game-over-actions">
-      <button id="btn-retry" class="btn-primary" type="button">🔄 Jugar de nuevo</button>
-      <button id="btn-menu" class="btn-secondary" type="button">🏠 Menú principal</button>
     </div>
   </div>
 </div>
 
-<style>
-  .quiz-game-wrapper {
-    width: 100%;
-    position: relative;
-  }
-
-  .confetti-canvas {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 200;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-size: 0.7rem;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #ffffff;
-    background: #000000;
-    border: 2px solid #000000;
-    padding: 0.35rem 0.85rem;
-    border-radius: 0px;
-    margin-bottom: 1.25rem;
-  }
-
-  .header-logo {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  .logo-ring {
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 1rem;
-    border-radius: 0px;
-    padding: 3px;
-    border: 2px solid #000000;
-    background: linear-gradient(135deg, var(--gold), var(--teal-accent), var(--pitch));
-  }
-
-  .logo-circle {
-    width: 100%;
-    height: 100%;
-    border-radius: 0px;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .logo-img {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-  }
-
-  .title-main {
-    font-size: clamp(2.4rem, 9vw, 3rem);
-    line-height: 1;
-    margin-bottom: 0.25rem;
-    font-style: italic;
-    font-weight: 900;
-  }
-
-  .subtitle {
-    font-size: 0.72rem;
-    font-family: var(--font-mono);
-    font-weight: 500;
-    color: var(--text-secondary);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-  }
-
-  .hero-tagline {
-    text-align: center;
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    margin-bottom: 1.5rem;
-    padding: 0 0.5rem;
-  }
-
-  .stats-overview {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .stat-card {
-    background: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 0px;
-    padding: 0.85rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.15rem;
-    box-shadow: 2px 2px 0px 0px #000000;
-  }
-
-  .stat-icon { font-size: 1.1rem; }
-
-  .stat-label {
-    font-size: 0.65rem;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  .stat-val {
-    font-size: 1.65rem;
-    font-family: var(--font-display);
-    line-height: 1;
-  }
-
-  .mode-selection h3 {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    text-align: center;
-    letter-spacing: 0.14em;
-    margin-bottom: 0.75rem;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  .mode-card {
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    width: 100%;
-    padding: 0.95rem 1rem;
-    margin-bottom: 0.6rem;
-    background: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 0px;
-    cursor: pointer;
-    text-align: left;
-    color: inherit;
-    font-family: inherit;
-    box-shadow: 2px 2px 0px 0px #000000;
-    transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
-  }
-
-  .mode-card:hover {
-    background: var(--bg-card-hover);
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0px 0px #000000;
-  }
-
-  .mode-card--featured {
-    background: #fff5f9;
-  }
-
-  .mode-card__icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-  }
-
-  .mode-card__body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-  }
-
-  .mode-card__title {
-    font-weight: 900;
-    font-size: 0.95rem;
-  }
-
-  .mode-card__desc {
-    font-size: 0.78rem;
-    color: var(--text-secondary);
-  }
-
-  .mode-card__arrow {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    transition: transform var(--transition);
-  }
-
-  .mode-card:hover .mode-card__arrow {
-    transform: translateX(3px);
-    color: var(--gold);
-  }
-
-  .pwa-install-container { margin-top: 1rem; }
-
-  .app-footer {
-    margin-top: 1.5rem;
-    text-align: center;
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    border-top: 2px solid #000000;
-    padding-top: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .app-footer a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-  }
-
-  .app-footer a:hover {
-    color: var(--gold);
-  }
-
-  .footer-credits a {
-    color: var(--text-primary);
-    font-weight: 700;
-  }
-
-  .footer-donate {
-    margin-top: 0.25rem;
-  }
-
-  .btn-donate {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    background: #ffffff;
-    border: 2px solid #000000;
-    color: #000000 !important;
-    padding: 0.35rem 0.85rem;
-    border-radius: 0px;
-    font-weight: 700 !important;
-    font-size: 0.7rem;
-    box-shadow: 2px 2px 0px 0px #000000;
-    transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
-  }
-
-  .btn-donate:hover {
-    background: var(--gold-soft);
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0px 0px #000000;
-  }
-
-  /* Game */
-  .game-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-
-  .btn-icon-round {
-    width: 36px;
-    height: 36px;
-    border-radius: 0px;
-    border: 2px solid #000000;
-    background: #ffffff;
-    color: #000000;
-    font-size: 0.9rem;
-    cursor: pointer;
-    box-shadow: 2px 2px 0px 0px #000000;
-    transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
-  }
-
-  .btn-icon-round:hover {
-    background: #eeeeee;
-    transform: translate(-1px, -1px);
-    box-shadow: 3px 3px 0px 0px #000000;
-  }
-
-  .score-container { text-align: center; }
-
-  .score-label {
-    font-size: 0.6rem;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
-
-  .score-val {
-    font-size: 1.6rem;
-    font-family: var(--font-display);
-    color: var(--gold);
-    line-height: 1.1;
-  }
-
-  .hearts-container {
-    display: flex;
-    gap: 0.35rem;
-  }
-
-  .heart {
-    width: 22px;
-    height: 22px;
-    border-radius: 0px;
-    background: #ffffff;
-    border: 2px solid #000000;
-    transition: var(--transition);
-    position: relative;
-    box-shadow: 1px 1px 0px 0px #000000;
-  }
-
-  .heart::after {
-    content: '♥';
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    color: #000000;
-    opacity: 0.15;
-  }
-
-  .heart.active {
-    background: var(--gold);
-    border-color: #000000;
-  }
-
-  .heart.active::after {
-    color: #ffffff;
-    opacity: 1;
-  }
-
-  .progress-block { margin-bottom: 1.1rem; }
-
-  .progress-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.75rem;
-  }
-
-  .streak-badge {
-    font-family: var(--font-mono);
-    font-weight: 700;
-    color: #000000;
-    background: var(--teal-accent);
-    border: 2px solid #000000;
-    padding: 0.2rem 0.6rem;
-    border-radius: 0px;
-    box-shadow: 1px 1px 0px 0px #000000;
-  }
-
-  .question-badge {
-    font-family: var(--font-mono);
-    font-weight: 700;
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #ffffff;
-    background: #000000;
-    padding: 0.2rem 0.55rem;
-    border-radius: 0px;
-    border: 2px solid #000000;
-  }
-
-  .progress-indicator {
-    color: var(--text-muted);
-    font-family: var(--font-mono);
-    font-weight: 700;
-    margin-left: auto;
-  }
-
-  .progress-track {
-    height: 10px;
-    background: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 0px;
-    overflow: hidden;
-  }
-
-  .progress-fill {
-    height: 100%;
-    width: 0%;
-    background: var(--gold);
-    border-radius: 0px;
-    transition: width 0.5s var(--ease-out);
-  }
-
-  .shirt-card {
-    background: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 0px;
-    padding: 1.25rem;
-    margin-bottom: 1.25rem;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 4px 4px 0px 0px #000000;
-  }
-
-  .shirt-card__label {
-    font-size: 0.65rem;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    text-align: center;
-    margin-bottom: 0.75rem;
-  }
-
-  .image-wrapper {
-    width: 100%;
-    aspect-ratio: 3/4;
-    max-height: 280px;
-    border-radius: 0px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem 1rem;
-    background: #ffffff;
-    border: 2px solid #000000;
-  }
-
-  .image-glow {
-    display: none;
-  }
-
-  .image-skeleton {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, transparent 25%, rgba(0, 0, 0, 0.05) 50%, transparent 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.4s infinite;
-    border-radius: 0px;
-  }
-
-  .image-wrapper img {
-    height: 100%;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
-    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.15));
-    z-index: 1;
-    transition: transform 0.4s var(--ease-spring);
-  }
-
-  .shirt-card:hover img {
-    transform: scale(1.04);
-  }
-
-  .btn-hint {
-    display: block;
-    margin: 0.85rem auto 0;
-    background: #ffffff;
-    border: 2px dashed #000000;
-    color: #000000;
-    font-size: 0.75rem;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    padding: 0.4rem 1rem;
-    border-radius: 0px;
-    cursor: pointer;
-    box-shadow: 2px 2px 0px 0px #000000;
-    transition: transform var(--transition), box-shadow var(--transition);
-  }
-
-  .btn-hint:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0px 0px #000000;
-    background: #eeeeee;
-  }
-
-  .hint-text {
-    margin-top: 0.75rem;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    text-align: center;
-    padding: 0.75rem;
-    border-radius: 0px;
-    background: #ffffff;
-    border: 2px solid #000000;
-    box-shadow: 2px 2px 0px 0px #000000;
-    animation: screenIn 0.3s var(--ease-out);
-  }
-
-  .options-container {
-    display: grid;
-    gap: 0.6rem;
-  }
-
-  .btn-option {
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    width: 100%;
-    padding: 0.95rem 1.15rem;
-    background: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 0px;
-    color: #000000;
-    font-family: var(--font-sans);
-    font-weight: 700;
-    font-size: 0.95rem;
-    cursor: pointer;
-    text-align: left;
-    box-shadow: 3px 3px 0px 0px #000000;
-    transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
-  }
-
-  .btn-option:hover:not(:disabled) {
-    background: #eeeeee;
-    transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0px 0px #000000;
-  }
-
-  .btn-option:active:not(:disabled) {
-    transform: translate(0px, 0px);
-    box-shadow: 0px 0px 0px 0px #000000;
-  }
-
-  .btn-option__letter {
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0px;
-    font-size: 0.75rem;
-    font-family: var(--font-mono);
-    font-weight: 800;
-    background: #ffffff;
-    color: #000000;
-    border: 2px solid #000000;
-    transition: var(--transition);
-  }
-
-  .btn-option:hover:not(:disabled) .btn-option__letter {
-    background: #000000;
-    color: #ffffff;
-  }
-
-  .btn-option.correct {
-    background: var(--pitch) !important;
-    color: #000000 !important;
-    box-shadow: 3px 3px 0px 0px #000000 !important;
-  }
-
-  .btn-option.correct .btn-option__letter {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-
-  .btn-option.incorrect {
-    background: var(--error) !important;
-    color: #ffffff !important;
-    box-shadow: 3px 3px 0px 0px #000000 !important;
-  }
-
-  .btn-option.incorrect .btn-option__letter {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-
-  .btn-option:disabled { cursor: default; }
-
-  /* Modal */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.4);
-  }
-
-  .modal-content {
-    width: 100%;
-    max-width: var(--max-width);
-    background: #ffffff;
-    border: 2px solid #000000;
-    box-shadow: 8px 8px 0px 0px #000000;
-    border-radius: 0px;
-    padding: 1.75rem 1.35rem;
-    animation: modalUp 0.4s var(--ease-spring) both;
-  }
-
-  @keyframes modalUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-
-  .feedback-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .feedback-emoji { font-size: 2rem; }
-
-  #feedback-title { font-size: 1.75rem; }
-
-  .correct-reveal-text {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-  }
-
-  .history-context {
-    background: #eeeeee;
-    border: 2px solid #000000;
-    border-radius: 0px;
-    padding: 1rem;
-    margin-bottom: 1.25rem;
-    max-height: 160px;
-    overflow-y: auto;
-  }
-
-  .history-context h4 {
-    font-size: 0.68rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
-    font-family: var(--font-mono);
-    font-weight: 700;
-  }
-
-  .history-context p {
-    font-size: 0.88rem;
-    line-height: 1.55;
-    color: var(--text-secondary);
-  }
-
-  /* Game over */
-  #game-over-screen {
-    text-align: center;
-    padding: 2rem 1.25rem;
-  }
-
-  .rank-badge {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-    letter-spacing: 0.12em;
-    color: #ffffff;
-    background: #000000;
-    border: 2px solid #000000;
-    padding: 0.35rem 1rem;
-    border-radius: 0px;
-    margin-bottom: 0.75rem;
-  }
-
-  #game-over-screen h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.35rem;
-  }
-
-  .game-over-subtitle {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-  }
-
-  .final-stats {
-    background: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 0px;
-    padding: 1rem 1.15rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-    box-shadow: 2px 2px 0px 0px #000000;
-  }
-
-  .final-stat-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-  }
-
-  .final-stat-row span:last-child {
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    font-weight: 900;
-  }
-
-  .game-over-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-  }
-
-  .btn-icon { font-size: 1.1rem; }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.75; }
-  }
-
-  @media (min-width: 480px) {
-    .modal-overlay { align-items: center; }
-    .modal-content { animation-name: screenIn; }
-  }
-</style>
-
+<!-- ==================== LOGICA Y SCRIPTS ==================== -->
 <script>
   import shirtsData from '../data/shirts.json';
   import type { Shirt } from '../data/shirts';
@@ -905,48 +428,51 @@ const SHIRT_COUNT = 50;
   let selectedShirts: Shirt[] = [];
   let isAnswered = false;
 
-  const startScreen = document.getElementById('start-screen')!;
-  const gameScreen = document.getElementById('game-screen')!;
-  const feedbackModal = document.getElementById('feedback-modal')!;
-  const gameOverScreen = document.getElementById('game-over-screen')!;
+  // Pantallas
+  const startScreens = document.querySelectorAll('.js-start-screen');
+  const gameScreens = document.querySelectorAll('.js-game-screen');
+  const feedbackModals = document.querySelectorAll('.js-feedback-modal');
+  const gameOverScreens = document.querySelectorAll('.js-game-over-screen');
 
-  const globalHighScoreLabel = document.getElementById('global-high-score')!;
-  const globalMaxStreakLabel = document.getElementById('global-max-streak')!;
-  const currentScoreLabel = document.getElementById('current-score')!;
-  const currentStreakLabel = document.getElementById('current-streak')!;
-  const streakBadge = document.getElementById('streak-badge')!;
-  const questionIndexLabel = document.getElementById('question-index')!;
-  const questionTypeBadge = document.getElementById('question-type-badge')!;
-  const progressFill = document.getElementById('progress-fill')!;
-  const hearts = document.querySelectorAll('.heart');
+  // Funciones de utilidad para actualizar en lote
+  function showScreen(screenType: 'start' | 'game' | 'gameover') {
+    startScreens.forEach(el => screenType === 'start' ? el.classList.remove('hidden') : el.classList.add('hidden'));
+    gameScreens.forEach(el => screenType === 'game' ? el.classList.remove('hidden') : el.classList.add('hidden'));
+    gameOverScreens.forEach(el => screenType === 'gameover' ? el.classList.remove('hidden') : el.classList.add('hidden'));
+  }
 
-  const shirtCard = document.getElementById('shirt-card')!;
-  const shirtImage = document.getElementById('shirt-image') as HTMLImageElement;
-  const imageLoader = document.getElementById('image-loader')!;
-  const btnHint = document.getElementById('btn-hint')!;
-  const hintBox = document.getElementById('hint-box')!;
-  const optionsGrid = document.getElementById('options-grid')!;
+  function updateTextContent(selector: string, text: string) {
+    document.querySelectorAll(selector).forEach(el => el.textContent = text);
+  }
 
-  const feedbackIcon = document.getElementById('feedback-icon')!;
-  const feedbackTitle = document.getElementById('feedback-title')!;
-  const correctAnswerReveal = document.getElementById('correct-answer-reveal')!;
-  const shirtDescription = document.getElementById('shirt-description')!;
+  function updateHeartsUI() {
+    const hearts = document.querySelectorAll('.js-heart');
+    hearts.forEach((heart, idx) => {
+      const heartIdx = idx % 3;
+      if (heartIdx < lives) {
+        (heart as HTMLElement).style.setProperty("font-variation-settings", "'FILL' 1");
+        (heart as HTMLElement).classList.remove('opacity-30');
+      } else {
+        (heart as HTMLElement).style.setProperty("font-variation-settings", "'FILL' 0");
+        (heart as HTMLElement).classList.add('opacity-30');
+      }
+    });
+  }
 
-  const finalScore = document.getElementById('final-score')!;
-  const finalStreak = document.getElementById('final-streak')!;
-  const finalGuessed = document.getElementById('final-guessed')!;
-  const gameOverMessage = document.getElementById('game-over-message')!;
-  const rankBadge = document.getElementById('rank-badge')!;
-
-  const btnHome = document.getElementById('btn-home')!;
-  const btnNext = document.getElementById('btn-next')!;
-  const btnRetry = document.getElementById('btn-retry')!;
-  const btnMenu = document.getElementById('btn-menu')!;
-  const confettiCanvas = document.getElementById('confetti-canvas') as HTMLCanvasElement;
+  function updateProgress() {
+    const pct = (currentQuestionIndex / selectedShirts.length) * 100;
+    document.querySelectorAll('.js-progress-fill').forEach(el => {
+      (el as HTMLElement).style.width = `${pct}%`;
+    });
+    const soccerIcon = document.getElementById('soccer-indicator-tablet');
+    if (soccerIcon) {
+      soccerIcon.style.left = `${pct}%`;
+    }
+  }
 
   function playSound(type: 'correct' | 'incorrect' | 'gameover' | 'hint') {
     try {
-      const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
       if (!AudioCtx) return;
       const ctx = new AudioCtx();
       const osc = ctx.createOscillator();
@@ -991,87 +517,27 @@ const SHIRT_COUNT = 50;
         osc.stop(ctx.currentTime + 0.8);
       }
     } catch {
-      /* audio bloqueado */
+      // Ignorar bloqueado
     }
-  }
-
-  function burstConfetti() {
-    const ctx = confettiCanvas.getContext('2d');
-    if (!ctx) return;
-    const draw = ctx;
-    confettiCanvas.width = window.innerWidth;
-    confettiCanvas.height = window.innerHeight;
-    const colors = ['#14d99a', '#f5c518', '#fff', '#22c55e'];
-    const particles = Array.from({ length: 60 }, () => ({
-      x: confettiCanvas.width / 2,
-      y: confettiCanvas.height * 0.45,
-      vx: (Math.random() - 0.5) * 14,
-      vy: Math.random() * -12 - 4,
-      color: colors[Math.floor(Math.random() * colors.length)],
-      size: Math.random() * 6 + 3,
-      life: 1,
-    }));
-
-    let frame = 0;
-    function tick() {
-      draw.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-      let alive = false;
-      for (const p of particles) {
-        if (p.life <= 0) continue;
-        alive = true;
-        p.x += p.vx;
-        p.y += p.vy;
-        p.vy += 0.35;
-        p.life -= 0.018;
-        draw.globalAlpha = p.life;
-        draw.fillStyle = p.color;
-        draw.fillRect(p.x, p.y, p.size, p.size * 0.6);
-      }
-      frame++;
-      if (alive && frame < 90) requestAnimationFrame(tick);
-      else draw.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-    }
-    tick();
   }
 
   function getRankTitle(s: number): string {
     if (s >= 4500) return 'Leyenda del Mundial';
-    if (s >= 3000) return 'Crack histórico';
+    if (s >= 3000) return 'Crack historico';
     if (s >= 1800) return 'Aficionado experto';
     if (s >= 800) return 'Hincha de cultura';
     return 'Novato del banquillo';
   }
 
   function init() {
-    globalHighScoreLabel.textContent = localStorage.getItem('high_score') || '0';
-    globalMaxStreakLabel.textContent = localStorage.getItem('max_streak') || '0';
+    const hs = localStorage.getItem('high_score') || '0';
+    const ms = localStorage.getItem('max_streak') || '0';
+    updateTextContent('.js-global-high-score', hs);
+    updateTextContent('.js-global-max-streak', ms);
   }
 
-  function updateProgress() {
-    const pct = ((currentQuestionIndex) / selectedShirts.length) * 100;
-    progressFill.style.width = `${pct}%`;
-  }
-
-  let deferredPrompt: Event | null = null;
-  const installBanner = document.getElementById('install-banner')!;
-  const btnInstall = document.getElementById('btn-install')!;
-
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    installBanner.classList.remove('hidden');
-  });
-
-  btnInstall.addEventListener('click', async () => {
-    const prompt = deferredPrompt as (Event & { prompt: () => void; userChoice: Promise<{ outcome: string }> }) | null;
-    if (!prompt) return;
-    prompt.prompt();
-    await prompt.userChoice;
-    deferredPrompt = null;
-    installBanner.classList.add('hidden');
-  });
-
-  document.querySelectorAll('.mode-card').forEach((button) => {
+  // Inicializar botones de modo
+  document.querySelectorAll('.js-mode-button').forEach((button) => {
     button.addEventListener('click', (e) => {
       const mode = (e.currentTarget as HTMLButtonElement).dataset.mode!;
       startGame(mode);
@@ -1089,237 +555,345 @@ const SHIRT_COUNT = 50;
     selectedShirts = [...shirts].sort(() => Math.random() - 0.5);
 
     updateHeartsUI();
-    currentScoreLabel.textContent = '0';
+    updateTextContent('.js-current-score', '0');
     updateStreakUI();
     updateProgress();
 
-    startScreen.classList.add('hidden');
-    gameOverScreen.classList.add('hidden');
-    gameScreen.classList.remove('hidden');
-    gameScreen.classList.add('screen-enter');
-
+    showScreen('game');
     loadNextQuestion();
+  }
+
+  function updateStreakUI() {
+    updateTextContent('.js-current-streak', streak.toString());
+    document.querySelectorAll('.js-streak-badge').forEach(badge => {
+      if (streak >= 3) {
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    });
   }
 
   function loadNextQuestion() {
     isAnswered = false;
     currentShirt = selectedShirts[currentQuestionIndex];
-    questionIndexLabel.textContent = `${currentQuestionIndex + 1}/${selectedShirts.length}`;
+    
+    updateTextContent('.js-question-index', `${currentQuestionIndex + 1}/${selectedShirts.length}`);
     updateProgress();
 
-    hintBox.classList.add('hidden');
-    hintBox.textContent = '';
-    btnHint.classList.remove('hidden');
+    // Pista
+    document.querySelectorAll('.js-hint-box').forEach(box => {
+      box.classList.add('hidden');
+      box.textContent = '';
+    });
+    document.querySelectorAll('.js-btn-hint').forEach(btn => btn.classList.remove('hidden'));
 
-    imageLoader.classList.remove('hidden');
-    shirtImage.classList.add('hidden');
+    // Loader e Imagen
+    const loaders = document.querySelectorAll('.js-image-loader');
+    const images = document.querySelectorAll('.js-shirt-image');
+    
+    loaders.forEach(loader => loader.classList.remove('hidden'));
+    images.forEach(img => img.classList.add('hidden'));
 
     const imageCandidates = getShirtImageCandidates(currentShirt);
     let candidateIndex = 0;
     let searchedCommons = false;
 
-    shirtImage.onload = () => {
-      imageLoader.classList.add('hidden');
-      shirtImage.classList.remove('hidden');
-    };
+    images.forEach(img => {
+      const imageElement = img as HTMLImageElement;
+      
+      imageElement.onload = () => {
+        loaders.forEach(l => l.classList.add('hidden'));
+        images.forEach(i => i.classList.remove('hidden'));
+      };
 
-    shirtImage.onerror = () => {
-      candidateIndex += 1;
-      if (candidateIndex < imageCandidates.length) {
-        shirtImage.src = imageCandidates[candidateIndex];
-        return;
-      }
-      if (!searchedCommons) {
-        searchedCommons = true;
-        searchShirtImageUrl(currentShirt!.team, currentShirt!.year).then((url) => {
-          shirtImage.src = url ?? '/favicon.svg';
-          imageLoader.classList.add('hidden');
-          shirtImage.classList.remove('hidden');
-        });
-        return;
-      }
-      imageLoader.classList.add('hidden');
-      shirtImage.classList.remove('hidden');
-      shirtImage.src = '/favicon.svg';
-    };
+      imageElement.onerror = () => {
+        candidateIndex += 1;
+        if (candidateIndex < imageCandidates.length) {
+          imageElement.src = imageCandidates[candidateIndex];
+          return;
+        }
+        if (!searchedCommons) {
+          searchedCommons = true;
+          searchShirtImageUrl(currentShirt!.team, currentShirt!.year).then((url) => {
+            imageElement.src = url ?? '/favicon.svg';
+          });
+          return;
+        }
+        imageElement.src = '/favicon.svg';
+      };
+      
+      imageElement.src = imageCandidates[0] ?? '/favicon.svg';
+    });
 
-    shirtImage.src = imageCandidates[0] ?? '/favicon.svg';
-    generateOptions();
+    // Enunciado
+    let questionText = '¿A que seleccion pertenece esta camiseta?';
+    let typeBadgeText = 'Seleccion';
+    
+    if (currentMode === 'year') {
+      questionText = '¿En que año/mundial se utilizo esta camiseta?';
+      typeBadgeText = 'Año';
+    } else if (currentMode === 'mixed') {
+      const rand = Math.random() > 0.5;
+      if (rand) {
+        questionText = '¿A que seleccion pertenece esta camiseta?';
+        typeBadgeText = 'Seleccion';
+      } else {
+        questionText = '¿En que año/mundial se utilizo esta camiseta?';
+        typeBadgeText = 'Año';
+      }
+    }
+    
+    updateTextContent('.js-question-text', questionText);
+    updateTextContent('.js-question-type-badge', typeBadgeText);
+
+    generateOptions(typeBadgeText === 'Año');
   }
 
-  function generateOptions() {
-    optionsGrid.innerHTML = '';
-
-    let questionType = currentMode;
-    if (currentMode === 'mixed') {
-      questionType = Math.random() > 0.5 ? 'team' : 'year';
+  function generateOptions(isYearQuestion: boolean) {
+    if (!currentShirt) return;
+    
+    const correctValue = isYearQuestion ? currentShirt.year.toString() : currentShirt.team;
+    
+    // Obtener 3 valores incorrectos distintos
+    const pool = new Set<string>();
+    while (pool.size < 3) {
+      const randomShirt = shirts[Math.floor(Math.random() * shirts.length)];
+      const randomValue = isYearQuestion ? randomShirt.year.toString() : randomShirt.team;
+      if (randomValue !== correctValue) {
+        pool.add(randomValue);
+      }
     }
 
-    questionTypeBadge.textContent = questionType === 'team' ? '🌍 Selección' : '📅 Año';
+    const options = [correctValue, ...Array.from(pool)].sort(() => Math.random() - 0.5);
 
-    let correctAnswer = '';
-    let allOptions: string[] = [];
+    // Pintar los grids de opciones (móvil y tablet)
+    const optionGrids = document.querySelectorAll('.js-options-grid');
+    optionGrids.forEach(grid => {
+      grid.innerHTML = '';
+      options.forEach((opt, idx) => {
+        const letter = LETTERS[idx];
+        const btn = document.createElement('button');
+        // Usamos las clases del mockup brutalista de Stitch
+        btn.className = 'w-full brutalist-button brutalist-button-shadow bg-white hover:bg-surface-container-high py-4 px-6 flex justify-between items-center transition-all group button-shift';
+        btn.type = 'button';
+        btn.innerHTML = `
+          <div class="flex items-center gap-4">
+            <span class="font-label-mono text-xs border-2 border-primary group-hover:border-on-primary w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">${letter}</span>
+            <span class="font-headline-md text-base md:text-lg uppercase text-left leading-tight">${opt}</span>
+          </div>
+          <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+        `;
 
-    if (questionType === 'team') {
-      correctAnswer = currentShirt!.team;
-      const uniqueTeams = [...new Set(shirts.map((s) => s.team))];
-      const distractors = uniqueTeams
-        .filter((t) => t !== correctAnswer)
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 3);
-      allOptions = [correctAnswer, ...distractors].sort(() => Math.random() - 0.5);
-    } else {
-      correctAnswer = currentShirt!.year.toString();
-      const uniqueYears = [...new Set(shirts.map((s) => s.year.toString()))];
-      const distractors = uniqueYears
-        .filter((y) => y !== correctAnswer)
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 3);
-      allOptions = [correctAnswer, ...distractors].sort(() => Math.random() - 0.5);
-    }
-
-    allOptions.forEach((option, i) => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'btn-option';
-      button.dataset.value = option;
-      button.dataset.correct = option === correctAnswer ? 'true' : 'false';
-      button.innerHTML = `<span class="btn-option__letter">${LETTERS[i]}</span><span>${option}</span>`;
-      button.addEventListener('click', () => handleAnswerSelect(button));
-      optionsGrid.appendChild(button);
+        btn.addEventListener('click', () => handleAnswerClick(opt, correctValue, btn));
+        grid.appendChild(btn);
+      });
     });
   }
 
-  function handleAnswerSelect(selectedButton: HTMLButtonElement) {
+  function handleAnswerClick(selected: string, correct: string, clickedBtn: HTMLButtonElement) {
     if (isAnswered) return;
     isAnswered = true;
 
-    const isCorrect = selectedButton.dataset.correct === 'true';
+    // Desactivar todos
+    const allButtons = document.querySelectorAll('.js-options-grid button');
+    allButtons.forEach(b => (b as HTMLButtonElement).disabled = true);
 
-    document.querySelectorAll('.btn-option').forEach((btn) => {
-      const b = btn as HTMLButtonElement;
-      b.disabled = true;
-      if (b.dataset.correct === 'true') b.classList.add('correct');
-    });
-
+    const isCorrect = selected === correct;
+    
     if (isCorrect) {
-      selectedButton.classList.add('correct');
-      shirtCard.classList.add('animate-success');
-      setTimeout(() => shirtCard.classList.remove('animate-success'), 650);
+      playSound('correct');
+      clickedBtn.classList.remove('bg-white');
+      clickedBtn.classList.add('bg-pulse-neon', 'text-white');
+      
+      // Cambiar icono del boton clickeado a check
+      const icon = clickedBtn.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.classList.remove('opacity-0');
+        icon.textContent = 'check_circle';
+      }
+
       streak++;
       if (streak > maxStreak) maxStreak = streak;
-      score += 100 + streak * 10;
-      currentScoreLabel.textContent = score.toString();
+      
+      // Puntos: 100 base + 20 por racha (max 300)
+      const bonus = Math.min(streak * 20, 200);
+      score += 100 + bonus;
+      updateTextContent('.js-current-score', score.toString());
       updateStreakUI();
-      playSound('correct');
-      burstConfetti();
-      if (navigator.vibrate) navigator.vibrate([60]);
-      showFeedbackModal(true);
+
+      showFeedback(true);
     } else {
-      selectedButton.classList.add('incorrect');
-      shirtCard.classList.add('animate-shake');
-      setTimeout(() => shirtCard.classList.remove('animate-shake'), 400);
+      playSound('incorrect');
+      clickedBtn.classList.remove('bg-white');
+      clickedBtn.classList.add('bg-[#ba1a1a]', 'text-white');
+      
+      const icon = clickedBtn.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.classList.remove('opacity-0');
+        icon.textContent = 'cancel';
+      }
+
+      // Buscar el boton correcto para marcarlo
+      allButtons.forEach(b => {
+        const btnText = b.querySelector('.font-headline-md')?.textContent || '';
+        if (btnText === correct.toUpperCase()) {
+          b.classList.remove('bg-white');
+          b.classList.add('bg-neon-green', 'text-primary');
+          const correctIcon = b.querySelector('.material-symbols-outlined');
+          if (correctIcon) {
+            correctIcon.classList.remove('opacity-0');
+            correctIcon.textContent = 'check_circle';
+          }
+        }
+      });
+
       streak = 0;
-      updateStreakUI();
       lives--;
       updateHeartsUI();
-      playSound('incorrect');
-      if (navigator.vibrate) navigator.vibrate([80, 40, 80]);
-      showFeedbackModal(false);
+      updateStreakUI();
+
+      showFeedback(false);
     }
   }
 
-  function showFeedbackModal(isCorrect: boolean) {
-    if (isCorrect) {
-      feedbackIcon.textContent = '⚽';
-      feedbackTitle.textContent = '¡Gol!';
-      feedbackTitle.className = 'emerald-text';
-    } else {
-      feedbackIcon.textContent = '🟥';
-      feedbackTitle.textContent = 'Fuera de juego';
-      feedbackTitle.className = 'error-text';
+  function showFeedback(isCorrect: boolean) {
+    if (!currentShirt) return;
+    playSound(isCorrect ? 'correct' : 'incorrect');
+
+    updateTextContent('.js-feedback-icon', isCorrect ? '🎉' : '❌');
+    updateTextContent('.js-feedback-title', isCorrect ? '¡Correcto!' : '¡Fallaste!');
+    updateTextContent('.js-correct-answer-reveal', `La respuesta es: ${currentShirt.team} (${currentShirt.year})`);
+    
+    // Generar descripcion
+    let desc = `Camiseta histórica utilizada por ${currentShirt.team} en el Mundial de ${currentShirt.year}.`;
+    if (currentShirt.desc) {
+      desc += ` ${currentShirt.desc}`;
+    }
+    updateTextContent('.js-shirt-description', desc);
+
+    // Ajustar boton del modal si se queda sin vidas
+    const nextBtn = document.querySelector('.js-btn-next');
+    if (nextBtn) {
+      if (lives === 0) {
+        nextBtn.querySelector('span:first-child')!.textContent = 'Ver resultados';
+      } else {
+        nextBtn.querySelector('span:first-child')!.textContent = 'Siguiente camiseta';
+      }
     }
 
-    correctAnswerReveal.innerHTML = `Camiseta de <span class="gold-text">${currentShirt!.team}</span> · Mundial <span class="gold-text">${currentShirt!.year}</span>`;
-    shirtDescription.textContent = currentShirt!.desc;
-
-    setTimeout(() => feedbackModal.classList.remove('hidden'), 600);
+    feedbackModals.forEach(m => m.classList.remove('hidden'));
   }
 
-  btnNext.addEventListener('click', () => {
-    feedbackModal.classList.add('hidden');
-    currentQuestionIndex++;
-    if (lives <= 0 || currentQuestionIndex >= selectedShirts.length) {
-      endGame();
-    } else {
-      loadNextQuestion();
-    }
+  // Listener boton next modal
+  document.querySelectorAll('.js-btn-next').forEach(btn => {
+    btn.addEventListener('click', () => {
+      feedbackModals.forEach(m => m.classList.add('hidden'));
+      if (lives === 0) {
+        endGame();
+      } else {
+        currentQuestionIndex++;
+        if (currentQuestionIndex >= selectedShirts.length) {
+          endGame();
+        } else {
+          loadNextQuestion();
+        }
+      }
+    });
   });
 
   function endGame() {
     playSound('gameover');
-    gameScreen.classList.add('hidden');
-    feedbackModal.classList.add('hidden');
-    gameOverScreen.classList.remove('hidden');
-    gameOverScreen.classList.add('screen-enter');
+    showScreen('gameover');
 
-    progressFill.style.width = '100%';
-    finalScore.textContent = score.toString();
-    finalStreak.textContent = maxStreak.toString();
-    finalGuessed.textContent = `${currentQuestionIndex}/${selectedShirts.length}`;
-    rankBadge.textContent = getRankTitle(score);
+    updateTextContent('.js-final-score', score.toString());
+    updateTextContent('.js-final-streak', maxStreak.toString());
+    updateTextContent('.js-final-guessed', `${currentQuestionIndex}/${selectedShirts.length}`);
+    
+    const pct = selectedShirts.length > 0 ? (currentQuestionIndex / selectedShirts.length) * 100 : 0;
+    document.querySelectorAll('.js-final-guessed-progress').forEach(el => {
+      (el as HTMLElement).style.width = `${pct}%`;
+    });
 
-    if (lives <= 0) {
-      gameOverMessage.textContent = 'Sin vidas. Las leyendas del fútbol no se rinden — vuelve a intentarlo.';
-    } else {
-      gameOverMessage.textContent = '¡Histórico! Has recorrido las 50 camisetas más icónicas del Mundial.';
+    const rankTitle = getRankTitle(score);
+    updateTextContent('.js-rank-badge', rankTitle);
+
+    // Mensajes de fin
+    let message = '¡Buen intento! Sigue entrenando para conocer las equipaciones históricas.';
+    if (score >= 4500) {
+      message = '¡Increíble! Eres una enciclopedia viviente del fútbol mundial. Récord absoluto.';
+    } else if (score >= 2500) {
+      message = '¡Excelente partido! Tienes una gran memoria y cultura de mundiales.';
     }
+    updateTextContent('.js-game-over-message', message);
 
-    const localHighScore = parseInt(localStorage.getItem('high_score') || '0', 10);
-    const localMaxStreak = parseInt(localStorage.getItem('max_streak') || '0', 10);
-
-    if (score > localHighScore) {
+    // Guardar Records
+    const hs = parseInt(localStorage.getItem('high_score') || '0', 10);
+    const ms = parseInt(localStorage.getItem('max_streak') || '0', 10);
+    
+    let isNewRecord = false;
+    if (score > hs) {
       localStorage.setItem('high_score', score.toString());
-      finalScore.innerHTML = `${score} <span class="new-record-badge">Récord</span>`;
+      isNewRecord = true;
     }
-    if (maxStreak > localMaxStreak) {
+    if (maxStreak > ms) {
       localStorage.setItem('max_streak', maxStreak.toString());
     }
+
+    document.querySelectorAll('.js-new-record-badge').forEach(badge => {
+      if (isNewRecord) {
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    });
 
     init();
   }
 
-  btnHint.addEventListener('click', () => {
-    playSound('hint');
-    hintBox.textContent = `Color principal: ${currentShirt!.color.toLowerCase()}.`;
-    hintBox.classList.remove('hidden');
-    btnHint.classList.add('hidden');
-  });
-
-  function updateHeartsUI() {
-    hearts.forEach((heart, idx) => {
-      heart.classList.toggle('active', idx < lives);
+  // Salida
+  document.querySelectorAll('.js-btn-home').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (confirm('¿Abandonar la partida?')) {
+        showScreen('start');
+        init();
+      }
     });
-  }
-
-  function updateStreakUI() {
-    streakBadge.classList.toggle('hidden', streak < 3);
-    if (streak >= 3) currentStreakLabel.textContent = streak.toString();
-  }
-
-  btnHome.addEventListener('click', () => {
-    if (confirm('¿Abandonar la partida?')) {
-      gameScreen.classList.add('hidden');
-      startScreen.classList.remove('hidden');
-    }
   });
 
-  btnMenu.addEventListener('click', () => {
-    gameOverScreen.classList.add('hidden');
-    startScreen.classList.remove('hidden');
+  // Reintentar y Menú en GameOver
+  document.querySelectorAll('.js-btn-retry').forEach(btn => {
+    btn.addEventListener('click', () => {
+      startGame(currentMode);
+    });
   });
 
-  btnRetry.addEventListener('click', () => startGame(currentMode));
+  document.querySelectorAll('.js-btn-menu').forEach(btn => {
+    btn.addEventListener('click', () => {
+      showScreen('start');
+      init();
+    });
+  });
 
+  // Pista
+  document.querySelectorAll('.js-btn-hint').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!currentShirt) return;
+      playSound('hint');
+      
+      const hints = [];
+      if (currentShirt.color) hints.push(`Color principal: ${currentShirt.color}`);
+      
+      const hintText = hints.length > 0 ? hints.join(' | ') : 'No hay pistas adicionales para esta camiseta.';
+
+      document.querySelectorAll('.js-hint-box').forEach(box => {
+        box.textContent = hintText;
+        box.classList.remove('hidden');
+      });
+      btn.classList.add('hidden');
+    });
+  });
+
+  // Inicialización
   init();
 </script>

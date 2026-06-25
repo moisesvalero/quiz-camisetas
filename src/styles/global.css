@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #f9f9f9;
+  --color-primary-container: #1b1b1b;
+  --color-outline-variant: #cfc4c5;
+  --color-error-container: #ffdad6;
+  --color-primary: #000000;
+  --color-on-primary: #ffffff;
+  --color-tertiary-fixed: #e2e2e2;
+  --color-on-primary-fixed-variant: #474747;
+  --color-on-primary-container: #848484;
+  --color-tertiary-fixed-dim: #c6c6c6;
+  --color-on-tertiary-fixed: #1b1b1b;
+  --color-primary-fixed-dim: #c6c6c6;
+  --color-on-tertiary: #ffffff;
+  --color-on-secondary-fixed: #1a1c1c;
+  --color-secondary: #5d5f5f;
+  --color-on-tertiary-container: #848484;
+  --color-error: #ba1a1a;
+  --color-surface-tint: #5e5e5e;
+  --color-surface-container: #eeeeee;
+  --color-surface-container-highest: #e2e2e2;
+  --color-on-secondary: #ffffff;
+  --color-inverse-on-surface: #f1f1f1;
+  --color-secondary-fixed: #e2e2e2;
+  --color-on-secondary-container: #616363;
+  --color-surface-container-high: #e8e8e8;
+  --color-secondary-fixed-dim: #c6c6c7;
+  --color-on-error: #ffffff;
+  --color-tertiary: #000000;
+  --color-on-background: #1b1b1b;
+  --color-surface-dim: #dadada;
+  --color-primary-fixed: #e2e2e2;
+  --color-on-secondary-fixed-variant: #454747;
+  --color-surface-container-low: #f3f3f3;
+  --color-on-error-container: #93000a;
+  --color-surface-container-lowest: #ffffff;
+  --color-inverse-primary: #c6c6c6;
+  --color-on-surface-variant: #4c4546;
+  --color-secondary-container: #dfe0e0;
+  --color-inverse-surface: #303030;
+  --color-on-tertiary-fixed-variant: #474747;
+  --color-on-primary-fixed: #1b1b1b;
+  --color-surface-variant: #e2e2e2;
+  --color-surface: #f9f9f9;
+  --color-outline: #7e7576;
+  --color-tertiary-container: #1b1b1b;
+  --color-on-surface: #1b1b1b;
+  --color-surface-bright: #f9f9f9;
+  
+  --color-neon-pink: #FF007A;
+  --color-electric-turquoise: #00F0FF;
+  --color-neon-green: #00FF41;
+  --color-neon-blue: #00E0FF;
+
+  --font-label-mono: 'JetBrains Mono', monospace;
+  --font-headline-md: 'Outfit', sans-serif;
+  --font-headline-lg: 'Outfit', sans-serif;
+  --font-body-md: 'Outfit', sans-serif;
+  --font-body-lg: 'Outfit', sans-serif;
+  --font-headline-lg-mobile: 'Outfit', sans-serif;
+  --font-display-xl: 'Outfit', sans-serif;
+  --font-display-xl-mobile: 'Outfit', sans-serif;
+
+  --font-size-label-mono: 14px;
+  --font-size-headline-md: 24px;
+  --font-size-headline-lg: 40px;
+  --font-size-body-md: 16px;
+  --font-size-body-lg: 18px;
+  --font-size-headline-lg-mobile: 32px;
+  --font-size-display-xl: 80px;
+  --font-size-display-xl-mobile: 48px;
+}
+
+/* Custom styles from Stitch mockups */
+body {
+  background-color: #f9f9f9;
+  color: #1b1b1b;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  min-height: max(884px, 100dvh);
+}
+
+.bento-card {
+  background: #ffffff;
+  border: 2px solid #000000;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bento-card:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 0 #000;
+}
+
+.bento-card-shadow {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.unity-pulse-bg {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0,0,0,0.03) 1px, transparent 1px),
+    radial-gradient(circle at 90% 80%, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.pulse-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.pulse-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.05), transparent);
+  animation: pulse-move 3s infinite linear;
+}
+
+@keyframes pulse-move {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.stagger-load {
+  animation: slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Brutalist details */
+.brutalist-border {
+  border: 2px solid #000000;
+}
+
+.bento-border {
+  border: 2px solid #000000;
+}
+
+.brutalist-shadow {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.brutalist-button-shadow {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.button-shift {
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button-shift:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.button-shift:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+
+.brutalist-button {
+  border: 2px solid #000000;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.brutalist-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+
+.brutalist-button-shadow {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.bg-pulse-neon {
+  background: linear-gradient(135deg, #FF007A 0%, #00F0FF 100%);
+}
+
+.bg-surface-glass {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Mesh de estadio */
+.stadium-mesh {
+  background-image: radial-gradient(#e2e2e2 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+
+/* Letras e Outline */
+.text-outline {
+  -webkit-text-stroke: 1px #000000;
+  color: transparent;
+}
