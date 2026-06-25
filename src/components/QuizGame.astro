@@ -9,12 +9,8 @@
     <!-- MÓVIL (md:hidden) -->
     <div class="md:hidden flex flex-col w-full max-w-md mx-auto px-4 pt-4 pb-8">
       <header class="text-center mb-6 stagger-load">
-        <div class="inline-block bg-primary text-on-primary font-label-mono text-[11px] px-3 py-1 mb-4 border-[2px] border-black">
-          JERSEY PRO EDITION
-        </div>
-        <h1 class="font-display-xl-mobile text-display-xl-mobile leading-[1.1] tracking-tighter uppercase font-black text-primary italic">
-          RETRO<br/>SHIRT<br/><span class="text-outline border-b-4 border-primary">QUIZ</span>
-        </h1>
+        <h1 class="font-display-xl-mobile text-[44px] leading-none uppercase font-black text-primary italic mb-2">RETRO SHIRT QUIZ</h1>
+        <p class="font-label-mono text-[9px] text-secondary uppercase tracking-wider">Identifica las camisetas mas legendarias de los mundiales</p>
       </header>
       
       <!-- Banner espectacular recortado para móvil -->
@@ -26,22 +22,7 @@
         </div>
       </div>
       
-      <section class="grid grid-cols-2 gap-4 mb-8 stagger-load delay-1">
-        <div class="bento-card bento-card-shadow p-4 flex flex-col items-center justify-center">
-          <span class="font-label-mono text-[9px] text-secondary uppercase mb-1">Racha Maxima</span>
-          <div class="flex items-center gap-1">
-            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
-            <span class="font-headline-md text-headline-md js-global-max-streak">0</span>
-          </div>
-        </div>
-        <div class="bento-card bento-card-shadow p-4 flex flex-col items-center justify-center">
-          <span class="font-label-mono text-[9px] text-secondary uppercase mb-1">Mejor Record</span>
-          <div class="flex items-center gap-1">
-            <span class="material-symbols-outlined text-primary">emoji_events</span>
-            <span class="font-headline-md text-headline-md js-global-high-score">0</span>
-          </div>
-        </div>
-      </section>
+
 
       <section class="flex flex-col gap-4 flex-grow stagger-load delay-2">
         <button class="bento-card bento-card-shadow text-left p-5 group relative overflow-hidden js-mode-button" data-mode="easy">
@@ -51,8 +32,8 @@
             </div>
             <span class="font-label-mono text-[10px] bg-green-500 text-white px-2 py-0.5 uppercase font-bold">MODO FÁCIL</span>
           </div>
-          <h3 class="font-headline-md text-headline-md mb-1 uppercase font-bold">Era Moderna (1994-2022)</h3>
-          <p class="font-body-md text-on-surface-variant leading-tight">Camisetas coloridas y de marcas conocidas. Ideal para empezar.</p>
+          <h3 class="font-headline-md text-xl mb-1 uppercase font-bold text-primary">ERA MODERNA</h3>
+          <p class="font-body-md text-on-surface-variant leading-tight">Camisetas de 1994 a 2022. Diseños modernos y fáciles de reconocer.</p>
           <div class="mt-4 flex items-center text-primary font-label-mono text-xs group-hover:translate-x-1 transition-transform">
             JUGAR AHORA <span class="material-symbols-outlined ml-1">arrow_forward</span>
           </div>
@@ -64,8 +45,8 @@
             </div>
             <span class="font-label-mono text-[10px] bg-amber-500 text-white px-2 py-0.5 uppercase font-bold">MODO DIFÍCIL</span>
           </div>
-          <h3 class="font-headline-md text-headline-md mb-1 uppercase font-bold">Era Clásica (1974-1993)</h3>
-          <p class="font-body-md text-on-surface-variant leading-tight">Uniformes retro legendarios. Para aficionados experimentados.</p>
+          <h3 class="font-headline-md text-xl mb-1 uppercase font-bold text-primary">ERA CLÁSICA</h3>
+          <p class="font-body-md text-on-surface-variant leading-tight">Camisetas de 1974 a 1993. Los grandes designs de la era dorada.</p>
           <div class="mt-4 flex items-center text-primary font-label-mono text-xs group-hover:translate-x-1 transition-transform">
             JUGAR AHORA <span class="material-symbols-outlined ml-1">arrow_forward</span>
           </div>
@@ -77,8 +58,8 @@
             </div>
             <span class="font-label-mono text-[10px] bg-red-600 text-white px-2 py-0.5 uppercase font-bold">MODO EXTREMO</span>
           </div>
-          <h3 class="font-headline-md text-headline-md mb-1 uppercase text-white font-bold">Era Leyenda (1930-1970)</h3>
-          <p class="font-body-md text-on-primary-container leading-tight">Camisetas antiguas y raras de los inicios. Desafío para eruditos.</p>
+          <h3 class="font-headline-md text-xl mb-1 uppercase text-white font-bold">ERA LEYENDA</h3>
+          <p class="font-body-md text-on-primary-container leading-tight">Camisetas de 1930 a 1970. Equipaciones antiguas, raras e históricas.</p>
           <div class="mt-4 flex items-center text-white font-label-mono text-xs group-hover:translate-x-1 transition-transform">
             INICIAR DESAFÍO <span class="material-symbols-outlined ml-1">bolt</span>
           </div>
@@ -87,8 +68,9 @@
 
       <footer class="mt-10 flex flex-col items-center gap-6 stagger-load delay-3">
         <div class="flex flex-col items-center gap-3">
-          <div class="text-[11px] text-on-surface-variant opacity-60">
-            Desarrollado por <a href="https://github.com/moisesvalero" target="_blank" rel="noopener noreferrer" class="font-bold underline">Moisés Valero</a>
+          <div class="text-[11px] text-on-surface-variant opacity-60 flex items-center gap-1.5 justify-center">
+            <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            <a href="https://github.com/moisesvalero" target="_blank" rel="noopener noreferrer" class="font-bold underline">@moisesvalero</a>
           </div>
           <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=moi6%40outlook%2ecom&lc=ES&item_name=Retro%20Shirt%20Quiz&currency_code=EUR" target="_blank" rel="noopener noreferrer" class="btn-donate">
             Apoya el proyecto ❤️
@@ -152,8 +134,11 @@
         <div class="col-span-12 border-2 border-primary p-6 flex items-center justify-between bg-surface-container-lowest bento-card">
           <div class="flex items-center gap-8">
             <div class="flex flex-col">
-              <span class="font-label-mono text-[10px] text-secondary uppercase">Desarrollador</span>
-              <a href="https://github.com/moisesvalero" target="_blank" rel="noopener noreferrer" class="font-headline-md text-lg underline">Moisés Valero</a>
+              <span class="font-label-mono text-[10px] text-secondary uppercase">GitHub</span>
+              <a href="https://github.com/moisesvalero" target="_blank" rel="noopener noreferrer" class="font-headline-md text-lg flex items-center gap-1.5 underline">
+                <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                @moisesvalero
+              </a>
             </div>
             <div class="h-8 w-[1px] bg-outline-variant"></div>
             <div class="flex flex-col">
@@ -657,13 +642,54 @@
     
     const correctValue = `${currentShirt.team} (${currentShirt.year})`;
     
-    // Obtener 3 valores incorrectos distintos
+    // Obtener 3 valores incorrectos distintos de forma inteligente
     const pool = new Set<string>();
-    while (pool.size < 3) {
-      const randomShirt = shirts[Math.floor(Math.random() * shirts.length)];
-      const randomValue = `${randomShirt.team} (${randomShirt.year})`;
-      if (randomValue !== correctValue) {
-        pool.add(randomValue);
+    
+    if (currentMode === 'easy') {
+      // Modo fácil: distractores aleatorios de la base de datos
+      while (pool.size < 3) {
+        const randomShirt = shirts[Math.floor(Math.random() * shirts.length)];
+        const randomValue = `${randomShirt.team} (${randomShirt.year})`;
+        if (randomValue !== correctValue) {
+          pool.add(randomValue);
+        }
+      }
+    } else {
+      // Modos Difícil/Extremo: distractores inteligentes cercanos
+      const WORLD_CUP_YEARS = [1930, 1934, 1938, 1950, 1954, 1958, 1962, 1966, 1970, 1974, 1978, 1982, 1986, 1990, 1994, 1998, 2002, 2006, 2010, 2014, 2018, 2022];
+      const teamsPool = [...new Set(shirts.map(s => s.team))].filter(t => t !== currentShirt!.team);
+      
+      // Intentar distractor 1: Misma selección, año de mundial alternativo cercano (±24 años)
+      const sameTeamYears = WORLD_CUP_YEARS.filter(y => y !== currentShirt!.year && Math.abs(y - currentShirt!.year) <= 24);
+      if (sameTeamYears.length > 0) {
+        const randomYear = sameTeamYears[Math.floor(Math.random() * sameTeamYears.length)];
+        pool.add(`${currentShirt.team} (${randomYear})`);
+      }
+
+      // Intentar distractor 2: Otra selección del pool, mismo año
+      if (teamsPool.length > 0) {
+        const randomTeam = teamsPool[Math.floor(Math.random() * teamsPool.length)];
+        pool.add(`${randomTeam} (${currentShirt.year})`);
+      }
+
+      // Intentar distractor 3: Otra selección del pool, año de mundial cercano (±12 años)
+      if (teamsPool.length > 0) {
+        const otherTeams = teamsPool.filter(t => !Array.from(pool).some(p => p.startsWith(t)));
+        const randomTeam = otherTeams.length > 0 ? otherTeams[Math.floor(Math.random() * otherTeams.length)] : teamsPool[Math.floor(Math.random() * teamsPool.length)];
+        const nearYears = WORLD_CUP_YEARS.filter(y => Math.abs(y - currentShirt!.year) <= 12 && y !== currentShirt!.year);
+        const randomYear = nearYears.length > 0 ? nearYears[Math.floor(Math.random() * nearYears.length)] : WORLD_CUP_YEARS[Math.floor(Math.random() * WORLD_CUP_YEARS.length)];
+        pool.add(`${randomTeam} (${randomYear})`);
+      }
+
+      // Relleno de seguridad con distractores genéricos si no hay 3 únicos
+      let safetyCounter = 0;
+      while (pool.size < 3 && safetyCounter < 100) {
+        safetyCounter++;
+        const randomShirt = shirts[Math.floor(Math.random() * shirts.length)];
+        const randomValue = `${randomShirt.team} (${randomShirt.year})`;
+        if (randomValue !== correctValue) {
+          pool.add(randomValue);
+        }
       }
     }
 
