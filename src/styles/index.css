@@ -97,11 +97,8 @@ body::after {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .glass-panel {

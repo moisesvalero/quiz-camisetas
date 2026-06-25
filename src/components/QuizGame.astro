@@ -152,11 +152,7 @@
             </div>
           </div>
 
-          <!-- Pistas de color -->
-          <div class="flex flex-col items-center">
-            <button class="js-btn-hint btn-hint w-full" type="button">💡 Ver pista de color</button>
-            <div class="js-hint-box hint-text hidden mt-2"></div>
-          </div>
+
         </section>
 
         <!-- Columna de interacción (Derecha) -->
@@ -494,13 +490,6 @@
     updateTextContent('.js-question-index', `${currentQuestionIndex + 1}/${selectedShirts.length}`);
     updateProgress();
 
-    // Pista
-    document.querySelectorAll('.js-hint-box').forEach(box => {
-      box.classList.add('hidden');
-      box.textContent = '';
-    });
-    document.querySelectorAll('.js-btn-hint').forEach(btn => btn.classList.remove('hidden'));
-
     // Loader e Imagen
     const loaders = document.querySelectorAll('.js-image-loader');
     const images = document.querySelectorAll('.js-shirt-image');
@@ -817,25 +806,6 @@
     btn.addEventListener('click', () => {
       showScreen('start');
       init();
-    });
-  });
-
-  // Pista
-  document.querySelectorAll('.js-btn-hint').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (!currentShirt) return;
-      playSound('hint');
-      
-      const hints = [];
-      if (currentShirt.color) hints.push(`Color principal: ${currentShirt.color}`);
-      
-      const hintText = hints.length > 0 ? hints.join(' | ') : 'No hay pistas adicionales para esta camiseta.';
-
-      document.querySelectorAll('.js-hint-box').forEach(box => {
-        box.textContent = hintText;
-        box.classList.remove('hidden');
-      });
-      btn.classList.add('hidden');
     });
   });
 
