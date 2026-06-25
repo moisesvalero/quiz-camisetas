@@ -1,40 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --bg-dark: #030806;
-  --bg-elevated: rgba(10, 22, 16, 0.72);
-  --bg-card: rgba(12, 26, 18, 0.55);
-  --bg-card-hover: rgba(18, 38, 26, 0.82);
+  --bg-dark: #f1f5f9;
+  --bg-elevated: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
 
-  --pitch: #0d3d2a;
-  --pitch-light: #10b981;
-  --pitch-glow: rgba(16, 185, 129, 0.45);
-  --gold: #f5c518;
-  --gold-soft: #ffe566;
-  --gold-glow: rgba(245, 197, 24, 0.35);
+  --pitch: #008f5d; /* Verde FIFA */
+  --pitch-light: #059669;
+  --pitch-glow: rgba(5, 150, 105, 0.05);
+  --gold: #b28229; /* Dorado elegante legible */
+  --gold-soft: #fef3c7;
+  --gold-glow: rgba(178, 130, 41, 0.08);
 
-  --text-primary: #f8faf9;
-  --text-secondary: #94a89e;
-  --text-muted: #5c6e64;
+  --text-primary: #0f1c3f; /* Azul profundo FIFA */
+  --text-secondary: #475569; /* Slate 600 */
+  --text-muted: #64748b; /* Slate 500 */
 
-  --border-color: rgba(255, 255, 255, 0.07);
-  --border-glow: rgba(16, 185, 129, 0.28);
+  --border-color: #cbd5e1; /* Borde suave */
+  --border-glow: rgba(14, 29, 56, 0.08);
 
-  --success: #22c55e;
-  --error: #f43f5e;
+  --success: #10b981;
+  --error: #ef4444;
 
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --font-sans: 'Inter', sans-serif;
 
   --max-width: 440px;
-  --radius-xl: 28px;
-  --radius-lg: 22px;
-  --radius-md: 14px;
-  --radius-sm: 10px;
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
 
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --transition: 0.28s var(--ease-out);
+  --transition: 0.25s var(--ease-out);
 }
 
 *,
@@ -60,28 +60,22 @@ body {
   position: relative;
 }
 
-/* Césped + ruido cinematográfico */
+/* Degradados FIFA World Cup 2026 */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 90% 55% at 50% -5%, rgba(16, 185, 129, 0.18) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 45% at 100% 100%, rgba(245, 197, 24, 0.07) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 0% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 45%),
-    linear-gradient(180deg, #030806 0%, #06120c 40%, #030806 100%);
+    radial-gradient(circle 500px at 100% -10%, rgba(59, 130, 246, 0.06) 0%, transparent 100%),
+    radial-gradient(circle 500px at 0% 100%, rgba(139, 92, 246, 0.06) 0%, transparent 100%),
+    radial-gradient(circle 600px at 50% 50%, rgba(16, 185, 129, 0.04) 0%, transparent 100%),
+    #f8fafc;
   z-index: -3;
   pointer-events: none;
 }
 
 body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  z-index: -1;
-  pointer-events: none;
+  display: none;
 }
 
 .scene {
@@ -95,23 +89,23 @@ body::after {
 .scene__orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(90px);
   animation: float 14s ease-in-out infinite;
 }
 
-.scene__orb--green {
+.scene__orb--primary {
   width: 320px;
   height: 320px;
-  background: rgba(16, 185, 129, 0.14);
+  background: rgba(59, 130, 246, 0.06);
   top: -80px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.scene__orb--gold {
-  width: 200px;
-  height: 200px;
-  background: rgba(245, 197, 24, 0.1);
+.scene__orb--secondary {
+  width: 240px;
+  height: 240px;
+  background: rgba(139, 92, 246, 0.05);
   bottom: 10%;
   right: -40px;
   animation-delay: -5s;
@@ -126,9 +120,9 @@ body::after {
   background: repeating-linear-gradient(
     90deg,
     transparent,
-    transparent 49px,
-    rgba(16, 185, 129, 0.04) 49px,
-    rgba(16, 185, 129, 0.04) 50px
+    transparent 59px,
+    rgba(59, 130, 246, 0.02) 59px,
+    rgba(59, 130, 246, 0.02) 60px
   );
   mask-image: linear-gradient(to top, black 0%, transparent 85%);
 }
@@ -151,31 +145,33 @@ body::after {
 
 .glass-panel {
   background: var(--bg-card);
-  backdrop-filter: blur(24px) saturate(1.4);
-  -webkit-backdrop-filter: blur(24px) saturate(1.4);
-  border: 1px solid var(--border-color);
+  border: 1.5px solid #e2e8f0;
   border-radius: var(--radius-xl);
   padding: 1.75rem 1.35rem;
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
-    0 24px 48px -12px rgba(0, 0, 0, 0.55),
-    0 0 60px -20px var(--pitch-glow);
+    0 1px 3px rgba(15, 23, 42, 0.03),
+    0 10px 30px -10px rgba(15, 23, 42, 0.06),
+    0 0 40px -15px var(--border-glow);
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .glass-panel:hover {
-  border-color: rgba(16, 185, 129, 0.12);
+  border-color: #cbd5e1;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.03),
+    0 12px 35px -8px rgba(15, 23, 42, 0.08),
+    0 0 45px -10px var(--border-glow);
 }
 
 h1, h2, h3, .font-display {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
 .gold-text {
-  background: linear-gradient(135deg, #fff 0%, var(--gold-soft) 45%, var(--gold) 100%);
+  background: linear-gradient(135deg, #0f1c3f 0%, #b28229 60%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -183,25 +179,26 @@ h1, h2, h3, .font-display {
 
 .emerald-text {
   color: var(--pitch-light);
-  text-shadow: 0 0 24px var(--pitch-glow);
+  font-weight: 700;
 }
 
 .error-text {
   color: var(--error);
+  font-weight: 700;
 }
 
 .btn-primary {
-  background: linear-gradient(145deg, #14d99a 0%, #059669 55%, #047857 100%);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(145deg, #0e1d38 0%, #1d335f 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   padding: 1rem 1.25rem;
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
-  box-shadow: 0 4px 20px var(--pitch-glow), 0 1px 0 rgba(255, 255, 255, 0.15) inset;
-  transition: transform 0.22s var(--ease-spring), box-shadow var(--transition);
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.15);
+  transition: transform 0.22s var(--ease-spring), box-shadow var(--transition), background var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -211,7 +208,8 @@ h1, h2, h3, .font-display {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.5);
+  background: linear-gradient(145deg, #182e56 0%, #29457c 100%);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
 }
 
 .btn-primary:active {
@@ -219,15 +217,16 @@ h1, h2, h3, .font-display {
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.04);
+  background: #ffffff;
   color: var(--text-primary);
-  border: 1px solid var(--border-color);
+  border: 1.5px solid #cbd5e1;
   border-radius: var(--radius-md);
   padding: 1rem 1.25rem;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
   transition: var(--transition);
   display: flex;
   align-items: center;
@@ -237,8 +236,14 @@ h1, h2, h3, .font-display {
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.14);
+  background: #f8fafc;
+  border-color: #94a3b8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
 }
 
 .hidden {

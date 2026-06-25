@@ -87,7 +87,8 @@ Abre [http://localhost:4321](http://localhost:4321).
 | `pnpm dev` | Servidor de desarrollo |
 | `pnpm build` | Build de producción en `./dist/` |
 | `pnpm preview` | Previsualiza el build local |
-| `pnpm download:local` | Regenera imágenes locales desde Wikimedia |
+| `pnpm download:fka` | Descarga las imágenes usando las URLs pre-resueltas de Football Kit Archive |
+| `pnpm import:fka` | Importa y descarga todas las camisetas resolviendo CDN desde cero vía Playwright |
 
 ---
 
@@ -129,7 +130,7 @@ Cada push a `main` puede desplegar automáticamente una nueva versión.
 
 ## 📜 Créditos de imágenes
 
-Las fotografías de camisetas proceden de **[Wikimedia Commons](https://commons.wikimedia.org)** y se distribuyen bajo sus respectivas licencias libres. Este proyecto es **educativo y recreativo**; no está afiliado a la FIFA ni a ninguna federación.
+Los diseños en 3D de las camisetas proceden de **[Football Kit Archive](https://www.footballkitarchive.com/)**. Este proyecto es **educativo y recreativo**; no está afiliado a la FIFA, a ninguna federación ni a la marca del archivo.
 
 ---
 
@@ -146,7 +147,7 @@ Las fotografías de camisetas proceden de **[Wikimedia Commons](https://commons.
 
 ## 📄 Licencia
 
-Código del proyecto: uso libre para aprendizaje y portfolio. Respeta las licencias de las imágenes en Wikimedia Commons.
+Código del proyecto: uso libre para aprendizaje y portfolio. Respeta la propiedad intelectual y créditos de los diseños en Football Kit Archive.
 
 ---
 
