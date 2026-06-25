@@ -24,7 +24,7 @@ Abre el enlace, elige tu modo y empieza a sumar puntos. Cada acierto cuenta. Cad
 | **3 modos de juego** | Adivina la **selección**, el **año** o enfréntate al **modo mixto** |
 | **Sistema de vidas y rachas** | Tres corazones, multiplicadores de racha y récord guardado en tu dispositivo |
 | **PWA instalable** | Añádela al móvil como una app nativa; carga offline tras la primera visita |
-| **Diseño premium** | Interfaz oscura tipo “retro sports”, animaciones suaves y experiencia táctil |
+| **Diseño premium** | Interfaz clara de estética brutalista Daylight (estilo oficial de la FIFA), animaciones interactivas y experiencia táctil |
 | **100 % en el navegador** | Sin descargas, sin cuentas, sin fricción |
 
 ---
