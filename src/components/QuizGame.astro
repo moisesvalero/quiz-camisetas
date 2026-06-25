@@ -5,314 +5,196 @@
   <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
 
   <!-- ==================== PANTALLAS DE INICIO ==================== -->
-  <div id="start-screen" class="js-start-screen w-full">
-    <!-- MÓVIL (md:hidden) -->
-    <div class="md:hidden flex flex-col w-full max-w-md mx-auto px-4 pt-4 pb-8">
-      <header class="text-center mb-6 stagger-load">
-        <h1 class="font-display-xl-mobile text-[44px] leading-none uppercase font-black text-primary italic mb-2">RETRO SHIRT QUIZ</h1>
-        <p class="font-label-mono text-[9px] text-secondary uppercase tracking-wider">Identifica las camisetas mas legendarias de los mundiales</p>
-      </header>
-      
-      <!-- Banner espectacular recortado para móvil -->
-      <div class="w-full h-28 border-[2px] border-black overflow-hidden relative bento-card brutalist-shadow mb-6 stagger-load delay-1">
-        <div class="absolute inset-0 bg-black/10 z-10"></div>
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/images/hero_banner.png')"></div>
-        <div class="absolute bottom-2 left-2 z-20 bg-primary text-on-primary border-[2px] border-black px-2 py-0.5 brutalist-shadow">
-          <span class="font-headline-md text-xs uppercase tracking-wider italic text-white">WORLD CUP KITS</span>
-        </div>
+  <div id="start-screen" class="js-start-screen w-full max-w-5xl mx-auto px-4 md:px-12 pt-4 pb-8 md:pb-24">
+    <!-- Cabecera -->
+    <header class="text-center mb-6 md:mb-12 stagger-load">
+      <h1 class="font-display-xl text-[44px] md:text-7xl uppercase leading-none tracking-tighter italic mb-2">RETRO SHIRT QUIZ</h1>
+      <p class="font-label-mono text-[9px] md:text-label-mono text-secondary uppercase tracking-widest">Identifica las camisetas mas legendarias de los mundiales</p>
+    </header>
+
+    <!-- Banner espectacular responsivo -->
+    <div class="w-full h-28 md:h-64 border-2 border-primary overflow-hidden relative bento-card brutalist-shadow mb-6 md:mb-12 stagger-load delay-1">
+      <div class="absolute inset-0 bg-black/10 z-10"></div>
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image: url('/images/hero_banner.png')"></div>
+      <div class="absolute bottom-2 left-2 md:bottom-6 md:left-6 z-20 bg-primary text-on-primary border-[2px] border-black px-2 py-0.5 md:px-4 md:py-2 brutalist-shadow">
+        <span class="font-headline-md text-xs md:text-xl uppercase tracking-widest italic text-white">RETRO WORLD CUP KITS</span>
       </div>
-      
-
-
-      <section class="flex flex-col gap-4 flex-grow stagger-load delay-2">
-        <button class="bento-card bento-card-shadow text-left p-5 group relative overflow-hidden js-mode-button" data-mode="easy">
-          <div class="flex justify-between items-start mb-2">
-            <div class="bg-green-100 text-green-700 p-2 border-[2px] border-black flex items-center justify-center">
-              <span class="material-symbols-outlined text-[24px]">sentiment_satisfied</span>
-            </div>
-            <span class="font-label-mono text-[10px] bg-green-500 text-white px-2 py-0.5 uppercase font-bold">MODO FÁCIL</span>
-          </div>
-          <h3 class="font-headline-md text-xl mb-1 uppercase font-bold text-primary">ERA MODERNA</h3>
-          <p class="font-body-md text-on-surface-variant leading-tight">Camisetas de 1994 a 2022. Diseños modernos y fáciles de reconocer.</p>
-          <div class="mt-4 flex items-center text-primary font-label-mono text-xs group-hover:translate-x-1 transition-transform">
-            JUGAR AHORA <span class="material-symbols-outlined ml-1">arrow_forward</span>
-          </div>
-        </button>
-        <button class="bento-card bento-card-shadow text-left p-5 group relative overflow-hidden js-mode-button" data-mode="medium">
-          <div class="flex justify-between items-start mb-2">
-            <div class="bg-amber-100 text-amber-700 p-2 border-[2px] border-black flex items-center justify-center">
-              <span class="material-symbols-outlined text-[24px]">sentiment_neutral</span>
-            </div>
-            <span class="font-label-mono text-[10px] bg-amber-500 text-white px-2 py-0.5 uppercase font-bold">MODO DIFÍCIL</span>
-          </div>
-          <h3 class="font-headline-md text-xl mb-1 uppercase font-bold text-primary">ERA CLÁSICA</h3>
-          <p class="font-body-md text-on-surface-variant leading-tight">Camisetas de 1974 a 1993. Los grandes designs de la era dorada.</p>
-          <div class="mt-4 flex items-center text-primary font-label-mono text-xs group-hover:translate-x-1 transition-transform">
-            JUGAR AHORA <span class="material-symbols-outlined ml-1">arrow_forward</span>
-          </div>
-        </button>
-        <button class="bento-card bento-card-shadow text-left p-5 group relative overflow-hidden bg-primary-container text-on-primary js-mode-button" data-mode="hard">
-          <div class="flex justify-between items-start mb-2">
-            <div class="bg-red-100 text-red-700 p-2 border-[2px] border-black flex items-center justify-center">
-              <span class="material-symbols-outlined text-[24px]">sentiment_extremely_dissatisfied</span>
-            </div>
-            <span class="font-label-mono text-[10px] bg-red-600 text-white px-2 py-0.5 uppercase font-bold">MODO EXTREMO</span>
-          </div>
-          <h3 class="font-headline-md text-xl mb-1 uppercase text-white font-bold">ERA LEYENDA</h3>
-          <p class="font-body-md text-on-primary-container leading-tight">Camisetas de 1930 a 1970. Equipaciones antiguas, raras e históricas.</p>
-          <div class="mt-4 flex items-center text-white font-label-mono text-xs group-hover:translate-x-1 transition-transform">
-            INICIAR DESAFÍO <span class="material-symbols-outlined ml-1">bolt</span>
-          </div>
-        </button>
-      </section>
-
-      <footer class="mt-10 flex flex-col items-center gap-6 stagger-load delay-3">
-        <div class="flex flex-col items-center gap-3">
-          <div class="text-[11px] text-on-surface-variant opacity-60 flex items-center gap-1.5 justify-center">
-            <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-            <a href="https://github.com/moisesvalero" target="_blank" rel="noopener noreferrer" class="font-bold underline">@moisesvalero</a>
-          </div>
-          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=moi6%40outlook%2ecom&lc=ES&item_name=Retro%20Shirt%20Quiz&currency_code=EUR" target="_blank" rel="noopener noreferrer" class="btn-donate">
-            Apoya el proyecto ❤️
-          </a>
-        </div>
-        <p class="font-label-mono text-[9px] text-on-surface-variant opacity-40 uppercase tracking-widest text-center">
-          © 2026 JERSEY PRO • FIFA 2026 UNITY PULSE
-        </p>
-      </footer>
     </div>
 
-    <!-- TABLET / ESCRITORIO (hidden md:block) -->
-    <div class="hidden md:block w-full max-w-5xl mx-auto px-12 pt-4 pb-24">
-      <section class="text-center mb-12 stagger-load">
-        <h1 class="font-display-xl text-7xl uppercase leading-none tracking-tighter italic mb-2">RETRO SHIRT QUIZ</h1>
-        <p class="font-label-mono text-label-mono text-secondary uppercase tracking-widest">Identifica las camisetas mas legendarias de los mundiales</p>
-      </section>
-      
-      <div class="grid grid-cols-12 gap-4 stagger-load delay-1">
-        <div class="col-span-12 h-64 border-2 border-primary overflow-hidden relative bento-card brutalist-shadow">
-          <div class="absolute inset-0 bg-black/10 z-10"></div>
-          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image: url('/images/hero_banner.png')"></div>
-          <div class="absolute bottom-6 left-6 z-20 bg-primary text-on-primary border-[2px] border-black px-4 py-2 brutalist-shadow">
-            <span class="font-headline-md text-xl uppercase tracking-widest italic text-white">RETRO WORLD CUP KITS</span>
+    <!-- Rejilla de Modos Bento Grid responsiva -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 stagger-load delay-2">
+      <!-- MODO FÁCIL -->
+      <button class="col-span-1 md:col-span-4 min-h-[14rem] md:h-64 bg-surface-container-lowest border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button" data-mode="easy">
+        <div class="flex justify-between items-center w-full">
+          <span class="material-symbols-outlined text-primary text-3xl">sentiment_satisfied</span>
+          <span class="font-label-mono text-[10px] bg-green-500 text-white px-2 py-1 uppercase font-bold">MODO FÁCIL</span>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <h3 class="font-headline-md text-xl text-primary uppercase font-bold">ERA MODERNA</h3>
+          <p class="font-label-mono text-xs text-secondary mt-2">Camisetas de 1994 a 2022. Diseños modernos y fáciles de reconocer.</p>
+        </div>
+      </button>
+
+      <!-- MODO DIFÍCIL -->
+      <button class="col-span-1 md:col-span-4 min-h-[14rem] md:h-64 bg-surface-container-lowest border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button" data-mode="medium">
+        <div class="flex justify-between items-center w-full">
+          <span class="material-symbols-outlined text-primary text-3xl">sentiment_neutral</span>
+          <span class="font-label-mono text-[10px] bg-amber-500 text-white px-2 py-1 uppercase font-bold">MODO DIFÍCIL</span>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <h3 class="font-headline-md text-xl text-primary uppercase font-bold">ERA CLÁSICA</h3>
+          <p class="font-label-mono text-xs text-secondary mt-2">Camisetas de 1974 a 1993. Los grandes diseños de la era dorada.</p>
+        </div>
+      </button>
+
+      <!-- MODO EXTREMO -->
+      <button class="col-span-1 md:col-span-4 min-h-[14rem] md:h-64 !bg-primary border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button" data-mode="hard">
+        <div class="flex justify-between items-center w-full">
+          <span class="material-symbols-outlined text-on-primary text-3xl text-white">sentiment_extremely_dissatisfied</span>
+          <span class="font-label-mono text-[10px] bg-red-600 text-white px-2 py-1 uppercase font-bold">MODO EXTREMO</span>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <h3 class="font-headline-md text-xl text-on-primary uppercase font-bold !text-white">ERA LEYENDA</h3>
+          <p class="font-label-mono text-xs !text-white opacity-80 mt-2">Camisetas de 1930 a 1970. Equipaciones antiguas, raras e históricas.</p>
+        </div>
+      </button>
+
+      <!-- FOOTER / CRÉDITOS UNIFICADO -->
+      <div class="col-span-1 md:col-span-12 border-2 border-primary p-6 flex flex-col md:flex-row items-center justify-between bg-surface-container-lowest bento-card gap-6 md:gap-0 mt-4 md:mt-0">
+        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+          <div class="flex flex-col items-center md:items-start">
+            <span class="font-label-mono text-[10px] text-secondary uppercase">GitHub</span>
+            <a href="https://github.com/moisesvalero" target="_blank" rel="noopener noreferrer" class="font-headline-md text-lg flex items-center gap-1.5 underline">
+              <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              @moisesvalero
+            </a>
+          </div>
+          <div class="hidden md:block h-8 w-[1px] bg-outline-variant"></div>
+          <div class="flex flex-col items-center md:items-start">
+            <span class="font-label-mono text-[10px] text-secondary uppercase">Proveedor de datos</span>
+            <a href="https://www.footballkitarchive.com/world-cup-kits-l308/" target="_blank" rel="noopener noreferrer" class="font-headline-md text-lg underline">Football Kit Archive</a>
           </div>
         </div>
-        
-        <button class="col-span-4 h-64 bg-surface-container-lowest border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button" data-mode="easy">
-          <div class="flex justify-between w-full">
-            <span class="material-symbols-outlined text-primary text-3xl">sentiment_satisfied</span>
-            <span class="font-label-mono text-[10px] bg-green-500 text-white px-2 py-1 uppercase font-bold">MODO FÁCIL</span>
-          </div>
-          <div>
-            <h3 class="font-headline-md text-xl text-primary uppercase font-bold">ERA MODERNA</h3>
-            <p class="font-label-mono text-xs text-secondary mt-2">Camisetas de 1994 a 2022. Diseños modernos y fáciles de reconocer.</p>
-          </div>
-        </button>
-        
-        <button class="col-span-4 h-64 bg-surface-container-lowest border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button" data-mode="medium">
-          <div class="flex justify-between w-full">
-            <span class="material-symbols-outlined text-primary text-3xl">sentiment_neutral</span>
-            <span class="font-label-mono text-[10px] bg-amber-500 text-white px-2 py-1 uppercase font-bold">MODO DIFÍCIL</span>
-          </div>
-          <div>
-            <h3 class="font-headline-md text-xl text-primary uppercase font-bold">ERA CLÁSICA</h3>
-            <p class="font-label-mono text-xs text-secondary mt-2">Camisetas de 1974 a 1993. Los grandes diseños de la era dorada.</p>
-          </div>
-        </button>
-
-        <button class="col-span-4 h-64 !bg-primary border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button" data-mode="hard">
-          <div class="flex justify-between w-full">
-            <span class="material-symbols-outlined text-on-primary text-3xl text-white">sentiment_extremely_dissatisfied</span>
-            <span class="font-label-mono text-[10px] bg-red-600 text-white px-2 py-1 uppercase font-bold">MODO EXTREMO</span>
-          </div>
-          <div>
-            <h3 class="font-headline-md text-xl text-on-primary uppercase font-bold !text-white">ERA LEYENDA</h3>
-            <p class="font-label-mono text-xs !text-white opacity-80 mt-2">Camisetas de 1930 a 1970. Equipaciones antiguas, raras e históricas.</p>
-          </div>
-        </button>
-        
-        <div class="col-span-12 border-2 border-primary p-6 flex items-center justify-between bg-surface-container-lowest bento-card">
-          <div class="flex items-center gap-8">
-            <div class="flex flex-col">
-              <span class="font-label-mono text-[10px] text-secondary uppercase">GitHub</span>
-              <a href="https://github.com/moisesvalero" target="_blank" rel="noopener noreferrer" class="font-headline-md text-lg flex items-center gap-1.5 underline">
-                <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-                @moisesvalero
-              </a>
-            </div>
-            <div class="h-8 w-[1px] bg-outline-variant"></div>
-            <div class="flex flex-col">
-              <span class="font-label-mono text-[10px] text-secondary uppercase">Proveedor de datos</span>
-              <a href="https://www.footballkitarchive.com/world-cup-kits-l308/" target="_blank" rel="noopener noreferrer" class="font-headline-md text-lg underline">Football Kit Archive</a>
-            </div>
-          </div>
+        <div class="flex flex-col items-center md:items-end gap-3">
           <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=moi6%40outlook%2ecom&lc=ES&item_name=Retro%20Shirt%20Quiz&currency_code=EUR" target="_blank" rel="noopener noreferrer" class="btn-donate">
             Apoya el proyecto ❤️
           </a>
+          <p class="font-label-mono text-[9px] text-on-surface-variant opacity-40 uppercase tracking-widest text-center md:text-right">
+            © 2026 JERSEY PRO • FIFA 2026 UNITY PULSE
+          </p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- ==================== PANTALLAS DE JUEGO ==================== -->
-  <div id="game-screen" class="js-game-screen hidden w-full">
-    <!-- MÓVIL (md:hidden) -->
-    <div class="md:hidden flex flex-col w-full max-w-md mx-auto min-h-screen">
-      <header class="w-full px-4 pt-6 pb-2 flex flex-col gap-4 sticky top-0 bg-background z-20">
-        <div class="flex justify-between items-center">
-          <div class="flex flex-col">
-            <span class="font-label-mono text-label-mono text-secondary uppercase tracking-widest text-[9px]">RACHA</span>
-            <span class="font-headline-md text-headline-md text-primary js-current-streak">0</span>
+    <div id="game-screen" class="js-game-screen hidden w-full">
+    <!-- CABECERA DE JUEGO UNIFICADA Y RESPONSIVA -->
+    <header class="w-full h-16 md:h-20 flex items-center justify-between px-4 md:px-12 border-b-2 border-primary bg-white sticky top-0 z-20">
+      <!-- Izquierda: Racha y Vidas -->
+      <div class="flex items-center gap-2 md:gap-4">
+        <div class="bento-border bg-primary text-on-primary px-2.5 py-1 md:px-4 md:py-2 flex items-center gap-1 md:gap-2">
+          <span class="material-symbols-outlined text-on-primary text-xs md:text-base">local_fire_department</span>
+          <span class="font-label-mono text-[10px] md:text-label-mono">RACHA: <span class="js-current-streak">0</span></span>
+        </div>
+        <!-- Corazones (vidas) -->
+        <div class="flex items-center gap-0.5 md:gap-1.5 ml-1">
+          <span class="material-symbols-outlined text-[#FF007A] text-[18px] md:text-[26px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
+          <span class="material-symbols-outlined text-[#FF007A] text-[18px] md:text-[26px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
+          <span class="material-symbols-outlined text-[#FF007A] text-[18px] md:text-[26px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
+        </div>
+      </div>
+
+      <!-- Centro: Título -->
+      <div class="font-display-xl text-primary font-black tracking-tighter text-lg md:text-[28px] italic cursor-pointer js-btn-home" role="button">
+        RETRO SHIRT QUIZ
+      </div>
+
+      <!-- Derecha: Puntos y Botón Home -->
+      <div class="flex items-center gap-3 md:gap-6">
+        <div class="flex flex-col items-end">
+          <span class="hidden md:inline font-label-mono text-xs uppercase opacity-60 tracking-widest">Puntos Actuales</span>
+          <span class="font-display-xl text-lg md:text-[40px] leading-none text-primary js-current-score">0</span>
+        </div>
+        <button class="bento-border bg-surface-container-lowest p-1.5 md:p-2 hover:bg-red-50 hover:text-red-600 transition-colors js-btn-home" aria-label="Volver a Inicio">
+          <span class="material-symbols-outlined text-lg md:text-2xl">home</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- CUERPO DE JUEGO RESPONSIVO -->
+    <main class="w-full max-w-5xl mx-auto px-4 md:px-12 py-6 md:py-10 flex-grow">
+      <!-- Barra de progreso arriba -->
+      <div class="w-full h-2 md:h-3 bg-surface-container border-2 border-primary relative overflow-hidden mb-6">
+        <div class="h-full bg-neon-pink border-r-2 border-primary transition-all duration-300 js-progress-fill" style="width: 0%;"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+        <!-- Columna de la camiseta (Izquierda) -->
+        <section class="col-span-1 md:col-span-5 flex flex-col gap-4 relative">
+          <!-- Balón indicador de dificultad (solo tablet/desktop) -->
+          <div class="absolute -top-6 left-[0%] transform -translate-x-1/2 transition-all duration-300 hidden md:block" id="soccer-indicator-tablet">
+            <span class="material-symbols-outlined text-primary text-3xl animate-bounce">sports_soccer</span>
           </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="font-label-mono text-[9px] text-secondary uppercase tracking-wider">VIDAS</span>
-            <div class="flex gap-1">
-              <span class="material-symbols-outlined text-[#FF007A] text-[20px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
-              <span class="material-symbols-outlined text-[#FF007A] text-[20px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
-              <span class="material-symbols-outlined text-[#FF007A] text-[20px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
+
+          <div class="w-full aspect-[4/5] bg-white border-2 border-primary brutalist-shadow flex items-center justify-center p-6 md:p-8 relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-electric-turquoise opacity-20 rotate-12"></div>
+            <div class="w-full h-full relative z-10 flex items-center justify-center">
+              <!-- Loader de imagen -->
+              <div class="absolute inset-0 bg-white flex items-center justify-center js-image-loader">
+                <div class="w-10 h-10 border-4 border-black border-t-transparent animate-spin"></div>
+              </div>
+              <img class="w-full h-full object-contain hidden js-shirt-image" src="" alt="Camiseta retro del mundial" />
+            </div>
+            <!-- Badge de tipo de pregunta ("SELECCIÓN" o "AÑO") -->
+            <div class="absolute bottom-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-mono text-[10px] tracking-widest js-question-type-badge z-20">
+              SELECCIÓN
             </div>
           </div>
-          <div class="flex flex-col items-end">
-            <span class="font-label-mono text-label-mono text-secondary uppercase tracking-widest text-[9px]">PUNTOS</span>
-            <span class="font-headline-md text-headline-md text-primary js-current-score">0</span>
-          </div>
-        </div>
-        <div class="w-full h-3 bg-surface-container border-2 border-primary relative overflow-hidden">
-          <div class="h-full bg-neon-pink border-r-2 border-primary transition-all duration-300 js-progress-fill" style="width: 0%;"></div>
-        </div>
-      </header>
-      
-      <main class="flex-grow overflow-y-auto px-4 py-4 flex flex-col gap-5">
-        <section class="w-full aspect-[4/5] bg-white border-2 border-primary brutalist-button-shadow flex items-center justify-center p-6 relative overflow-hidden">
-          <div class="absolute -top-10 -right-10 w-40 h-40 bg-electric-turquoise opacity-20 rotate-12"></div>
-          <div class="w-full h-full relative z-10 flex items-center justify-center">
-            <div class="absolute inset-0 bg-white flex items-center justify-center js-image-loader">
-              <div class="w-10 h-10 border-4 border-black border-t-transparent animate-spin"></div>
-            </div>
-            <img class="w-full h-full object-contain hidden js-shirt-image" src="" alt="Camiseta retro del mundial" />
-          </div>
-          <div class="absolute bottom-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-mono text-[9px] tracking-widest js-question-type-badge z-20">
-            SELECCION
+
+          <!-- Pistas de color -->
+          <div class="flex flex-col items-center">
+            <button class="js-btn-hint btn-hint w-full" type="button">💡 Ver pista de color</button>
+            <div class="js-hint-box hint-text hidden mt-2"></div>
           </div>
         </section>
-        
-        <div class="flex flex-col items-center">
-          <button class="js-btn-hint btn-hint" type="button">💡 Ver pista de color</button>
-          <div class="js-hint-box hint-text hidden"></div>
-        </div>
 
-        <div class="flex flex-col gap-1">
-          <span class="font-label-mono text-label-mono text-secondary flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-[15px]">quiz</span> PREGUNTA <span class="js-question-index">1</span>
-          </span>
-          <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary uppercase leading-tight js-question-text">
-            ¿A que seleccion pertenece esta camiseta?
-          </h2>
-        </div>
-        
-        <div class="flex flex-col gap-3 pb-8 js-options-grid">
-           <!-- Opciones móviles -->
-        </div>
-      </main>
-      
-      <footer class="bg-primary text-on-primary py-4 px-6 flex justify-between items-center sticky bottom-0 z-20">
-        <button class="flex items-center gap-2 group js-btn-home">
-          <span class="material-symbols-outlined text-white">arrow_back</span>
-          <span class="font-label-mono text-label-mono text-white uppercase tracking-widest">Abandonar</span>
-        </button>
-        <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-electric-turquoise" style="font-variation-settings: 'FILL' 1;">bolt</span>
-          <span class="font-label-mono text-label-mono text-electric-turquoise js-streak-badge hidden">RACHA ACTIVA</span>
-        </div>
-      </footer>
-    </div>
-
-    <!-- TABLET / ESCRITORIO (hidden md:flex) -->
-    <div class="hidden md:flex flex-col w-full min-h-screen">
-      <header class="w-full h-20 flex items-center justify-between px-12 z-10 border-b-2 border-primary bg-white">
-        <div class="flex items-center gap-4">
-          <div class="bento-border bg-primary text-on-primary px-4 py-2 flex items-center gap-2">
-            <span class="material-symbols-outlined text-on-primary">local_fire_department</span>
-            <span class="font-label-mono text-label-mono">RACHA: <span class="js-current-streak">0</span></span>
-          </div>
-          <div class="bento-border bg-surface-container-lowest px-4 py-2">
-            <span class="font-label-mono text-label-mono text-primary uppercase font-bold">PREGUNTA <span class="js-question-index">1</span></span>
-          </div>
-          <div class="flex items-center gap-1.5 ml-2">
-            <span class="material-symbols-outlined text-[#FF007A] text-[26px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
-            <span class="material-symbols-outlined text-[#FF007A] text-[26px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
-            <span class="material-symbols-outlined text-[#FF007A] text-[26px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
-          </div>
-        </div>
-        <div class="hidden md:block font-display-xl text-primary font-black tracking-tighter text-[28px] italic cursor-pointer js-btn-home" role="button">
-          RETRO SHIRT QUIZ
-        </div>
-        <div class="flex items-center gap-6">
-          <div class="flex flex-col items-end">
-            <span class="font-label-mono text-xs uppercase opacity-60 tracking-widest">Puntos Actuales</span>
-            <span class="font-display-xl text-[40px] leading-none text-primary js-current-score">0</span>
-          </div>
-          <button class="bento-border bg-surface-container-lowest p-2 hover:bg-red-50 hover:text-red-600 transition-colors js-btn-home">
-            <span class="material-symbols-outlined">close</span>
-          </button>
-        </div>
-      </header>
-
-      <main class="flex-grow flex flex-col items-center justify-center px-12 pb-12 gap-6 relative z-10">
-        <div class="w-full max-w-4xl h-3 bento-border bg-surface-container-highest relative mt-6 mb-2">
-          <div class="absolute inset-y-0 left-0 bg-primary transition-all duration-300 js-progress-fill" style="width: 0%;"></div>
-          <div class="absolute -top-6 left-[0%] transform -translate-x-1/2 transition-all duration-300" id="soccer-indicator-tablet">
-            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
-          </div>
-        </div>
-        
-        <div class="flex flex-row items-center justify-center gap-12 w-full max-w-5xl">
-          <div class="w-1/2 flex justify-center">
-            <div class="bento-border bg-surface-container-lowest p-8 relative w-full aspect-square max-w-[400px] flex items-center justify-center group">
-              <div class="absolute top-4 left-4 z-20">
-                <span class="font-label-mono text-label-mono bg-primary text-on-primary px-3 py-1 js-question-type-badge">SELECCION</span>
-              </div>
-              <div class="w-full h-full flex items-center justify-center relative">
-                <div class="absolute inset-0 bg-white flex items-center justify-center js-image-loader">
-                  <div class="w-12 h-12 border-4 border-black border-t-transparent animate-spin"></div>
-                </div>
-                <img class="max-w-full max-h-full object-contain hidden js-shirt-image" src="" alt="Camiseta historica del mundial" />
-              </div>
-              <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-container -z-10"></div>
-            </div>
-          </div>
-          
-          <div class="w-1/2 flex flex-col gap-4">
-            <div class="mb-2">
-              <h2 class="font-headline-lg text-3xl text-primary uppercase tracking-tighter leading-none js-question-text">
-                ¿A que seleccion pertenece esta camiseta?
+        <!-- Columna de interacción (Derecha) -->
+        <section class="col-span-1 md:col-span-7 flex flex-col justify-between gap-6">
+          <div class="space-y-4">
+            <!-- Pregunta actual (número de pregunta y texto) -->
+            <div class="flex flex-col gap-1">
+              <span class="font-label-mono text-label-mono text-secondary flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[15px]">quiz</span> PREGUNTA <span class="js-question-index">1</span>
+              </span>
+              <h2 class="font-display-xl text-2xl md:text-3xl text-primary uppercase tracking-tighter leading-tight js-question-text">
+                ¿A qué selección pertenece esta camiseta?
               </h2>
             </div>
-            <div class="mb-3 text-left">
-              <button class="js-btn-hint btn-hint !m-0" type="button">💡 Ver pista de color</button>
-              <div class="js-hint-box hint-text hidden !text-left"></div>
-            </div>
-            <div class="grid grid-cols-1 gap-4 js-options-grid">
-               <!-- Opciones tablet -->
+
+            <!-- Opciones del Quiz -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 js-options-grid">
+              <!-- Las opciones se inyectan dinámicamente -->
             </div>
           </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER DE JUEGO RESPONSIVO -->
+    <footer class="w-full h-16 flex items-center justify-between px-4 md:px-12 border-t-2 border-primary bg-white mt-8">
+      <p class="font-label-mono text-[9px] md:text-[10px] text-secondary">RETRO SHIRT QUIZ • DAYLIGHT UNITY PULSE EDITION</p>
+      <!-- Racha badge (decorativo o secundario) -->
+      <div class="hidden sm:flex items-center gap-4">
+        <span class="font-label-mono text-xs uppercase opacity-60">Racha de victorias</span>
+        <div class="w-12 h-8 bento-border bg-primary flex items-center justify-center text-on-primary">
+          <span class="font-display-xl text-lg js-current-streak">0</span>
         </div>
-      </main>
-      
-      <footer class="w-full h-16 flex items-center justify-between px-12 border-t-2 border-primary bg-white z-10">
-        <p class="font-label-mono text-[10px] text-secondary">RETRO SHIRT QUIZ • DAYLIGHT UNITY PULSE EDITION</p>
-        <div class="flex items-center gap-4">
-          <span class="font-label-mono text-xs uppercase opacity-60">Racha de victorias</span>
-          <div class="w-12 h-8 bento-border bg-primary flex items-center justify-center text-on-primary">
-            <span class="font-display-xl text-lg js-current-streak">0</span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   </div>
 
-  <!-- ==================== PANTALLA GAME OVER (RESPONSIVA UNIFICADA) ==================== -->
-  <div id="game-over-screen" class="js-game-over-screen hidden bg-background text-on-background min-h-screen flex flex-col w-full">
+<div id="game-over-screen" class="js-game-over-screen hidden bg-background text-on-background min-h-screen flex flex-col w-full">
     <header class="bg-white border-b-2 border-primary w-full top-0 left-0 z-10 h-16 flex items-center justify-between px-6">
       <div class="flex items-center gap-2">
         <span class="material-symbols-outlined text-primary">sports_soccer</span>
