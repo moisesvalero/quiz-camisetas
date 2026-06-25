@@ -257,7 +257,42 @@
   </div>
 
   <!-- ==================== MODAL DE FEEDBACK ==================== -->
-  <div id="feedback-modal" class="modal-overlay hidden js-feedback-modal" role="dialog" aria-modal="true">
+    <!-- PROMPT DE INSTALACIÓN PWA BRUTALISTA -->
+  <div id="pwa-install-prompt" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-sm bg-white border-2 border-primary p-4 brutalist-shadow hidden flex-col gap-3">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 border-2 border-primary bg-primary text-white flex items-center justify-center brutalist-shadow flex-shrink-0">
+          <span class="material-symbols-outlined text-2xl">install_mobile</span>
+        </div>
+        <div class="flex flex-col">
+          <h4 class="font-headline-md text-sm uppercase font-bold text-primary leading-tight">Instalar Aplicación</h4>
+          <p class="font-body-md text-xs text-secondary mt-0.5 leading-snug">Juega a pantalla completa, más rápido y sin conexión.</p>
+        </div>
+      </div>
+      <button id="pwa-close-btn" class="text-secondary hover:text-primary transition-colors" aria-label="Cerrar prompt">
+        <span class="material-symbols-outlined text-xl">close</span>
+      </button>
+    </div>
+    
+    <!-- Botón para Android/Chrome/Escritorio -->
+    <button id="pwa-install-btn" class="w-full bg-pulse-neon text-white font-headline-md text-sm uppercase py-2.5 border-2 border-primary brutalist-shadow button-shift hidden items-center justify-center gap-1.5">
+      <span>Instalar ahora</span> <span class="material-symbols-outlined text-sm">download</span>
+    </button>
+
+    <!-- Instrucciones específicas para iOS (Safari) -->
+    <div id="pwa-ios-instructions" class="hidden text-[10px] font-label-mono bg-amber-50 border-2 border-amber-300 p-2.5 text-amber-900 leading-snug">
+      <div class="flex items-center gap-1 font-bold uppercase mb-1 text-[11px] text-amber-950">
+        <span class="material-symbols-outlined text-sm">info</span> Instrucción para iPhone
+      </div>
+      Para instalar en tu dispositivo iOS:
+      <ol class="list-decimal pl-4 mt-1 space-y-1">
+        <li>Pulsa el botón <strong>Compartir</strong> <span class="inline-flex items-center align-middle justify-center px-1 py-0.5 bg-white border border-gray-300 rounded"><span class="material-symbols-outlined text-xs">ios_share</span></span> en Safari.</li>
+        <li>Selecciona la opción <strong>Añadir a la pantalla de inicio</strong>.</li>
+      </ol>
+    </div>
+  </div>
+
+<div id="feedback-modal" class="modal-overlay hidden js-feedback-modal" role="dialog" aria-modal="true">
     <div class="modal-content bento-border brutalist-shadow bg-white p-6 max-w-sm w-full animate-bounce-in">
       <div class="feedback-header flex items-center gap-3 mb-4">
         <span id="feedback-icon" class="feedback-emoji text-3xl js-feedback-icon">🎉</span>
@@ -805,5 +840,69 @@
   });
 
   // Inicialización
+    // Lógica del prompt de instalación PWA
+  const pwaPrompt = document.getElementById('pwa-install-prompt');
+  const pwaCloseBtn = document.getElementById('pwa-close-btn');
+  const pwaInstallBtn = document.getElementById('pwa-install-btn');
+  const pwaIosInstructions = document.getElementById('pwa-ios-instructions');
+
+  let deferredPrompt: any = null;
+
+  // Detectar si ya se ha instalado o si el usuario rechazó el prompt anteriormente
+  const isPwaDismissed = localStorage.getItem('pwa-install-dismissed') === 'true';
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone === true;
+
+  // Detectar si es iOS (Safari)
+  const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+
+  if (pwaPrompt && !isPwaDismissed && !isStandalone) {
+    // Si es iOS, mostramos las instrucciones específicas para iPhone
+    if (isIos) {
+      pwaIosInstructions?.classList.remove('hidden');
+      // Mostrar el prompt después de 3 segundos para no abrumar al iniciar
+      setTimeout(() => {
+        pwaPrompt.classList.remove('hidden');
+        pwaPrompt.classList.add('flex');
+      }, 3000);
+    }
+
+    // Capturar el evento beforeinstallprompt de Android/Chrome
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      
+      // Mostrar el botón de instalación
+      pwaInstallBtn?.classList.remove('hidden');
+      pwaInstallBtn?.classList.add('flex');
+
+      // Mostrar el prompt después de 3 segundos
+      setTimeout(() => {
+        pwaPrompt.classList.remove('hidden');
+        pwaPrompt.classList.add('flex');
+      }, 3000);
+    });
+
+    // Acción del botón de instalar
+    pwaInstallBtn?.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      // Mostrar prompt nativo
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        console.log('El usuario aceptó instalar la PWA');
+      }
+      deferredPrompt = null;
+      pwaPrompt.classList.add('hidden');
+      pwaPrompt.classList.remove('flex');
+    });
+
+    // Cerrar el prompt y guardarlo en localStorage para no molestar más
+    pwaCloseBtn?.addEventListener('click', () => {
+      pwaPrompt.classList.add('hidden');
+      pwaPrompt.classList.remove('flex');
+      localStorage.setItem('pwa-install-dismissed', 'true');
+    });
+  }
+
   init();
 </script>
