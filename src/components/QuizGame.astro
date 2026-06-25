@@ -7,8 +7,8 @@
   <!-- ==================== PANTALLAS DE INICIO ==================== -->
   <div id="start-screen" class="js-start-screen w-full">
     <!-- MÓVIL (md:hidden) -->
-    <div class="md:hidden flex flex-col w-full max-w-md mx-auto px-4 pt-12 pb-8">
-      <header class="text-center mb-10 stagger-load">
+    <div class="md:hidden flex flex-col w-full max-w-md mx-auto px-4 pt-4 pb-8">
+      <header class="text-center mb-6 stagger-load">
         <div class="inline-block bg-primary text-on-primary font-label-mono text-[11px] px-3 py-1 mb-4 border-[2px] border-black">
           JERSEY PRO EDITION
         </div>
@@ -16,6 +16,15 @@
           RETRO<br/>SHIRT<br/><span class="text-outline border-b-4 border-primary">QUIZ</span>
         </h1>
       </header>
+      
+      <!-- Banner espectacular recortado para móvil -->
+      <div class="w-full h-28 border-[2px] border-black overflow-hidden relative bento-card brutalist-shadow mb-6 stagger-load delay-1">
+        <div class="absolute inset-0 bg-black/10 z-10"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/images/hero_banner.png')"></div>
+        <div class="absolute bottom-2 left-2 z-20 bg-primary text-on-primary border-[2px] border-black px-2 py-0.5 brutalist-shadow">
+          <span class="font-headline-md text-xs uppercase tracking-wider italic text-white">WORLD CUP KITS</span>
+        </div>
+      </div>
       
       <section class="grid grid-cols-2 gap-4 mb-8 stagger-load delay-1">
         <div class="bento-card bento-card-shadow p-4 flex flex-col items-center justify-center">
@@ -92,7 +101,7 @@
     </div>
 
     <!-- TABLET / ESCRITORIO (hidden md:block) -->
-    <div class="hidden md:block w-full max-w-5xl mx-auto px-12 pt-12 pb-24">
+    <div class="hidden md:block w-full max-w-5xl mx-auto px-12 pt-4 pb-24">
       <section class="text-center mb-12 stagger-load">
         <h1 class="font-display-xl text-7xl uppercase leading-none tracking-tighter italic mb-2">RETRO SHIRT QUIZ</h1>
         <p class="font-label-mono text-label-mono text-secondary uppercase tracking-widest">Identifica las camisetas mas legendarias de los mundiales</p>
