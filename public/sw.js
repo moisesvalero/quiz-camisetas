@@ -1,5 +1,5 @@
-const CACHE_NAME = 'quiz-camisetas-v3';
-const ARSETS = [
+const CACHE_NAME = 'quiz-camisetas-v5';
+const ASSETS = [
   '/',
   '/index.html',
   '/favicon.svg',
