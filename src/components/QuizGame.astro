@@ -1,5 +1,4 @@
 ---
-const SHIRT_COUNT = 50;
 ---
 
 <div class="quiz-game-wrapper w-full min-h-screen">
@@ -100,54 +99,45 @@ const SHIRT_COUNT = 50;
       </section>
       
       <div class="grid grid-cols-12 gap-4 stagger-load delay-1">
-        <button class="col-span-8 h-80 bg-primary border-2 border-primary p-8 flex flex-col justify-between text-left group cursor-pointer active:scale-95 transition-all bento-card js-mode-button" data-mode="mixed">
-          <div class="flex justify-between items-start w-full">
-            <span class="font-label-mono text-label-mono text-on-primary opacity-60 uppercase">Modo Principal: Mixto</span>
-            <span class="material-symbols-outlined text-on-primary text-5xl group-hover:rotate-12 transition-transform">play_circle</span>
-          </div>
-          <div>
-            <h2 class="font-headline-lg text-5xl text-on-primary uppercase leading-none mb-2">INICIAR JUEGO</h2>
-            <p class="font-body-lg text-on-primary opacity-80 max-w-md">Adivina la seleccion o el año de {SHIRT_COUNT} camisetas iconicas. ¿Cuantas reconoces?</p>
-          </div>
-        </button>
-        
-        <div class="col-span-4 h-80 bg-surface-container-lowest border-2 border-primary p-8 flex flex-col justify-between bento-card">
-          <span class="font-label-mono text-label-mono text-primary opacity-60 uppercase">Record General</span>
-          <div class="space-y-1">
-            <span class="font-display-xl text-6xl text-primary leading-none js-global-high-score">0</span>
-            <div class="flex items-center gap-2 text-primary">
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
-              <span class="font-label-mono text-xs uppercase">Elite Récord</span>
-            </div>
-          </div>
-          <div class="w-full bg-surface-container h-1 mt-4">
-            <div class="bg-primary h-full w-[85%]"></div>
+        <div class="col-span-12 h-64 border-2 border-primary overflow-hidden relative bento-card brutalist-shadow">
+          <div class="absolute inset-0 bg-black/10 z-10"></div>
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image: url('/images/hero_banner.png')"></div>
+          <div class="absolute bottom-6 left-6 z-20 bg-primary text-on-primary border-[2px] border-black px-4 py-2 brutalist-shadow">
+            <span class="font-headline-md text-xl uppercase tracking-widest italic text-white">RETRO WORLD CUP KITS</span>
           </div>
         </div>
         
-        <button class="col-span-4 h-64 bg-surface-container-lowest border-2 border-primary p-6 flex flex-col justify-between text-left bento-card group cursor-pointer js-mode-button" data-mode="team">
+        <button class="col-span-4 h-64 bg-surface-container-lowest border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button" data-mode="team">
           <div class="flex justify-between w-full">
             <span class="material-symbols-outlined text-primary text-3xl">flag</span>
             <span class="font-label-mono text-[10px] bg-primary text-on-primary px-2 py-1 uppercase">MODO 01</span>
           </div>
           <div>
-            <h3 class="font-headline-md text-xl text-primary uppercase">ADIVINAR SELECCION</h3>
-            <p class="font-label-mono text-xs text-secondary mt-2">Identifica paises por sus diseños oficiales.</p>
+            <h3 class="font-headline-md text-xl text-primary uppercase font-bold">Adivinar Selección</h3>
+            <p class="font-label-mono text-xs text-secondary mt-2">Identifica países por los diseños de sus camisetas oficiales.</p>
           </div>
         </button>
         
-        <div class="col-span-5 h-64 border-2 border-primary overflow-hidden relative bento-card">
-          <div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-10"></div>
-          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDc5fWk3FKkNOsEYWIluiqx_c38mP6oLTPQcyFQ6osOFxmB5FClK3lus55V9GoNcCWl3uR8icKV-oy0GM_l5Z5d5-FdbZ71zf-vxQ5hHdQT82VUrOoSsCKaq300OyXvAXAXQTMnX70CsExkY5VAH3Mnt5TMgSufKef9asrEFkk-RK-NPHwLIIy7Wq9YsgVikv4l2MUCRe6hzMGW8HKqK8YxRo-f-1_WsZbu2Wgd2VoSJB6R-eEA990Mum1alSr24hqrJJDOktWhLq-0')"></div>
-          <div class="absolute bottom-4 left-4 z-20 bg-primary text-on-primary p-2">
-            <span class="font-label-mono text-xs uppercase tracking-widest">Jersey Pro WC26</span>
+        <button class="col-span-4 h-64 bg-surface-container-lowest border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button" data-mode="year">
+          <div class="flex justify-between w-full">
+            <span class="material-symbols-outlined text-primary text-3xl">calendar_today</span>
+            <span class="font-label-mono text-[10px] bg-primary text-on-primary px-2 py-1 uppercase">MODO 02</span>
           </div>
-        </div>
-        
-        <button class="col-span-3 h-64 bg-surface-container-high border-2 border-primary p-6 flex flex-col items-center justify-center text-center bento-card cursor-pointer js-mode-button" data-mode="year">
-          <span class="material-symbols-outlined text-primary text-4xl mb-4">calendar_today</span>
-          <h3 class="font-label-mono text-sm font-bold uppercase leading-tight">ADIVINAR<br/>AÑO</h3>
-          <p class="font-label-mono text-[10px] text-secondary mt-2">¿Que mundial fue?</p>
+          <div>
+            <h3 class="font-headline-md text-xl text-primary uppercase font-bold">Adivinar Año</h3>
+            <p class="font-label-mono text-xs text-secondary mt-2">¿En qué Copa del Mundo se usó este uniforme histórico?</p>
+          </div>
+        </button>
+
+        <button class="col-span-4 h-64 bg-primary border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button" data-mode="mixed">
+          <div class="flex justify-between w-full">
+            <span class="material-symbols-outlined text-on-primary text-3xl text-white">shuffle</span>
+            <span class="font-label-mono text-[10px] bg-white text-primary px-2 py-1 uppercase font-bold">MODO 03</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-xl text-on-primary uppercase font-bold text-white">Modo Mixto</h3>
+            <p class="font-label-mono text-xs text-on-primary opacity-80 mt-2">El desafío definitivo. Mezcla aleatoria de países y años.</p>
+          </div>
         </button>
         
         <div class="col-span-12 border-2 border-primary p-6 flex items-center justify-between bg-surface-container-lowest bento-card">
