@@ -7,7 +7,7 @@
   <!-- ==================== PANTALLAS DE INICIO ==================== -->
   <div id="start-screen" class="js-start-screen w-full max-w-5xl mx-auto px-4 md:px-12 pt-3 md:pt-6 pb-8 md:pb-24">
     <!-- Cabecera -->
-    <header class="text-center mb-6 md:mb-12 stagger-load">
+    <header class="text-center mb-6 md:mb-12 stagger-load safe-area-top">
       <h1 class="font-display-xl text-[44px] md:text-7xl uppercase leading-none tracking-tighter italic mb-2">SHIRT QUIZ</h1>
       <p class="font-label-mono text-[9px] md:text-label-mono text-secondary uppercase tracking-widest">Adivina la selección y el año de cada camiseta</p>
     </header>
@@ -90,7 +90,7 @@
   <!-- ==================== PANTALLAS DE JUEGO ==================== -->
     <div id="game-screen" class="js-game-screen hidden w-full flex flex-col" style="height: 100dvh;">
     <!-- CABECERA DE JUEGO UNIFICADA Y RESPONSIVA -->
-    <header class="w-full h-16 md:h-20 flex items-center justify-between px-4 md:px-12 border-b-2 border-primary bg-white sticky top-0 z-20">
+    <header class="w-full min-h-16 md:min-h-20 flex items-center justify-between px-4 md:px-12 border-b-2 border-primary bg-white sticky top-0 z-20 safe-area-top">
       <!-- Izquierda: Racha y Vidas -->
       <div class="flex items-center gap-2 md:gap-4">
         <div class="bento-border bg-primary text-on-primary px-2.5 py-1 md:px-4 md:py-2 flex items-center gap-1 md:gap-2">
@@ -191,7 +191,7 @@
   </div>
 
 <div id="game-over-screen" class="js-game-over-screen hidden bg-background text-on-background min-h-screen flex flex-col w-full">
-    <header class="bg-white border-b-2 border-primary w-full top-0 left-0 z-10 h-16 flex items-center justify-between px-6">
+    <header class="bg-white border-b-2 border-primary w-full top-0 left-0 z-10 min-h-16 flex items-center justify-between px-6 safe-area-top">
       <div class="flex items-center gap-2">
         <span class="material-symbols-outlined text-primary">sports_soccer</span>
         <h1 class="font-display-xl-mobile text-2xl uppercase tracking-tighter text-primary italic cursor-pointer js-btn-home" role="button">RETRO SHIRT QUIZ</h1>

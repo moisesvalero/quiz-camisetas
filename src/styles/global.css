@@ -73,6 +73,11 @@
   --font-size-display-xl-mobile: 48px;
 }
 
+/* Safe area para PWA en iPhone con notch/isla dinámica */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
 /* Custom styles from Stitch mockups */
 body {
   background-color: #f9f9f9;
