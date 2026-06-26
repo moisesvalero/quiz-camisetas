@@ -498,5 +498,1255 @@
     "filename": "argentina-2022-home-kit-61780.jpg",
     "image": "/shirts/50.jpg",
     "original_image": "/shirts/50.jpg"
+  },
+  {
+    "id": 51,
+    "team": "Alemania",
+    "year": 1962,
+    "color": "Local",
+    "desc": "Camiseta local de Alemania de 1962.",
+    "filename": "camiseta-local-alemania-1962.jpg",
+    "image": "/shirts/51.jpg",
+    "original_image": "/shirts/51.jpg"
+  },
+  {
+    "id": 52,
+    "team": "Alemania",
+    "year": 1986,
+    "color": "Local",
+    "desc": "Camiseta local de Alemania de 1986.",
+    "filename": "camiseta-local-alemania-1986.jpg",
+    "image": "/shirts/52.jpg",
+    "original_image": "/shirts/52.jpg"
+  },
+  {
+    "id": 53,
+    "team": "Alemania",
+    "year": 2026,
+    "color": "Local",
+    "desc": "Camiseta local de Alemania de 2026.",
+    "filename": "camiseta-local-alemania-2026.jpg",
+    "image": "/shirts/53.jpg",
+    "original_image": "/shirts/53.jpg"
+  },
+  {
+    "id": 54,
+    "team": "Arabia Saudí",
+    "year": 1992,
+    "color": "Local",
+    "desc": "Camiseta local de Arabia Saudí de 1992.",
+    "filename": "camiseta-local-arabia-saudi-1992.jpg",
+    "image": "/shirts/54.jpg",
+    "original_image": "/shirts/54.jpg"
+  },
+  {
+    "id": 55,
+    "team": "Arabia Saudí",
+    "year": 1994,
+    "color": "Local",
+    "desc": "Camiseta local de Arabia Saudí de 1994.",
+    "filename": "camiseta-local-arabia-saudi-1994.jpg",
+    "image": "/shirts/55.jpg",
+    "original_image": "/shirts/55.jpg"
+  },
+  {
+    "id": 56,
+    "team": "Argelia",
+    "year": 1986,
+    "color": "Local",
+    "desc": "Camiseta local de Argelia de 1986.",
+    "filename": "camiseta-local-argelia-1986.jpg",
+    "image": "/shirts/56.jpg",
+    "original_image": "/shirts/56.jpg"
+  },
+  {
+    "id": 57,
+    "team": "Argentina",
+    "year": 1930,
+    "color": "Local",
+    "desc": "Camiseta local de Argentina de 1930.",
+    "filename": "camiseta-local-argentina-1930.jpg",
+    "image": "/shirts/57.jpg",
+    "original_image": "/shirts/57.jpg"
+  },
+  {
+    "id": 58,
+    "team": "Argentina",
+    "year": 2020,
+    "color": "Local",
+    "desc": "Camiseta local de Argentina de 2020.",
+    "filename": "camiseta-local-argentina-2020.jpg",
+    "image": "/shirts/58.jpg",
+    "original_image": "/shirts/58.jpg"
+  },
+  {
+    "id": 59,
+    "team": "Australia",
+    "year": 2014,
+    "color": "Local",
+    "desc": "Camiseta local de Australia de 2014.",
+    "filename": "camiseta-local-australia-2014.jpg",
+    "image": "/shirts/59.jpg",
+    "original_image": "/shirts/59.jpg"
+  },
+  {
+    "id": 60,
+    "team": "Austria",
+    "year": 1982,
+    "color": "Local",
+    "desc": "Camiseta local de Austria de 1982.",
+    "filename": "camiseta-local-austria-1982.jpg",
+    "image": "/shirts/60.jpg",
+    "original_image": "/shirts/60.jpg"
+  },
+  {
+    "id": 61,
+    "team": "Bélgica",
+    "year": 1930,
+    "color": "Local",
+    "desc": "Camiseta local de Bélgica de 1930.",
+    "filename": "camiseta-local-belgica-1930.jpg",
+    "image": "/shirts/61.jpg",
+    "original_image": "/shirts/61.jpg"
+  },
+  {
+    "id": 62,
+    "team": "Bulgaria",
+    "year": 1966,
+    "color": "Local",
+    "desc": "Camiseta local de Bulgaria de 1966.",
+    "filename": "camiseta-local-bulgaria-1966.jpg",
+    "image": "/shirts/62.jpg",
+    "original_image": "/shirts/62.jpg"
+  },
+  {
+    "id": 63,
+    "team": "Bulgaria",
+    "year": 1990,
+    "color": "Local",
+    "desc": "Camiseta local de Bulgaria de 1990.",
+    "filename": "camiseta-local-bulgaria-1990.jpg",
+    "image": "/shirts/63.jpg",
+    "original_image": "/shirts/63.jpg"
+  },
+  {
+    "id": 64,
+    "team": "Bulgaria",
+    "year": 1994,
+    "color": "Local",
+    "desc": "Camiseta local de Bulgaria de 1994.",
+    "filename": "camiseta-local-bulgaria-1994.jpg",
+    "image": "/shirts/64.jpg",
+    "original_image": "/shirts/64.jpg"
+  },
+  {
+    "id": 65,
+    "team": "Cabo Verde",
+    "year": 2010,
+    "color": "Local",
+    "desc": "Camiseta local de Cabo Verde de 2010.",
+    "filename": "camiseta-local-cabo-verde-2010.jpg",
+    "image": "/shirts/65.jpg",
+    "original_image": "/shirts/65.jpg"
+  },
+  {
+    "id": 66,
+    "team": "Cabo Verde",
+    "year": 2026,
+    "color": "Local",
+    "desc": "Camiseta local de Cabo Verde de 2026.",
+    "filename": "camiseta-local-cabo-verde-2026.jpg",
+    "image": "/shirts/66.jpg",
+    "original_image": "/shirts/66.jpg"
+  },
+  {
+    "id": 67,
+    "team": "Canadá",
+    "year": 1978,
+    "color": "Local",
+    "desc": "Camiseta local de Canadá de 1978.",
+    "filename": "camiseta-local-canada-1978.jpg",
+    "image": "/shirts/67.jpg",
+    "original_image": "/shirts/67.jpg"
+  },
+  {
+    "id": 68,
+    "team": "Canadá",
+    "year": 2006,
+    "color": "Local",
+    "desc": "Camiseta local de Canadá de 2006.",
+    "filename": "camiseta-local-canada-2006.jpg",
+    "image": "/shirts/68.jpg",
+    "original_image": "/shirts/68.jpg"
+  },
+  {
+    "id": 69,
+    "team": "Colombia",
+    "year": 1950,
+    "color": "Local",
+    "desc": "Camiseta local de Colombia de 1950.",
+    "filename": "camiseta-local-colombia-1950.jpg",
+    "image": "/shirts/69.jpg",
+    "original_image": "/shirts/69.jpg"
+  },
+  {
+    "id": 70,
+    "team": "Corea del Sur",
+    "year": 1994,
+    "color": "Local",
+    "desc": "Camiseta local de Corea del Sur de 1994.",
+    "filename": "camiseta-local-corea-del-sur-1994.jpg",
+    "image": "/shirts/70.jpg",
+    "original_image": "/shirts/70.jpg"
+  },
+  {
+    "id": 71,
+    "team": "Costa de Marfil",
+    "year": 1994,
+    "color": "Local",
+    "desc": "Camiseta local de Costa de Marfil de 1994.",
+    "filename": "camiseta-local-costa-de-marfil-1994.jpg",
+    "image": "/shirts/71.jpg",
+    "original_image": "/shirts/71.jpg"
+  },
+  {
+    "id": 72,
+    "team": "Croacia",
+    "year": 1990,
+    "color": "Local",
+    "desc": "Camiseta local de Croacia de 1990.",
+    "filename": "camiseta-local-croacia-1990.jpg",
+    "image": "/shirts/72.jpg",
+    "original_image": "/shirts/72.jpg"
+  },
+  {
+    "id": 73,
+    "team": "Ecuador",
+    "year": 1986,
+    "color": "Local",
+    "desc": "Camiseta local de Ecuador de 1986.",
+    "filename": "camiseta-local-ecuador-1986.jpg",
+    "image": "/shirts/73.jpg",
+    "original_image": "/shirts/73.jpg"
+  },
+  {
+    "id": 74,
+    "team": "Ecuador",
+    "year": 1993,
+    "color": "Local",
+    "desc": "Camiseta local de Ecuador de 1993.",
+    "filename": "camiseta-local-ecuador-1993.jpg",
+    "image": "/shirts/74.jpg",
+    "original_image": "/shirts/74.jpg"
+  },
+  {
+    "id": 75,
+    "team": "Estados Unidos",
+    "year": 1994,
+    "color": "Local",
+    "desc": "Camiseta local de Estados Unidos de 1994.",
+    "filename": "camiseta-local-ee-uu-1994.jpg",
+    "image": "/shirts/75.jpg",
+    "original_image": "/shirts/75.jpg"
+  },
+  {
+    "id": 76,
+    "team": "Estados Unidos",
+    "year": 2026,
+    "color": "Local",
+    "desc": "Camiseta local de Estados Unidos de 2026.",
+    "filename": "camiseta-local-ee-uu-2026.jpg",
+    "image": "/shirts/76.jpg",
+    "original_image": "/shirts/76.jpg"
+  },
+  {
+    "id": 77,
+    "team": "Egipto",
+    "year": 2001,
+    "color": "Local",
+    "desc": "Camiseta local de Egipto de 2001.",
+    "filename": "camiseta-local-egipto-2001-02.jpg",
+    "image": "/shirts/77.jpg",
+    "original_image": "/shirts/77.jpg"
+  },
+  {
+    "id": 78,
+    "team": "Egipto",
+    "year": 2026,
+    "color": "Local",
+    "desc": "Camiseta local de Egipto de 2026.",
+    "filename": "camiseta-local-egipto-2026.jpg",
+    "image": "/shirts/78.jpg",
+    "original_image": "/shirts/78.jpg"
+  },
+  {
+    "id": 79,
+    "team": "Escocia",
+    "year": 1950,
+    "color": "Local",
+    "desc": "Camiseta local de Escocia de 1950.",
+    "filename": "camiseta-local-escocia-1950.jpg",
+    "image": "/shirts/79.jpg",
+    "original_image": "/shirts/79.jpg"
+  },
+  {
+    "id": 80,
+    "team": "España",
+    "year": 1950,
+    "color": "Local",
+    "desc": "Camiseta local de España de 1950.",
+    "filename": "camiseta-local-espana-1950.jpg",
+    "image": "/shirts/80.jpg",
+    "original_image": "/shirts/80.jpg"
+  },
+  {
+    "id": 81,
+    "team": "España",
+    "year": 1982,
+    "color": "Local",
+    "desc": "Camiseta local de España de 1982.",
+    "filename": "camiseta-local-espana-1982.jpg",
+    "image": "/shirts/81.jpg",
+    "original_image": "/shirts/81.jpg"
+  },
+  {
+    "id": 82,
+    "team": "España",
+    "year": 1998,
+    "color": "Local",
+    "desc": "Camiseta local de España de 1998.",
+    "filename": "camiseta-local-espana-1998.jpg",
+    "image": "/shirts/82.jpg",
+    "original_image": "/shirts/82.jpg"
+  },
+  {
+    "id": 83,
+    "team": "Francia",
+    "year": 1930,
+    "color": "Local",
+    "desc": "Camiseta local de Francia de 1930.",
+    "filename": "camiseta-local-francia-1930.jpg",
+    "image": "/shirts/83.jpg",
+    "original_image": "/shirts/83.jpg"
+  },
+  {
+    "id": 84,
+    "team": "Francia",
+    "year": 1990,
+    "color": "Local",
+    "desc": "Camiseta local de Francia de 1990.",
+    "filename": "camiseta-local-francia-1990.jpg",
+    "image": "/shirts/84.jpg",
+    "original_image": "/shirts/84.jpg"
+  },
+  {
+    "id": 85,
+    "team": "Inglaterra",
+    "year": 1946,
+    "color": "Local",
+    "desc": "Camiseta local de Inglaterra de 1946.",
+    "filename": "camiseta-local-inglaterra-1946.jpg",
+    "image": "/shirts/85.jpg",
+    "original_image": "/shirts/85.jpg"
+  },
+  {
+    "id": 86,
+    "team": "Inglaterra",
+    "year": 1986,
+    "color": "Local",
+    "desc": "Camiseta local de Inglaterra de 1986.",
+    "filename": "camiseta-local-inglaterra-1986.jpg",
+    "image": "/shirts/86.jpg",
+    "original_image": "/shirts/86.jpg"
+  },
+  {
+    "id": 87,
+    "team": "Inglaterra",
+    "year": 2026,
+    "color": "Local",
+    "desc": "Camiseta local de Inglaterra de 2026.",
+    "filename": "camiseta-local-inglaterra-2026.jpg",
+    "image": "/shirts/87.jpg",
+    "original_image": "/shirts/87.jpg"
+  },
+  {
+    "id": 88,
+    "team": "Irán",
+    "year": 1978,
+    "color": "Local",
+    "desc": "Camiseta local de Irán de 1978.",
+    "filename": "camiseta-local-iran-1978.jpg",
+    "image": "/shirts/88.jpg",
+    "original_image": "/shirts/88.jpg"
+  },
+  {
+    "id": 89,
+    "team": "Irán",
+    "year": 2026,
+    "color": "Local",
+    "desc": "Camiseta local de Irán de 2026.",
+    "filename": "camiseta-local-iran-2026.jpg",
+    "image": "/shirts/89.jpg",
+    "original_image": "/shirts/89.jpg"
+  },
+  {
+    "id": 90,
+    "team": "Iraq",
+    "year": 2011,
+    "color": "Local",
+    "desc": "Camiseta local de Iraq de 2011.",
+    "filename": "camiseta-local-iraq-2011.jpg",
+    "image": "/shirts/90.jpg",
+    "original_image": "/shirts/90.jpg"
+  },
+  {
+    "id": 91,
+    "team": "Japón",
+    "year": 1936,
+    "color": "Local",
+    "desc": "Camiseta local de Japón de 1936.",
+    "filename": "camiseta-local-japon-1936.jpg",
+    "image": "/shirts/91.jpg",
+    "original_image": "/shirts/91.jpg"
+  },
+  {
+    "id": 92,
+    "team": "Japón",
+    "year": 1990,
+    "color": "Local",
+    "desc": "Camiseta local de Japón de 1990.",
+    "filename": "camiseta-local-japon-1990.jpg",
+    "image": "/shirts/92.jpg",
+    "original_image": "/shirts/92.jpg"
+  },
+  {
+    "id": 93,
+    "team": "Noruega",
+    "year": 2006,
+    "color": "Local",
+    "desc": "Camiseta local de Noruega de 2006.",
+    "filename": "camiseta-local-noruega-2006.jpg",
+    "image": "/shirts/93.jpg",
+    "original_image": "/shirts/93.jpg"
+  },
+  {
+    "id": 94,
+    "team": "Países Bajos",
+    "year": 1905,
+    "color": "Local",
+    "desc": "Camiseta local de Países Bajos de 1905.",
+    "filename": "camiseta-local-paises-bajos-1905.jpg",
+    "image": "/shirts/94.jpg",
+    "original_image": "/shirts/94.jpg"
+  },
+  {
+    "id": 95,
+    "team": "Países Bajos",
+    "year": 1986,
+    "color": "Local",
+    "desc": "Camiseta local de Países Bajos de 1986.",
+    "filename": "camiseta-local-paises-bajos-1986.jpg",
+    "image": "/shirts/95.jpg",
+    "original_image": "/shirts/95.jpg"
+  },
+  {
+    "id": 96,
+    "team": "Países Bajos",
+    "year": 2026,
+    "color": "Local",
+    "desc": "Camiseta local de Países Bajos de 2026.",
+    "filename": "camiseta-local-paises-bajos-2026.jpg",
+    "image": "/shirts/96.jpg",
+    "original_image": "/shirts/96.jpg"
+  },
+  {
+    "id": 97,
+    "team": "República Checa",
+    "year": 1995,
+    "color": "Local",
+    "desc": "Camiseta local de República Checa de 1995.",
+    "filename": "camiseta-local-republica-checa-1995.jpg",
+    "image": "/shirts/97.jpg",
+    "original_image": "/shirts/97.jpg"
+  },
+  {
+    "id": 98,
+    "team": "República Checa",
+    "year": 2014,
+    "color": "Local",
+    "desc": "Camiseta local de República Checa de 2014.",
+    "filename": "camiseta-local-republica-checa-2014.jpg",
+    "image": "/shirts/98.jpg",
+    "original_image": "/shirts/98.jpg"
+  },
+  {
+    "id": 99,
+    "team": "Senegal",
+    "year": 2018,
+    "color": "Local",
+    "desc": "Camiseta local de Senegal de 2018.",
+    "filename": "camiseta-local-senegal-2018.jpg",
+    "image": "/shirts/99.jpg",
+    "original_image": "/shirts/99.jpg"
+  },
+  {
+    "id": 100,
+    "team": "Sudáfrica",
+    "year": 2002,
+    "color": "Local",
+    "desc": "Camiseta local de Sudáfrica de 2002.",
+    "filename": "camiseta-local-sudafrica-2002.jpg",
+    "image": "/shirts/100.jpg",
+    "original_image": "/shirts/100.jpg"
+  },
+  {
+    "id": 101,
+    "team": "Suecia",
+    "year": 1908,
+    "color": "Local",
+    "desc": "Camiseta local de Suecia de 1908.",
+    "filename": "camiseta-local-suecia-1908.jpg",
+    "image": "/shirts/101.jpg",
+    "original_image": "/shirts/101.jpg"
+  },
+  {
+    "id": 102,
+    "team": "Suiza",
+    "year": 1980,
+    "color": "Local",
+    "desc": "Camiseta local de Suiza de 1980.",
+    "filename": "camiseta-local-suiza-1980.jpg",
+    "image": "/shirts/102.jpg",
+    "original_image": "/shirts/102.jpg"
+  },
+  {
+    "id": 103,
+    "team": "Turquía",
+    "year": 2002,
+    "color": "Local",
+    "desc": "Camiseta local de Turquía de 2002.",
+    "filename": "camiseta-local-turquia-2002.jpg",
+    "image": "/shirts/103.jpg",
+    "original_image": "/shirts/103.jpg"
+  },
+  {
+    "id": 104,
+    "team": "Unión Portuguesa de Fútbol",
+    "year": 1921,
+    "color": "Local",
+    "desc": "Camiseta local de Unión Portuguesa de Fútbol de 1921.",
+    "filename": "camiseta-local-uniao-portuguesa-de-futebol-1921.jpg",
+    "image": "/shirts/104.jpg",
+    "original_image": "/shirts/104.jpg"
+  },
+  {
+    "id": 105,
+    "team": "Uruguay",
+    "year": 1998,
+    "color": "Local",
+    "desc": "Camiseta local de Uruguay de 1998.",
+    "filename": "camiseta-local-uruguay-1998.jpg",
+    "image": "/shirts/105.jpg",
+    "original_image": "/shirts/105.jpg"
+  },
+  {
+    "id": 106,
+    "team": "Uruguay",
+    "year": 2013,
+    "color": "Local",
+    "desc": "Camiseta local de Uruguay de 2013.",
+    "filename": "camiseta-local-uruguay-2013.jpg",
+    "image": "/shirts/106.jpg",
+    "original_image": "/shirts/106.jpg"
+  },
+  {
+    "id": 107,
+    "team": "Bulgaria",
+    "year": 1970,
+    "color": "Alternativa",
+    "desc": "Camiseta alternativa de Bulgaria de 1970.",
+    "filename": "camiseta-pt-1-bulgaria-1970.jpg",
+    "image": "/shirts/107.jpg",
+    "original_image": "/shirts/107.jpg"
+  },
+  {
+    "id": 108,
+    "team": "Alemania",
+    "year": 1979,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Alemania de 1979.",
+    "filename": "camiseta-visitante-alemania-1979.jpg",
+    "image": "/shirts/108.jpg",
+    "original_image": "/shirts/108.jpg"
+  },
+  {
+    "id": 109,
+    "team": "Argelia",
+    "year": 1990,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Argelia de 1990.",
+    "filename": "camiseta-visitante-argelia-1990.jpg",
+    "image": "/shirts/109.jpg",
+    "original_image": "/shirts/109.jpg"
+  },
+  {
+    "id": 110,
+    "team": "Argelia",
+    "year": 1994,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Argelia de 1994.",
+    "filename": "camiseta-visitante-argelia-1994.jpg",
+    "image": "/shirts/110.jpg",
+    "original_image": "/shirts/110.jpg"
+  },
+  {
+    "id": 111,
+    "team": "Argentina",
+    "year": 1958,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Argentina de 1958.",
+    "filename": "camiseta-visitante-argentina-1958.jpg",
+    "image": "/shirts/111.jpg",
+    "original_image": "/shirts/111.jpg"
+  },
+  {
+    "id": 112,
+    "team": "Argentina",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Argentina de 2026.",
+    "filename": "camiseta-visitante-argentina-2026.jpg",
+    "image": "/shirts/112.jpg",
+    "original_image": "/shirts/112.jpg"
+  },
+  {
+    "id": 113,
+    "team": "Australia",
+    "year": 1998,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Australia de 1998.",
+    "filename": "camiseta-visitante-australia-1998.jpg",
+    "image": "/shirts/113.jpg",
+    "original_image": "/shirts/113.jpg"
+  },
+  {
+    "id": 114,
+    "team": "Australia",
+    "year": 2002,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Australia de 2002.",
+    "filename": "camiseta-visitante-australia-2002.jpg",
+    "image": "/shirts/114.jpg",
+    "original_image": "/shirts/114.jpg"
+  },
+  {
+    "id": 115,
+    "team": "Australia",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Australia de 2026.",
+    "filename": "camiseta-visitante-australia-2026.jpg",
+    "image": "/shirts/115.jpg",
+    "original_image": "/shirts/115.jpg"
+  },
+  {
+    "id": 116,
+    "team": "Austria",
+    "year": 1970,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Austria de 1970.",
+    "filename": "camiseta-visitante-austria-1970.jpg",
+    "image": "/shirts/116.jpg",
+    "original_image": "/shirts/116.jpg"
+  },
+  {
+    "id": 117,
+    "team": "Austria",
+    "year": 1978,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Austria de 1978.",
+    "filename": "camiseta-visitante-austria-1978.jpg",
+    "image": "/shirts/117.jpg",
+    "original_image": "/shirts/117.jpg"
+  },
+  {
+    "id": 118,
+    "team": "Austria",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Austria de 2026.",
+    "filename": "camiseta-visitante-austria-2026.jpg",
+    "image": "/shirts/118.jpg",
+    "original_image": "/shirts/118.jpg"
+  },
+  {
+    "id": 119,
+    "team": "Bélgica",
+    "year": 1986,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Bélgica de 1986.",
+    "filename": "camiseta-visitante-belgica-1986.jpg",
+    "image": "/shirts/119.jpg",
+    "original_image": "/shirts/119.jpg"
+  },
+  {
+    "id": 120,
+    "team": "Bélgica",
+    "year": 2022,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Bélgica de 2022.",
+    "filename": "camiseta-visitante-belgica-2022.jpg",
+    "image": "/shirts/120.jpg",
+    "original_image": "/shirts/120.jpg"
+  },
+  {
+    "id": 121,
+    "team": "Bélgica",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Bélgica de 2026.",
+    "filename": "camiseta-visitante-belgica-2026.jpg",
+    "image": "/shirts/121.jpg",
+    "original_image": "/shirts/121.jpg"
+  },
+  {
+    "id": 122,
+    "team": "Brasil",
+    "year": 1970,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Brasil de 1970.",
+    "filename": "camiseta-visitante-brasil-1970.jpg",
+    "image": "/shirts/122.jpg",
+    "original_image": "/shirts/122.jpg"
+  },
+  {
+    "id": 123,
+    "team": "Brasil",
+    "year": 1979,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Brasil de 1979.",
+    "filename": "camiseta-visitante-brasil-1979.jpg",
+    "image": "/shirts/123.jpg",
+    "original_image": "/shirts/123.jpg"
+  },
+  {
+    "id": 124,
+    "team": "Brasil",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Brasil de 2026.",
+    "filename": "camiseta-visitante-brasil-2026.jpg",
+    "image": "/shirts/124.jpg",
+    "original_image": "/shirts/124.jpg"
+  },
+  {
+    "id": 125,
+    "team": "Bulgaria",
+    "year": 1976,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Bulgaria de 1976.",
+    "filename": "camiseta-visitante-bulgaria-1976.jpg",
+    "image": "/shirts/125.jpg",
+    "original_image": "/shirts/125.jpg"
+  },
+  {
+    "id": 126,
+    "team": "Bulgaria",
+    "year": 1986,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Bulgaria de 1986.",
+    "filename": "camiseta-visitante-bulgaria-1986.jpg",
+    "image": "/shirts/126.jpg",
+    "original_image": "/shirts/126.jpg"
+  },
+  {
+    "id": 127,
+    "team": "Bulgaria",
+    "year": 1998,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Bulgaria de 1998.",
+    "filename": "camiseta-visitante-bulgaria-1998.jpg",
+    "image": "/shirts/127.jpg",
+    "original_image": "/shirts/127.jpg"
+  },
+  {
+    "id": 128,
+    "team": "Colombia",
+    "year": 1990,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Colombia de 1990.",
+    "filename": "camiseta-visitante-colombia-1990.jpg",
+    "image": "/shirts/128.jpg",
+    "original_image": "/shirts/128.jpg"
+  },
+  {
+    "id": 129,
+    "team": "Colombia",
+    "year": 1994,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Colombia de 1994.",
+    "filename": "camiseta-visitante-colombia-1994.jpg",
+    "image": "/shirts/129.jpg",
+    "original_image": "/shirts/129.jpg"
+  },
+  {
+    "id": 130,
+    "team": "Colombia",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Colombia de 2026.",
+    "filename": "camiseta-visitante-colombia-2026.jpg",
+    "image": "/shirts/130.jpg",
+    "original_image": "/shirts/130.jpg"
+  },
+  {
+    "id": 131,
+    "team": "Corea del Sur",
+    "year": 1998,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Corea del Sur de 1998.",
+    "filename": "camiseta-visitante-corea-del-sur-1998.jpg",
+    "image": "/shirts/131.jpg",
+    "original_image": "/shirts/131.jpg"
+  },
+  {
+    "id": 132,
+    "team": "Costa de Marfil",
+    "year": 2010,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Costa de Marfil de 2010.",
+    "filename": "camiseta-visitante-costa-de-marfil-2010.jpg",
+    "image": "/shirts/132.jpg",
+    "original_image": "/shirts/132.jpg"
+  },
+  {
+    "id": 133,
+    "team": "Costa de Marfil",
+    "year": 2014,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Costa de Marfil de 2014.",
+    "filename": "camiseta-visitante-costa-de-marfil-2014.jpg",
+    "image": "/shirts/133.jpg",
+    "original_image": "/shirts/133.jpg"
+  },
+  {
+    "id": 134,
+    "team": "Costa de Marfil",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Costa de Marfil de 2026.",
+    "filename": "camiseta-visitante-costa-de-marfil-2026.jpg",
+    "image": "/shirts/134.jpg",
+    "original_image": "/shirts/134.jpg"
+  },
+  {
+    "id": 135,
+    "team": "Croacia",
+    "year": 1998,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Croacia de 1998.",
+    "filename": "camiseta-visitante-croacia-1998.jpg",
+    "image": "/shirts/135.jpg",
+    "original_image": "/shirts/135.jpg"
+  },
+  {
+    "id": 136,
+    "team": "Croacia",
+    "year": 2010,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Croacia de 2010.",
+    "filename": "camiseta-visitante-croacia-2010.jpg",
+    "image": "/shirts/136.jpg",
+    "original_image": "/shirts/136.jpg"
+  },
+  {
+    "id": 137,
+    "team": "Curaçao",
+    "year": 2018,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Curaçao de 2018.",
+    "filename": "camiseta-visitante-curacao-2018.jpg",
+    "image": "/shirts/137.jpg",
+    "original_image": "/shirts/137.jpg"
+  },
+  {
+    "id": 138,
+    "team": "Curaçao",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Curaçao de 2026.",
+    "filename": "camiseta-visitante-curacao-2026.jpg",
+    "image": "/shirts/138.jpg",
+    "original_image": "/shirts/138.jpg"
+  },
+  {
+    "id": 139,
+    "team": "Ecuador",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Ecuador de 2026.",
+    "filename": "camiseta-visitante-ecuador-2026.jpg",
+    "image": "/shirts/139.jpg",
+    "original_image": "/shirts/139.jpg"
+  },
+  {
+    "id": 140,
+    "team": "Estados Unidos",
+    "year": 2002,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Estados Unidos de 2002.",
+    "filename": "camiseta-visitante-ee-uu-2002.jpg",
+    "image": "/shirts/140.jpg",
+    "original_image": "/shirts/140.jpg"
+  },
+  {
+    "id": 141,
+    "team": "Egipto",
+    "year": 2020,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Egipto de 2020.",
+    "filename": "camiseta-visitante-egipto-2020-21.jpg",
+    "image": "/shirts/141.jpg",
+    "original_image": "/shirts/141.jpg"
+  },
+  {
+    "id": 142,
+    "team": "Escocia",
+    "year": 1994,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Escocia de 1994.",
+    "filename": "camiseta-visitante-escocia-1994.jpg",
+    "image": "/shirts/142.jpg",
+    "original_image": "/shirts/142.jpg"
+  },
+  {
+    "id": 143,
+    "team": "Escocia",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Escocia de 2026.",
+    "filename": "camiseta-visitante-escocia-2026.jpg",
+    "image": "/shirts/143.jpg",
+    "original_image": "/shirts/143.jpg"
+  },
+  {
+    "id": 144,
+    "team": "España",
+    "year": 1986,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de España de 1986.",
+    "filename": "camiseta-visitante-espana-1986.jpg",
+    "image": "/shirts/144.jpg",
+    "original_image": "/shirts/144.jpg"
+  },
+  {
+    "id": 145,
+    "team": "España",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de España de 2026.",
+    "filename": "camiseta-visitante-espana-2026.jpg",
+    "image": "/shirts/145.jpg",
+    "original_image": "/shirts/145.jpg"
+  },
+  {
+    "id": 146,
+    "team": "Francia",
+    "year": 1970,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Francia de 1970.",
+    "filename": "camiseta-visitante-francia-1970.jpg",
+    "image": "/shirts/146.jpg",
+    "original_image": "/shirts/146.jpg"
+  },
+  {
+    "id": 147,
+    "team": "Francia",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Francia de 2026.",
+    "filename": "camiseta-visitante-francia-2026.jpg",
+    "image": "/shirts/147.jpg",
+    "original_image": "/shirts/147.jpg"
+  },
+  {
+    "id": 148,
+    "team": "Inglaterra",
+    "year": 1994,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Inglaterra de 1994.",
+    "filename": "camiseta-visitante-inglaterra-1994.jpg",
+    "image": "/shirts/148.jpg",
+    "original_image": "/shirts/148.jpg"
+  },
+  {
+    "id": 149,
+    "team": "Irán",
+    "year": 2002,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Irán de 2002.",
+    "filename": "camiseta-visitante-iran-2002.jpg",
+    "image": "/shirts/149.jpg",
+    "original_image": "/shirts/149.jpg"
+  },
+  {
+    "id": 150,
+    "team": "Iraq",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Iraq de 2026.",
+    "filename": "camiseta-visitante-iraq-2026.jpg",
+    "image": "/shirts/150.jpg",
+    "original_image": "/shirts/150.jpg"
+  },
+  {
+    "id": 151,
+    "team": "Marruecos",
+    "year": 2002,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Marruecos de 2002.",
+    "filename": "camiseta-visitante-marruecos-2002.jpg",
+    "image": "/shirts/151.jpg",
+    "original_image": "/shirts/151.jpg"
+  },
+  {
+    "id": 152,
+    "team": "Marruecos",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Marruecos de 2026.",
+    "filename": "camiseta-visitante-marruecos-2026.jpg",
+    "image": "/shirts/152.jpg",
+    "original_image": "/shirts/152.jpg"
+  },
+  {
+    "id": 153,
+    "team": "México",
+    "year": 1986,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de México de 1986.",
+    "filename": "camiseta-visitante-mexico-1986.jpg",
+    "image": "/shirts/153.jpg",
+    "original_image": "/shirts/153.jpg"
+  },
+  {
+    "id": 154,
+    "team": "Noruega",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Noruega de 2026.",
+    "filename": "camiseta-visitante-noruega-2026.jpg",
+    "image": "/shirts/154.jpg",
+    "original_image": "/shirts/154.jpg"
+  },
+  {
+    "id": 155,
+    "team": "Países Bajos",
+    "year": 2018,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Países Bajos de 2018.",
+    "filename": "camiseta-visitante-paises-bajos-2018.jpg",
+    "image": "/shirts/155.jpg",
+    "original_image": "/shirts/155.jpg"
+  },
+  {
+    "id": 156,
+    "team": "Países Bajos",
+    "year": 2020,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Países Bajos de 2020.",
+    "filename": "camiseta-visitante-paises-bajos-2020.jpg",
+    "image": "/shirts/156.jpg",
+    "original_image": "/shirts/156.jpg"
+  },
+  {
+    "id": 157,
+    "team": "Portugal",
+    "year": 1966,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Portugal de 1966.",
+    "filename": "camiseta-visitante-portugal-1966.jpg",
+    "image": "/shirts/157.jpg",
+    "original_image": "/shirts/157.jpg"
+  },
+  {
+    "id": 158,
+    "team": "Portugal",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Portugal de 2026.",
+    "filename": "camiseta-visitante-portugal-2026.jpg",
+    "image": "/shirts/158.jpg",
+    "original_image": "/shirts/158.jpg"
+  },
+  {
+    "id": 159,
+    "team": "República Checa",
+    "year": 2000,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de República Checa de 2000.",
+    "filename": "camiseta-visitante-republica-checa-2000.jpg",
+    "image": "/shirts/159.jpg",
+    "original_image": "/shirts/159.jpg"
+  },
+  {
+    "id": 160,
+    "team": "República Checa",
+    "year": 2010,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de República Checa de 2010.",
+    "filename": "camiseta-visitante-republica-checa-2010.jpg",
+    "image": "/shirts/160.jpg",
+    "original_image": "/shirts/160.jpg"
+  },
+  {
+    "id": 161,
+    "team": "República Checa",
+    "year": 2018,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de República Checa de 2018.",
+    "filename": "camiseta-visitante-republica-checa-2018.jpg",
+    "image": "/shirts/161.jpg",
+    "original_image": "/shirts/161.jpg"
+  },
+  {
+    "id": 162,
+    "team": "Senegal",
+    "year": 2006,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Senegal de 2006.",
+    "filename": "camiseta-visitante-senegal-2006.jpg",
+    "image": "/shirts/162.jpg",
+    "original_image": "/shirts/162.jpg"
+  },
+  {
+    "id": 163,
+    "team": "Sudáfrica",
+    "year": 2006,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Sudáfrica de 2006.",
+    "filename": "camiseta-visitante-sudafrica-2006.jpg",
+    "image": "/shirts/163.jpg",
+    "original_image": "/shirts/163.jpg"
+  },
+  {
+    "id": 164,
+    "team": "Sudáfrica",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Sudáfrica de 2026.",
+    "filename": "camiseta-visitante-sudafrica-2026.jpg",
+    "image": "/shirts/164.jpg",
+    "original_image": "/shirts/164.jpg"
+  },
+  {
+    "id": 165,
+    "team": "Suecia",
+    "year": 1992,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Suecia de 1992.",
+    "filename": "camiseta-visitante-suecia-1992.jpg",
+    "image": "/shirts/165.jpg",
+    "original_image": "/shirts/165.jpg"
+  },
+  {
+    "id": 166,
+    "team": "Suecia",
+    "year": 2002,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Suecia de 2002.",
+    "filename": "camiseta-visitante-suecia-2002.jpg",
+    "image": "/shirts/166.jpg",
+    "original_image": "/shirts/166.jpg"
+  },
+  {
+    "id": 167,
+    "team": "Suecia",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Suecia de 2026.",
+    "filename": "camiseta-visitante-suecia-2026.jpg",
+    "image": "/shirts/167.jpg",
+    "original_image": "/shirts/167.jpg"
+  },
+  {
+    "id": 168,
+    "team": "Suiza",
+    "year": 2006,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Suiza de 2006.",
+    "filename": "camiseta-visitante-suiza-2006.jpg",
+    "image": "/shirts/168.jpg",
+    "original_image": "/shirts/168.jpg"
+  },
+  {
+    "id": 169,
+    "team": "Turquía",
+    "year": 1990,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Turquía de 1990.",
+    "filename": "camiseta-visitante-turquia-1990.jpg",
+    "image": "/shirts/169.jpg",
+    "original_image": "/shirts/169.jpg"
+  },
+  {
+    "id": 170,
+    "team": "Uruguay",
+    "year": 1986,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Uruguay de 1986.",
+    "filename": "camiseta-visitante-uruguay-1986.jpg",
+    "image": "/shirts/170.jpg",
+    "original_image": "/shirts/170.jpg"
+  },
+  {
+    "id": 171,
+    "team": "Uruguay",
+    "year": 2026,
+    "color": "Visitante",
+    "desc": "Camiseta visitante de Uruguay de 2026.",
+    "filename": "camiseta-visitante-uruguay-2026.jpg",
+    "image": "/shirts/171.jpg",
+    "original_image": "/shirts/171.jpg"
+  },
+  {
+    "id": 172,
+    "team": "Alemania",
+    "year": 1998,
+    "color": "Entrenamiento",
+    "desc": "Camiseta entrenamiento de Alemania de 1998.",
+    "filename": "shirt-entrenamiento-alemania-1998.jpg",
+    "image": "/shirts/172.jpg",
+    "original_image": "/shirts/172.jpg"
+  },
+  {
+    "id": 173,
+    "team": "España",
+    "year": 1994,
+    "color": "Tercera",
+    "desc": "Camiseta tercera de España de 1994.",
+    "filename": "tercera-camiseta-espana-1994.jpg",
+    "image": "/shirts/173.jpg",
+    "original_image": "/shirts/173.jpg"
+  },
+  {
+    "id": 174,
+    "team": "Inglaterra",
+    "year": 1990,
+    "color": "Tercera",
+    "desc": "Camiseta tercera de Inglaterra de 1990.",
+    "filename": "tercera-camiseta-inglaterra-1990.jpg",
+    "image": "/shirts/174.jpg",
+    "original_image": "/shirts/174.jpg"
+  },
+  {
+    "id": 175,
+    "team": "México",
+    "year": 2026,
+    "color": "Tercera",
+    "desc": "Camiseta tercera de México de 2026.",
+    "filename": "tercera-camiseta-mexico-2026.jpg",
+    "image": "/shirts/175.jpg",
+    "original_image": "/shirts/175.jpg"
   }
 ]

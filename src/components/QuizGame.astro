@@ -8,8 +8,8 @@
   <div id="start-screen" class="js-start-screen w-full max-w-5xl mx-auto px-4 md:px-12 pt-3 md:pt-6 pb-8 md:pb-24">
     <!-- Cabecera -->
     <header class="text-center mb-6 md:mb-12 stagger-load">
-      <h1 class="font-display-xl text-[44px] md:text-7xl uppercase leading-none tracking-tighter italic mb-2">RETRO SHIRT QUIZ</h1>
-      <p class="font-label-mono text-[9px] md:text-label-mono text-secondary uppercase tracking-widest">Identifica las camisetas mas legendarias de los mundiales</p>
+      <h1 class="font-display-xl text-[44px] md:text-7xl uppercase leading-none tracking-tighter italic mb-2">SHIRT QUIZ</h1>
+      <p class="font-label-mono text-[9px] md:text-label-mono text-secondary uppercase tracking-widest">Adivina la selección y el año de cada camiseta</p>
     </header>
 
     <!-- Banner espectacular responsivo -->
@@ -17,7 +17,7 @@
       <div class="absolute inset-0 bg-black/10 z-10"></div>
       <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image: url('/images/hero_banner.png')"></div>
       <div class="absolute bottom-2 left-2 md:bottom-6 md:left-6 z-20 bg-primary text-on-primary border-[2px] border-black px-2 py-0.5 md:px-4 md:py-2 brutalist-shadow">
-        <span class="font-headline-md text-xs md:text-xl uppercase tracking-widest italic text-white">RETRO WORLD CUP KITS</span>
+        <span class="font-headline-md text-xs md:text-xl uppercase tracking-widest italic text-white">NATIONAL TEAM KITS</span>
       </div>
     </div>
 
@@ -30,8 +30,8 @@
           <span class="font-label-mono text-[10px] bg-green-500 text-white px-2 py-1 uppercase font-bold">MODO FÁCIL</span>
         </div>
         <div class="mt-4 md:mt-0">
-          <h3 class="font-headline-md text-xl text-primary uppercase font-bold">ERA MODERNA</h3>
-          <p class="font-label-mono text-xs text-secondary mt-2">Camisetas de 1994 a 2022. Diseños modernos y fáciles de reconocer.</p>
+          <h3 class="font-headline-md text-xl text-primary uppercase font-bold">MODERNAS</h3>
+          <p class="font-label-mono text-xs text-secondary mt-2">Camisetas desde 2000. Diseños recientes y fáciles de reconocer.</p>
         </div>
       </button>
 
@@ -42,8 +42,8 @@
           <span class="font-label-mono text-[10px] bg-amber-500 text-white px-2 py-1 uppercase font-bold">MODO DIFÍCIL</span>
         </div>
         <div class="mt-4 md:mt-0">
-          <h3 class="font-headline-md text-xl text-primary uppercase font-bold">ERA CLÁSICA</h3>
-          <p class="font-label-mono text-xs text-secondary mt-2">Camisetas de 1974 a 1993. Los grandes diseños de la era dorada.</p>
+          <h3 class="font-headline-md text-xl text-primary uppercase font-bold">CLÁSICAS</h3>
+          <p class="font-label-mono text-xs text-secondary mt-2">Camisetas de 1970 a 1999. Los grandes diseños de la era dorada.</p>
         </div>
       </button>
 
@@ -54,8 +54,8 @@
           <span class="font-label-mono text-[10px] bg-red-600 text-white px-2 py-1 uppercase font-bold">MODO EXTREMO</span>
         </div>
         <div class="mt-4 md:mt-0">
-          <h3 class="font-headline-md text-xl text-on-primary uppercase font-bold !text-white">ERA LEYENDA</h3>
-          <p class="font-label-mono text-xs !text-white opacity-80 mt-2">Camisetas de 1930 a 1970. Equipaciones antiguas, raras e históricas.</p>
+          <h3 class="font-headline-md text-xl text-on-primary uppercase font-bold !text-white">HISTÓRICAS</h3>
+          <p class="font-label-mono text-xs !text-white opacity-80 mt-2">Camisetas anteriores a 1970. Equipaciones antiguas, raras y legendarias.</p>
         </div>
       </button>
 
@@ -80,7 +80,7 @@
             Apoya el proyecto ❤️
           </a>
           <p class="font-label-mono text-[9px] text-on-surface-variant opacity-40 uppercase tracking-widest text-center md:text-right">
-            © 2026 JERSEY PRO • FIFA 2026 UNITY PULSE
+            © 2026 SHIRT QUIZ • NATIONAL TEAM KITS EDITION
           </p>
         </div>
       </div>
@@ -453,11 +453,11 @@
     // Filtrar camisetas según dificultad
     let filteredShirts = [...shirts];
     if (mode === 'easy') {
-      filteredShirts = shirts.filter(s => s.year >= 1994);
+      filteredShirts = shirts.filter(s => s.year >= 2000);
     } else if (mode === 'medium') {
-      filteredShirts = shirts.filter(s => s.year >= 1974 && s.year < 1994);
+      filteredShirts = shirts.filter(s => s.year >= 1970 && s.year < 2000);
     } else if (mode === 'hard') {
-      filteredShirts = shirts.filter(s => s.year < 1974);
+      filteredShirts = shirts.filter(s => s.year < 1970);
     }
 
     // Barajar las filtradas
