@@ -259,3 +259,17 @@ h1, h2, h3, .font-display {
   background: #000000;
   border-radius: 0px;
 }
+
+/* Imagen de camiseta: compacta en móvil, aspect-ratio completo en desktop */
+.shirt-image-box {
+  width: 100%;
+  height: clamp(130px, 28dvh, 260px);
+}
+
+@media (min-width: 768px) {
+  .shirt-image-box {
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+}
+
