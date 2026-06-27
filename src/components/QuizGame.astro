@@ -139,12 +139,10 @@
 
           <div class="w-full h-[250px] md:h-auto md:aspect-[4/5] bg-white border-2 border-primary brutalist-shadow flex items-center justify-center p-4 md:p-6 relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-40 h-40 bg-electric-turquoise opacity-20 rotate-12"></div>
-            <div class="w-full h-full relative z-10 flex items-center justify-center">
-              <!-- Loader de imagen -->
+            <div class="w-full h-full relative z-10 flex items-center justify-center js-shirt-slot">
               <div class="absolute inset-0 bg-white flex items-center justify-center js-image-loader">
                 <div class="w-10 h-10 border-4 border-black border-t-transparent animate-spin"></div>
               </div>
-              <img class="w-full h-full object-contain hidden js-shirt-image" src="" alt="Camiseta retro del mundial" />
             </div>
             <!-- Badge de tipo de pregunta ("SELECCIÓN" o "AÑO") -->
             <div class="absolute bottom-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-mono text-[10px] tracking-widest js-question-type-badge z-20">
@@ -314,6 +312,23 @@
 
   const shirts = shirtsData as Shirt[];
   const LETTERS = ['A', 'B', 'C', 'D'];
+
+  interface OptimizedShirtImage {
+    src: string;
+    width: number;
+    height: number;
+    webpSrcset: string;
+    avifSrcset: string;
+    sizes: string;
+  }
+
+  let optimizedImageMap: Record<number, OptimizedShirtImage> = {};
+  try {
+    const mapEl = document.getElementById('shirt-image-map');
+    if (mapEl?.textContent) optimizedImageMap = JSON.parse(mapEl.textContent);
+  } catch {
+    optimizedImageMap = {};
+  }
 
   let currentMode = 'team';
   let currentQuestionIndex = 0;
@@ -486,46 +501,76 @@
   function loadNextQuestion() {
     isAnswered = false;
     currentShirt = selectedShirts[currentQuestionIndex];
-    
+
     updateTextContent('.js-question-index', `${currentQuestionIndex + 1}/${selectedShirts.length}`);
     updateProgress();
 
-    // Loader e Imagen
-    const loaders = document.querySelectorAll('.js-image-loader');
-    const images = document.querySelectorAll('.js-shirt-image');
-    
-    loaders.forEach(loader => loader.classList.remove('hidden'));
-    images.forEach(img => img.classList.add('hidden'));
+    // Reconstruir slot de imagen en cada pregunta
+    const slots = document.querySelectorAll('.js-shirt-slot');
+    slots.forEach((slot) => {
+      slot.innerHTML = '';
 
-    const imageCandidates = getShirtImageCandidates(currentShirt);
-    let candidateIndex = 0;
-    let searchedCommons = false;
+      const loader = document.createElement('div');
+      loader.className = 'absolute inset-0 bg-white flex items-center justify-center js-image-loader';
+      loader.innerHTML = '<div class="w-10 h-10 border-4 border-black border-t-transparent animate-spin"></div>';
+      slot.appendChild(loader);
 
-    images.forEach(img => {
-      const imageElement = img as HTMLImageElement;
-      
-      imageElement.onload = () => {
-        loaders.forEach(l => l.classList.add('hidden'));
-        images.forEach(i => i.classList.remove('hidden'));
-      };
+      const optimized = currentShirt ? optimizedImageMap[currentShirt.id] : undefined;
 
-      imageElement.onerror = () => {
-        candidateIndex += 1;
-        if (candidateIndex < imageCandidates.length) {
-          imageElement.src = imageCandidates[candidateIndex];
-          return;
-        }
-        if (!searchedCommons) {
-          searchedCommons = true;
-          searchShirtImageUrl(currentShirt!.team, currentShirt!.year).then((url) => {
-            imageElement.src = url ?? '/favicon.svg';
-          });
-          return;
-        }
-        imageElement.src = '/favicon.svg';
-      };
-      
-      imageElement.src = imageCandidates[0] ?? '/favicon.svg';
+      if (optimized) {
+        const picture = document.createElement('picture');
+        picture.innerHTML = `
+          <source type="image/avif" srcset="${optimized.avifSrcset}" sizes="${optimized.sizes}">
+          <source type="image/webp" srcset="${optimized.webpSrcset}" sizes="${optimized.sizes}">
+          <img class="w-full h-full object-contain js-shirt-image hidden"
+               src="${optimized.src}"
+               width="${optimized.width}"
+               height="${optimized.height}"
+               decoding="async"
+               loading="lazy"
+               alt="Camiseta retro del mundial" />
+        `;
+        slot.appendChild(picture);
+
+        const img = picture.querySelector('img') as HTMLImageElement;
+        const hideLoader = () => {
+          loader.classList.add('hidden');
+          img.classList.remove('hidden');
+        };
+        img.onload = hideLoader;
+        img.decode?.().then(hideLoader).catch(() => {});
+      } else {
+        // Fallback dinámico (sin asset optimizado disponible)
+        const imageCandidates = getShirtImageCandidates(currentShirt!);
+        let candidateIndex = 0;
+        let searchedCommons = false;
+        const imageElement = document.createElement('img');
+        imageElement.className = 'w-full h-full object-contain hidden js-shirt-image';
+        imageElement.alt = 'Camiseta retro del mundial';
+        slot.appendChild(imageElement);
+
+        const showLoaded = () => {
+          loader.classList.add('hidden');
+          imageElement.classList.remove('hidden');
+        };
+        imageElement.onload = showLoaded;
+        imageElement.onerror = () => {
+          candidateIndex += 1;
+          if (candidateIndex < imageCandidates.length) {
+            imageElement.src = imageCandidates[candidateIndex];
+            return;
+          }
+          if (!searchedCommons) {
+            searchedCommons = true;
+            searchShirtImageUrl(currentShirt!.team, currentShirt!.year).then((url) => {
+              imageElement.src = url ?? '/favicon.svg';
+            });
+            return;
+          }
+          imageElement.src = '/favicon.svg';
+        };
+        imageElement.src = imageCandidates[0] ?? '/favicon.svg';
+      }
     });
 
     // Enunciado
@@ -536,7 +581,7 @@
     } else if (currentMode === 'hard') {
       typeBadgeText = 'Extremo';
     }
-    
+
     updateTextContent('.js-question-text', questionText);
     updateTextContent('.js-question-type-badge', typeBadgeText);
 
