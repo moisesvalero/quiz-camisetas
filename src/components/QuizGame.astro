@@ -510,10 +510,23 @@
     slots.forEach((slot) => {
       slot.innerHTML = '';
 
+      // Loader: solo el spinner, transparente, encima de la imagen
       const loader = document.createElement('div');
-      loader.className = 'absolute inset-0 bg-white flex items-center justify-center js-image-loader';
-      loader.innerHTML = '<div class="w-10 h-10 border-4 border-black border-t-transparent animate-spin"></div>';
+      loader.className = 'absolute inset-0 z-10 flex items-center justify-center pointer-events-none js-image-loader';
+      loader.innerHTML = '<div class="w-10 h-10 border-4 border-black border-t-transparent bg-white/70 animate-spin"></div>';
       slot.appendChild(loader);
+
+      const hideLoader = () => loader.classList.add('hidden');
+      const revealLoader = (img: HTMLImageElement) => {
+        if (img.complete && img.naturalWidth > 0) {
+          hideLoader();
+          return;
+        }
+        img.onload = hideLoader;
+        img.decode?.().then(hideLoader).catch(() => {});
+        // Fallback: si el navegador difiere onload (lazy intervention), oculta tras 1.2s
+        setTimeout(hideLoader, 1200);
+      };
 
       const optimized = currentShirt ? optimizedImageMap[currentShirt.id] : undefined;
 
@@ -522,38 +535,28 @@
         picture.innerHTML = `
           <source type="image/avif" srcset="${optimized.avifSrcset}" sizes="${optimized.sizes}">
           <source type="image/webp" srcset="${optimized.webpSrcset}" sizes="${optimized.sizes}">
-          <img class="w-full h-full object-contain js-shirt-image hidden"
+          <img class="w-full h-full object-contain js-shirt-image"
                src="${optimized.src}"
                width="${optimized.width}"
                height="${optimized.height}"
                decoding="async"
-               loading="lazy"
                alt="Camiseta retro del mundial" />
         `;
         slot.appendChild(picture);
 
         const img = picture.querySelector('img') as HTMLImageElement;
-        const hideLoader = () => {
-          loader.classList.add('hidden');
-          img.classList.remove('hidden');
-        };
-        img.onload = hideLoader;
-        img.decode?.().then(hideLoader).catch(() => {});
+        revealLoader(img);
       } else {
         // Fallback dinámico (sin asset optimizado disponible)
         const imageCandidates = getShirtImageCandidates(currentShirt!);
         let candidateIndex = 0;
         let searchedCommons = false;
         const imageElement = document.createElement('img');
-        imageElement.className = 'w-full h-full object-contain hidden js-shirt-image';
+        imageElement.className = 'w-full h-full object-contain js-shirt-image';
         imageElement.alt = 'Camiseta retro del mundial';
         slot.appendChild(imageElement);
 
-        const showLoaded = () => {
-          loader.classList.add('hidden');
-          imageElement.classList.remove('hidden');
-        };
-        imageElement.onload = showLoaded;
+        imageElement.onload = () => hideLoader();
         imageElement.onerror = () => {
           candidateIndex += 1;
           if (candidateIndex < imageCandidates.length) {
@@ -570,6 +573,7 @@
           imageElement.src = '/favicon.svg';
         };
         imageElement.src = imageCandidates[0] ?? '/favicon.svg';
+        revealLoader(imageElement);
       }
     });
 
