@@ -1,85 +1,185 @@
 ---
+
 ---
 
 <div class="quiz-game-wrapper w-full">
-  <canvas id="confetti-canvas" class="confetti-canvas" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9998;" aria-hidden="true"></canvas>
+  <canvas
+    id="confetti-canvas"
+    class="confetti-canvas"
+    style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9998;"
+    aria-hidden="true"></canvas>
 
   <!-- ==================== PANTALLAS DE INICIO ==================== -->
-  <div id="start-screen" class="js-start-screen w-full max-w-5xl mx-auto px-4 md:px-12 pt-3 md:pt-6 pb-8 md:pb-24">
+  <div
+    id="start-screen"
+    class="js-start-screen w-full max-w-5xl mx-auto px-4 md:px-12 pt-3 md:pt-6 pb-8 md:pb-24"
+  >
     <!-- Cabecera -->
     <header class="text-center mb-6 md:mb-12 stagger-load safe-area-top">
-      <h1 class="font-display-xl text-[44px] md:text-7xl uppercase leading-none tracking-tighter italic mb-2">SHIRT QUIZ</h1>
-      <p class="font-label-mono text-[9px] md:text-label-mono text-secondary uppercase tracking-widest">Adivina la selección y el año de cada camiseta</p>
+      <h1
+        class="font-display-xl text-[44px] md:text-7xl uppercase leading-none tracking-tighter italic mb-2"
+      >
+        SHIRT QUIZ
+      </h1>
+      <p
+        class="font-label-mono text-[9px] md:text-label-mono text-secondary uppercase tracking-widest"
+      >
+        Adivina la selección y el año de cada camiseta
+      </p>
     </header>
 
     <!-- Banner espectacular responsivo -->
-    <div class="w-full h-28 md:h-64 border-2 border-primary overflow-hidden relative bento-card brutalist-shadow mb-6 md:mb-12 stagger-load delay-1">
+    <div
+      class="w-full h-28 md:h-64 border-2 border-primary overflow-hidden relative bento-card brutalist-shadow mb-6 md:mb-12 stagger-load delay-1"
+    >
       <div class="absolute inset-0 bg-black/10 z-10"></div>
-      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image: url('/images/hero_banner.png')"></div>
-      <div class="absolute bottom-2 left-2 md:bottom-6 md:left-6 z-20 bg-primary text-on-primary border-[2px] border-black px-2 py-0.5 md:px-4 md:py-2 brutalist-shadow">
-        <span class="font-headline-md text-xs md:text-xl uppercase tracking-widest italic text-white">NATIONAL TEAM KITS</span>
+      <div
+        class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
+        style="background-image: url('/images/hero_banner.png')"
+      >
+      </div>
+      <div
+        class="absolute bottom-2 left-2 md:bottom-6 md:left-6 z-20 bg-primary text-on-primary border-[2px] border-black px-2 py-0.5 md:px-4 md:py-2 brutalist-shadow"
+      >
+        <span
+          class="font-headline-md text-xs md:text-xl uppercase tracking-widest italic text-white"
+          >NATIONAL TEAM KITS</span
+        >
       </div>
     </div>
 
     <!-- Rejilla de Modos Bento Grid responsiva -->
     <div class="grid grid-cols-1 md:grid-cols-12 gap-4 stagger-load delay-2">
       <!-- MODO FÁCIL -->
-      <button class="col-span-1 md:col-span-4 min-h-[14rem] md:h-64 bg-surface-container-lowest border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button" data-mode="easy">
+      <button
+        class="col-span-1 md:col-span-4 min-h-[14rem] md:h-64 bg-surface-container-lowest border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button"
+        data-mode="easy"
+      >
         <div class="flex justify-between items-center w-full">
-          <span class="material-symbols-outlined text-primary text-3xl">sentiment_satisfied</span>
-          <span class="font-label-mono text-[10px] bg-green-500 text-white px-2 py-1 uppercase font-bold">MODO FÁCIL</span>
+          <span class="material-symbols-outlined text-primary text-3xl"
+            >sentiment_satisfied</span
+          >
+          <span
+            class="font-label-mono text-[10px] bg-green-500 text-white px-2 py-1 uppercase font-bold"
+            >MODO FÁCIL</span
+          >
         </div>
         <div class="mt-4 md:mt-0">
-          <h3 class="font-headline-md text-xl text-primary uppercase font-bold">MODERNAS</h3>
-          <p class="font-label-mono text-xs text-secondary mt-2">Camisetas desde 2000. Diseños recientes y fáciles de reconocer.</p>
+          <h3 class="font-headline-md text-xl text-primary uppercase font-bold">
+            MODERNAS
+          </h3>
+          <p class="font-label-mono text-xs text-secondary mt-2">
+            Camisetas desde 2000. Diseños recientes y fáciles de reconocer.
+          </p>
         </div>
       </button>
 
       <!-- MODO DIFÍCIL -->
-      <button class="col-span-1 md:col-span-4 min-h-[14rem] md:h-64 bg-surface-container-lowest border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button" data-mode="medium">
+      <button
+        class="col-span-1 md:col-span-4 min-h-[14rem] md:h-64 bg-surface-container-lowest border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button"
+        data-mode="medium"
+      >
         <div class="flex justify-between items-center w-full">
-          <span class="material-symbols-outlined text-primary text-3xl">sentiment_neutral</span>
-          <span class="font-label-mono text-[10px] bg-amber-500 text-white px-2 py-1 uppercase font-bold">MODO DIFÍCIL</span>
+          <span class="material-symbols-outlined text-primary text-3xl"
+            >sentiment_neutral</span
+          >
+          <span
+            class="font-label-mono text-[10px] bg-amber-500 text-white px-2 py-1 uppercase font-bold"
+            >MODO DIFÍCIL</span
+          >
         </div>
         <div class="mt-4 md:mt-0">
-          <h3 class="font-headline-md text-xl text-primary uppercase font-bold">CLÁSICAS</h3>
-          <p class="font-label-mono text-xs text-secondary mt-2">Camisetas de 1970 a 1999. Los grandes diseños de la era dorada.</p>
+          <h3 class="font-headline-md text-xl text-primary uppercase font-bold">
+            CLÁSICAS
+          </h3>
+          <p class="font-label-mono text-xs text-secondary mt-2">
+            Camisetas de 1970 a 1999. Los grandes diseños de la era dorada.
+          </p>
         </div>
       </button>
 
       <!-- MODO EXTREMO -->
-      <button class="col-span-1 md:col-span-4 min-h-[14rem] md:h-64 !bg-primary border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button" data-mode="hard">
+      <button
+        class="col-span-1 md:col-span-4 min-h-[14rem] md:h-64 !bg-primary border-2 border-primary p-6 flex flex-col justify-between text-left bento-card brutalist-shadow group cursor-pointer js-mode-button"
+        data-mode="hard"
+      >
         <div class="flex justify-between items-center w-full">
-          <span class="material-symbols-outlined text-on-primary text-3xl text-white">sentiment_extremely_dissatisfied</span>
-          <span class="font-label-mono text-[10px] bg-red-600 text-white px-2 py-1 uppercase font-bold">MODO EXTREMO</span>
+          <span
+            class="material-symbols-outlined text-on-primary text-3xl text-white"
+            >sentiment_extremely_dissatisfied</span
+          >
+          <span
+            class="font-label-mono text-[10px] bg-red-600 text-white px-2 py-1 uppercase font-bold"
+            >MODO EXTREMO</span
+          >
         </div>
         <div class="mt-4 md:mt-0">
-          <h3 class="font-headline-md text-xl text-on-primary uppercase font-bold !text-white">HISTÓRICAS</h3>
-          <p class="font-label-mono text-xs !text-white opacity-80 mt-2">Camisetas anteriores a 1970. Equipaciones antiguas, raras y legendarias.</p>
+          <h3
+            class="font-headline-md text-xl text-on-primary uppercase font-bold !text-white"
+          >
+            HISTÓRICAS
+          </h3>
+          <p class="font-label-mono text-xs !text-white opacity-80 mt-2">
+            Camisetas anteriores a 1970. Equipaciones antiguas, raras y
+            legendarias.
+          </p>
         </div>
       </button>
 
       <!-- FOOTER / CRÉDITOS UNIFICADO -->
-      <div class="col-span-1 md:col-span-12 border-2 border-primary p-6 flex flex-col md:flex-row items-center justify-between bg-surface-container-lowest bento-card gap-6 md:gap-0 mt-4 md:mt-0">
+      <div
+        class="col-span-1 md:col-span-12 border-2 border-primary p-6 flex flex-col md:flex-row items-center justify-between bg-surface-container-lowest bento-card gap-6 md:gap-0 mt-4 md:mt-0"
+      >
         <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
           <div class="flex flex-col items-center md:items-start">
-            <span class="font-label-mono text-[10px] text-secondary uppercase">GitHub</span>
-            <a href="https://github.com/moisesvalero/quiz-camisetas" target="_blank" rel="noopener noreferrer" class="font-headline-md text-lg flex items-center gap-1.5 underline">
-              <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            <span class="font-label-mono text-[10px] text-secondary uppercase"
+              >GitHub</span
+            >
+            <a
+              href="https://github.com/moisesvalero/quiz-camisetas"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-headline-md text-lg flex items-center gap-1.5 underline"
+            >
+              <svg
+                class="w-5 h-5 text-primary"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                ><path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"
+                ></path></svg
+              >
               ⭐ Star on GitHub
             </a>
           </div>
           <div class="hidden md:block h-8 w-[1px] bg-outline-variant"></div>
           <div class="flex flex-col items-center md:items-start">
-            <span class="font-label-mono text-[10px] text-secondary uppercase">Proveedor de datos</span>
-            <a href="https://www.footballkitarchive.com/world-cup-kits-l308/" target="_blank" rel="noopener noreferrer" class="font-headline-md text-lg underline">Football Kit Archive</a>
+            <span class="font-label-mono text-[10px] text-secondary uppercase"
+              >Proveedor de datos</span
+            >
+            <a
+              href="https://www.footballkitarchive.com/world-cup-kits-l308/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-headline-md text-lg underline">Football Kit Archive</a
+            >
           </div>
         </div>
         <div class="flex flex-col items-center md:items-end gap-3">
-          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=moi6%40outlook%2ecom&lc=ES&item_name=Retro%20Shirt%20Quiz&currency_code=EUR" target="_blank" rel="noopener noreferrer" class="btn-donate">
+          <a
+            href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=moi6%40outlook%2ecom&lc=ES&item_name=Retro%20Shirt%20Quiz&currency_code=EUR"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-donate"
+          >
             Apoya el proyecto ❤️
           </a>
-          <p class="font-label-mono text-[9px] text-on-surface-variant opacity-40 uppercase tracking-widest text-center md:text-right">
+          <p
+            class="font-label-mono text-[9px] text-on-surface-variant opacity-40 uppercase tracking-widest text-center md:text-right"
+          >
             © 2026 SHIRT QUIZ • NATIONAL TEAM KITS EDITION
           </p>
         </div>
@@ -88,86 +188,161 @@
   </div>
 
   <!-- ==================== PANTALLAS DE JUEGO ==================== -->
-    <div id="game-screen" class="js-game-screen hidden w-full flex flex-col" style="height: 100dvh;">
+  <div
+    id="game-screen"
+    class="js-game-screen hidden w-full flex flex-col"
+    style="height: 100dvh;"
+  >
     <!-- CABECERA DE JUEGO UNIFICADA Y RESPONSIVA -->
-    <header class="w-full min-h-16 md:min-h-20 flex items-center justify-between px-4 md:px-12 border-b-2 border-primary bg-white sticky top-0 z-20 safe-area-top">
+    <header
+      class="w-full min-h-16 md:min-h-20 flex items-center justify-between px-4 md:px-12 border-b-2 border-primary bg-white sticky top-0 z-20 safe-area-top"
+    >
       <!-- Izquierda: Racha y Vidas -->
       <div class="flex items-center gap-2 md:gap-4">
-        <div class="bento-border bg-primary text-on-primary px-2.5 py-1 md:px-4 md:py-2 flex items-center gap-1 md:gap-2">
-          <span class="material-symbols-outlined text-on-primary text-xs md:text-base">local_fire_department</span>
-          <span class="font-label-mono text-[10px] md:text-label-mono">RACHA: <span class="js-current-streak">0</span></span>
+        <div
+          class="bento-border bg-primary text-on-primary px-2.5 py-1 md:px-4 md:py-2 flex items-center gap-1 md:gap-2"
+        >
+          <span
+            class="material-symbols-outlined text-on-primary text-xs md:text-base"
+            >local_fire_department</span
+          >
+          <span class="font-label-mono text-[10px] md:text-label-mono"
+            >RACHA: <span class="js-current-streak">0</span></span
+          >
         </div>
         <!-- Corazones (vidas) -->
         <div class="flex items-center gap-0.5 md:gap-1.5 ml-1">
-          <span class="material-symbols-outlined text-[#FF007A] text-[18px] md:text-[26px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
-          <span class="material-symbols-outlined text-[#FF007A] text-[18px] md:text-[26px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
-          <span class="material-symbols-outlined text-[#FF007A] text-[18px] md:text-[26px] js-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
+          <span
+            class="material-symbols-outlined text-[#FF007A] text-[18px] md:text-[26px] js-heart"
+            style="font-variation-settings: 'FILL' 1;">favorite</span
+          >
+          <span
+            class="material-symbols-outlined text-[#FF007A] text-[18px] md:text-[26px] js-heart"
+            style="font-variation-settings: 'FILL' 1;">favorite</span
+          >
+          <span
+            class="material-symbols-outlined text-[#FF007A] text-[18px] md:text-[26px] js-heart"
+            style="font-variation-settings: 'FILL' 1;">favorite</span
+          >
         </div>
       </div>
 
       <!-- Centro: Título -->
-      <div class="font-display-xl text-primary font-black tracking-tighter text-sm md:text-[28px] italic cursor-pointer js-btn-home leading-tight" role="button">
+      <div
+        class="font-display-xl text-primary font-black tracking-tighter text-sm md:text-[28px] italic cursor-pointer js-btn-home leading-tight"
+        role="button"
+      >
         RETRO SHIRT QUIZ
       </div>
 
       <!-- Derecha: Puntos y Botón Home -->
       <div class="flex items-center gap-3 md:gap-6">
         <div class="flex flex-col items-end">
-          <span class="hidden md:inline font-label-mono text-xs uppercase opacity-60 tracking-widest">Puntos Actuales</span>
-          <span class="font-display-xl text-lg md:text-[40px] leading-none text-primary js-current-score">0</span>
+          <span
+            class="hidden md:inline font-label-mono text-xs uppercase opacity-60 tracking-widest"
+            >Puntos Actuales</span
+          >
+          <span
+            class="font-display-xl text-lg md:text-[40px] leading-none text-primary js-current-score"
+            >0</span
+          >
         </div>
-        <button class="bento-border bg-surface-container-lowest p-1.5 md:p-2 hover:bg-red-50 hover:text-red-600 transition-colors js-btn-home" aria-label="Volver a Inicio">
-          <span class="material-symbols-outlined text-lg md:text-2xl">home</span>
+        <button
+          class="bento-border bg-surface-container-lowest p-1.5 md:p-2 hover:bg-red-50 hover:text-red-600 transition-colors js-btn-home"
+          aria-label="Volver a Inicio"
+        >
+          <span class="material-symbols-outlined text-lg md:text-2xl">home</span
+          >
         </button>
       </div>
     </header>
 
     <!-- CUERPO DE JUEGO RESPONSIVO -->
-    <main class="w-full max-w-5xl mx-auto px-4 md:px-12 py-2 md:py-10 flex-grow overflow-hidden flex flex-col">
+    <main
+      class="w-full max-w-5xl mx-auto px-4 md:px-12 py-2 md:py-10 flex-grow overflow-hidden flex flex-col"
+    >
       <!-- Barra de progreso arriba -->
-      <div class="w-full h-2 md:h-3 bg-surface-container border-2 border-primary relative overflow-hidden mb-3 md:mb-6">
-        <div class="h-full bg-neon-pink border-r-2 border-primary transition-all duration-300 js-progress-fill" style="width: 0%;"></div>
+      <div
+        class="w-full h-2 md:h-3 bg-surface-container border-2 border-primary relative overflow-hidden mb-3 md:mb-6"
+      >
+        <div
+          class="h-full bg-neon-pink border-r-2 border-primary transition-all duration-300 js-progress-fill"
+          style="width: 0%;"
+        >
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 items-start flex-grow min-h-0">
+      <div
+        class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 items-start flex-grow min-h-0"
+      >
         <!-- Columna de la camiseta (Izquierda) -->
-        <section class="col-span-1 md:col-span-6 flex flex-col gap-2 md:gap-4 relative">
+        <section
+          class="col-span-1 md:col-span-6 flex flex-col gap-2 md:gap-4 relative"
+        >
           <!-- Balón indicador de dificultad (solo tablet/desktop) -->
-          <div class="absolute -top-6 left-[0%] transform -translate-x-1/2 transition-all duration-300 hidden md:block" id="soccer-indicator-tablet">
-            <span class="material-symbols-outlined text-primary text-3xl animate-bounce">sports_soccer</span>
+          <div
+            class="absolute -top-6 left-[0%] transform -translate-x-1/2 transition-all duration-300 hidden md:block"
+            id="soccer-indicator-tablet"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-3xl animate-bounce"
+              >sports_soccer</span
+            >
           </div>
 
-          <div class="w-full h-[250px] md:h-auto md:aspect-[4/5] bg-white border-2 border-primary brutalist-shadow flex items-center justify-center p-4 md:p-6 relative overflow-hidden">
-            <div class="absolute -top-10 -right-10 w-40 h-40 bg-electric-turquoise opacity-20 rotate-12"></div>
-            <div class="w-full h-full relative z-10 flex items-center justify-center js-shirt-slot">
-              <div class="absolute inset-0 bg-white flex items-center justify-center js-image-loader">
-                <div class="w-10 h-10 border-4 border-black border-t-transparent animate-spin"></div>
+          <div
+            class="w-full h-[250px] md:h-auto md:aspect-[4/5] bg-white border-2 border-primary brutalist-shadow flex items-center justify-center p-4 md:p-6 relative overflow-hidden"
+          >
+            <div
+              class="absolute -top-10 -right-10 w-40 h-40 bg-electric-turquoise opacity-20 rotate-12"
+            >
+            </div>
+            <div
+              class="w-full h-full relative z-10 flex items-center justify-center js-shirt-slot"
+            >
+              <div
+                class="absolute inset-0 bg-white flex items-center justify-center js-image-loader"
+              >
+                <div
+                  class="w-10 h-10 border-4 border-black border-t-transparent animate-spin"
+                >
+                </div>
               </div>
             </div>
             <!-- Badge de tipo de pregunta ("SELECCIÓN" o "AÑO") -->
-            <div class="absolute bottom-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-mono text-[10px] tracking-widest js-question-type-badge z-20">
+            <div
+              class="absolute bottom-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-mono text-[10px] tracking-widest js-question-type-badge z-20"
+            >
               SELECCIÓN
             </div>
           </div>
-
-
         </section>
 
         <!-- Columna de interacción (Derecha) -->
-        <section class="col-span-1 md:col-span-6 flex flex-col justify-between gap-1 md:gap-6">
+        <section
+          class="col-span-1 md:col-span-6 flex flex-col justify-between gap-1 md:gap-6"
+        >
           <div class="space-y-1 md:space-y-4">
             <!-- Pregunta actual (número de pregunta y texto) -->
             <div class="flex flex-col gap-0.5 md:gap-1">
-              <span class="font-label-mono text-[10px] md:text-label-mono text-secondary flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-xs md:text-[15px]">quiz</span> PREGUNTA <span class="js-question-index">1</span>
+              <span
+                class="font-label-mono text-[10px] md:text-label-mono text-secondary flex items-center gap-1.5"
+              >
+                <span class="material-symbols-outlined text-xs md:text-[15px]"
+                  >quiz</span
+                > PREGUNTA <span class="js-question-index">1</span>
               </span>
-              <h2 class="font-display-xl text-sm md:text-3xl text-primary uppercase tracking-tighter leading-tight js-question-text">
+              <h2
+                class="font-display-xl text-sm md:text-3xl text-primary uppercase tracking-tighter leading-tight js-question-text"
+              >
                 ¿A qué selección pertenece esta camiseta?
               </h2>
             </div>
 
             <!-- Opciones del Quiz -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 md:gap-3 js-options-grid">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 md:gap-3 js-options-grid"
+            >
               <!-- Las opciones se inyectan dinámicamente -->
             </div>
           </div>
@@ -176,129 +351,280 @@
     </main>
 
     <!-- FOOTER DE JUEGO RESPONSIVO -->
-    <footer class="hidden md:flex w-full h-16 items-center justify-between px-4 md:px-12 border-t-2 border-primary bg-white">
-      <p class="font-label-mono text-[9px] md:text-[10px] text-secondary">RETRO SHIRT QUIZ • DAYLIGHT UNITY PULSE EDITION</p>
+    <footer
+      class="hidden md:flex w-full h-16 items-center justify-between px-4 md:px-12 border-t-2 border-primary bg-white"
+    >
+      <p class="font-label-mono text-[9px] md:text-[10px] text-secondary">
+        RETRO SHIRT QUIZ • DAYLIGHT UNITY PULSE EDITION
+      </p>
       <!-- Racha badge (decorativo o secundario) -->
       <div class="hidden sm:flex items-center gap-4">
-        <span class="font-label-mono text-xs uppercase opacity-60">Racha de victorias</span>
-        <div class="w-12 h-8 bento-border bg-primary flex items-center justify-center text-on-primary">
+        <span class="font-label-mono text-xs uppercase opacity-60"
+          >Racha de victorias</span
+        >
+        <div
+          class="w-12 h-8 bento-border bg-primary flex items-center justify-center text-on-primary"
+        >
           <span class="font-display-xl text-lg js-current-streak">0</span>
         </div>
       </div>
     </footer>
   </div>
 
-<div id="game-over-screen" class="js-game-over-screen hidden bg-background text-on-background min-h-screen flex flex-col w-full">
-    <header class="bg-white border-b-2 border-primary w-full top-0 left-0 z-10 min-h-16 flex items-center justify-between px-6 safe-area-top">
+  <div
+    id="game-over-screen"
+    class="js-game-over-screen hidden bg-background text-on-background min-h-screen flex flex-col w-full"
+  >
+    <header
+      class="bg-white border-b-2 border-primary w-full top-0 left-0 z-10 min-h-16 flex items-center justify-between px-6 safe-area-top"
+    >
       <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-primary">sports_soccer</span>
-        <h1 class="font-display-xl-mobile text-2xl uppercase tracking-tighter text-primary italic cursor-pointer js-btn-home" role="button">RETRO SHIRT QUIZ</h1>
+        <span class="material-symbols-outlined text-primary">sports_soccer</span
+        >
+        <h1
+          class="font-display-xl-mobile text-2xl uppercase tracking-tighter text-primary italic cursor-pointer js-btn-home"
+          role="button"
+        >
+          RETRO SHIRT QUIZ
+        </h1>
       </div>
     </header>
-    
-    <main class="flex-grow flex items-center justify-center p-6 md:p-12 relative z-10 w-full max-w-4xl mx-auto">
+
+    <main
+      class="flex-grow flex items-center justify-center p-6 md:p-12 relative z-10 w-full max-w-4xl mx-auto"
+    >
       <div class="w-full space-y-8">
         <div class="text-center stagger-load">
-          <p class="font-label-mono text-label-mono uppercase tracking-widest text-secondary mb-2">Resumen de Partida</p>
-          <h2 class="font-display-xl-mobile text-display-xl-mobile md:font-display-xl md:text-5xl uppercase italic js-game-over-message">Fin del Partido</h2>
+          <p
+            class="font-label-mono text-label-mono uppercase tracking-widest text-secondary mb-2"
+          >
+            Resumen de Partida
+          </p>
+          <h2
+            class="font-display-xl-mobile text-display-xl-mobile md:font-display-xl md:text-5xl uppercase italic js-game-over-message"
+          >
+            Fin del Partido
+          </h2>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white brutalist-border p-6 flex flex-col items-center justify-center text-center brutalist-shadow">
-            <span class="font-label-mono text-label-mono uppercase text-secondary mb-4">Puntuación</span>
-            <div class="font-display-xl-mobile text-[48px] md:text-5xl text-primary js-final-score">0</div>
-            <div class="mt-4 px-3 py-1 bg-primary text-on-primary font-label-mono text-[11px] uppercase js-new-record-badge hidden">Nuevo Récord</div>
-          </div>
-          
-          <div class="bg-pulse-neon brutalist-border p-6 flex flex-col items-center justify-center text-center relative overflow-hidden brutalist-shadow">
-            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-              <div class="w-full h-full" style="background-image: radial-gradient(circle, #fff 10%, transparent 10.5%); background-size: 20px 20px;"></div>
+          <div
+            class="bg-white brutalist-border p-6 flex flex-col items-center justify-center text-center brutalist-shadow"
+          >
+            <span
+              class="font-label-mono text-label-mono uppercase text-secondary mb-4"
+              >Puntuación</span
+            >
+            <div
+              class="font-display-xl-mobile text-[48px] md:text-5xl text-primary js-final-score"
+            >
+              0
             </div>
-            <span class="font-label-mono text-label-mono uppercase text-on-primary mb-4 relative z-10">Mejor Racha</span>
-            <div class="font-display-xl-mobile text-[48px] md:text-5xl text-on-primary relative z-10 js-final-streak">0</div>
-            <span class="material-symbols-outlined text-on-primary text-4xl mt-2 relative z-10" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+            <div
+              class="mt-4 px-3 py-1 bg-primary text-on-primary font-label-mono text-[11px] uppercase js-new-record-badge hidden"
+            >
+              Nuevo Récord
+            </div>
           </div>
-          
-          <div class="bg-white brutalist-border p-6 flex flex-col items-center justify-center text-center brutalist-shadow">
-            <span class="font-label-mono text-label-mono uppercase text-secondary mb-4">Descubiertas</span>
-            <div class="font-display-xl-mobile text-[48px] md:text-5xl text-primary js-final-guessed">0/50</div>
-            <div class="w-full bg-[#eeeeee] h-2 mt-6 brutalist-border overflow-hidden">
-              <div class="bg-primary h-full js-final-guessed-progress" style="width: 0%;"></div>
+
+          <div
+            class="bg-pulse-neon brutalist-border p-6 flex flex-col items-center justify-center text-center relative overflow-hidden brutalist-shadow"
+          >
+            <div
+              class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
+            >
+              <div
+                class="w-full h-full"
+                style="background-image: radial-gradient(circle, #fff 10%, transparent 10.5%); background-size: 20px 20px;"
+              >
+              </div>
+            </div>
+            <span
+              class="font-label-mono text-label-mono uppercase text-on-primary mb-4 relative z-10"
+              >Mejor Racha</span
+            >
+            <div
+              class="font-display-xl-mobile text-[48px] md:text-5xl text-on-primary relative z-10 js-final-streak"
+            >
+              0
+            </div>
+            <span
+              class="material-symbols-outlined text-on-primary text-4xl mt-2 relative z-10"
+              style="font-variation-settings: 'FILL' 1;"
+              >local_fire_department</span
+            >
+          </div>
+
+          <div
+            class="bg-white brutalist-border p-6 flex flex-col items-center justify-center text-center brutalist-shadow"
+          >
+            <span
+              class="font-label-mono text-label-mono uppercase text-secondary mb-4"
+              >Descubiertas</span
+            >
+            <div
+              class="font-display-xl-mobile text-[48px] md:text-5xl text-primary js-final-guessed"
+            >
+              0/50
+            </div>
+            <div
+              class="w-full bg-[#eeeeee] h-2 mt-6 brutalist-border overflow-hidden"
+            >
+              <div
+                class="bg-primary h-full js-final-guessed-progress"
+                style="width: 0%;"
+              >
+              </div>
             </div>
           </div>
         </div>
-        
+
         <div class="text-center">
-          <span class="rank-badge js-rank-badge font-bold">Novato del banquillo</span>
+          <span class="rank-badge js-rank-badge font-bold"
+            >Novato del banquillo</span
+          >
         </div>
 
         <div class="flex flex-col md:flex-row gap-6">
-          <button class="flex-grow bg-primary text-on-primary font-headline-md text-lg uppercase py-5 brutalist-border brutalist-shadow button-shift flex items-center justify-center gap-3 js-btn-retry">
+          <button
+            class="flex-grow bg-primary text-on-primary font-headline-md text-lg uppercase py-5 brutalist-border brutalist-shadow button-shift flex items-center justify-center gap-3 js-btn-retry"
+          >
             <span class="material-symbols-outlined text-white">replay</span>
             <span class="text-white">Jugar de Nuevo</span>
           </button>
-          <button class="flex-grow bg-white text-primary font-headline-md text-lg uppercase py-5 brutalist-border brutalist-shadow button-shift flex items-center justify-center gap-3 js-btn-menu">
+          <button
+            class="flex-grow bg-white text-primary font-headline-md text-lg uppercase py-5 brutalist-border brutalist-shadow button-shift flex items-center justify-center gap-3 js-btn-menu"
+          >
             <span class="material-symbols-outlined">home</span>
             <span>Menú principal</span>
           </button>
         </div>
       </div>
     </main>
-    
+
     <footer class="mt-auto py-8 text-center opacity-40">
-      <p class="font-label-mono text-[9px] uppercase tracking-[0.2em]">© FIFA 2026 • RETRO SHIRT QUIZ • OFFICIAL DIGITAL EXPERIENCE</p>
+      <p class="font-label-mono text-[9px] uppercase tracking-[0.2em]">
+        © FIFA 2026 • RETRO SHIRT QUIZ • OFFICIAL DIGITAL EXPERIENCE
+      </p>
     </footer>
   </div>
 
   <!-- ==================== MODAL DE FEEDBACK ==================== -->
-    <!-- PROMPT DE INSTALACIÓN PWA BRUTALISTA -->
-  <div id="pwa-install-prompt" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-sm bg-white border-2 border-primary p-4 brutalist-shadow hidden flex-col gap-3">
+  <!-- PROMPT DE INSTALACIÓN PWA BRUTALISTA -->
+  <div
+    id="pwa-install-prompt"
+    class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-sm bg-white border-2 border-primary p-4 brutalist-shadow hidden flex-col gap-3"
+  >
     <div class="flex items-start justify-between gap-3">
       <div class="flex items-center gap-3">
-        <div class="w-12 h-12 border-2 border-primary bg-primary text-white flex items-center justify-center brutalist-shadow flex-shrink-0">
+        <div
+          class="w-12 h-12 border-2 border-primary bg-primary text-white flex items-center justify-center brutalist-shadow flex-shrink-0"
+        >
           <span class="material-symbols-outlined text-2xl">install_mobile</span>
         </div>
         <div class="flex flex-col">
-          <h4 class="font-headline-md text-sm uppercase font-bold text-primary leading-tight">Instalar Aplicación</h4>
-          <p class="font-body-md text-xs text-secondary mt-0.5 leading-snug">Juega a pantalla completa, más rápido y sin conexión.</p>
+          <h4
+            class="font-headline-md text-sm uppercase font-bold text-primary leading-tight"
+          >
+            Instalar Aplicación
+          </h4>
+          <p class="font-body-md text-xs text-secondary mt-0.5 leading-snug">
+            Juega a pantalla completa, más rápido y sin conexión.
+          </p>
         </div>
       </div>
-      <button id="pwa-close-btn" class="text-secondary hover:text-primary transition-colors" aria-label="Cerrar prompt">
+      <button
+        id="pwa-close-btn"
+        class="text-secondary hover:text-primary transition-colors"
+        aria-label="Cerrar prompt"
+      >
         <span class="material-symbols-outlined text-xl">close</span>
       </button>
     </div>
-    
+
     <!-- Botón para Android/Chrome/Escritorio -->
-    <button id="pwa-install-btn" class="w-full bg-pulse-neon text-white font-headline-md text-sm uppercase py-2.5 border-2 border-primary brutalist-shadow button-shift hidden items-center justify-center gap-1.5">
-      <span>Instalar ahora</span> <span class="material-symbols-outlined text-sm">download</span>
+    <button
+      id="pwa-install-btn"
+      class="w-full bg-pulse-neon text-white font-headline-md text-sm uppercase py-2.5 border-2 border-primary brutalist-shadow button-shift hidden items-center justify-center gap-1.5"
+    >
+      <span>Instalar ahora</span>
+      <span class="material-symbols-outlined text-sm">download</span>
     </button>
 
     <!-- Instrucciones específicas para iOS (Safari) -->
-    <div id="pwa-ios-instructions" class="hidden text-[10px] font-label-mono bg-amber-50 border-2 border-amber-300 p-2.5 text-amber-900 leading-snug">
-      <div class="flex items-center gap-1 font-bold uppercase mb-1 text-[11px] text-amber-950">
-        <span class="material-symbols-outlined text-sm">info</span> Instrucción para iPhone
+    <div
+      id="pwa-ios-instructions"
+      class="hidden text-[10px] font-label-mono bg-amber-50 border-2 border-amber-300 p-2.5 text-amber-900 leading-snug"
+    >
+      <div
+        class="flex items-center gap-1 font-bold uppercase mb-1 text-[11px] text-amber-950"
+      >
+        <span class="material-symbols-outlined text-sm">info</span> Instrucción para
+        iPhone
       </div>
       Para instalar en tu dispositivo iOS:
       <ol class="list-decimal pl-4 mt-1 space-y-1">
-        <li>Pulsa el botón <strong>Compartir</strong> <span class="inline-flex items-center align-middle justify-center px-1 py-0.5 bg-white border border-gray-300 rounded"><span class="material-symbols-outlined text-xs">ios_share</span></span> en Safari.</li>
-        <li>Selecciona la opción <strong>Añadir a la pantalla de inicio</strong>.</li>
+        <li>
+          Pulsa el botón <strong>Compartir</strong>
+          <span
+            class="inline-flex items-center align-middle justify-center px-1 py-0.5 bg-white border border-gray-300 rounded"
+            ><span class="material-symbols-outlined text-xs">ios_share</span
+            ></span
+          > en Safari.
+        </li>
+        <li>
+          Selecciona la opción <strong>Añadir a la pantalla de inicio</strong>.
+        </li>
       </ol>
     </div>
   </div>
 
-<div id="feedback-modal" class="modal-overlay hidden js-feedback-modal" role="dialog" aria-modal="true">
-    <div class="modal-content bento-border brutalist-shadow bg-white p-6 max-w-sm w-full animate-bounce-in">
+  <div
+    id="feedback-modal"
+    class="modal-overlay hidden js-feedback-modal"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div
+      class="modal-content bento-border brutalist-shadow bg-white p-6 max-w-sm w-full animate-bounce-in"
+    >
       <div class="feedback-header flex items-center gap-3 mb-4">
-        <span id="feedback-icon" class="feedback-emoji text-3xl js-feedback-icon">🎉</span>
-        <h2 id="feedback-title" class="font-headline-md text-2xl uppercase js-feedback-title">¡Correcto!</h2>
+        <span
+          id="feedback-icon"
+          class="feedback-emoji text-3xl js-feedback-icon">🎉</span
+        >
+        <h2
+          id="feedback-title"
+          class="font-headline-md text-2xl uppercase js-feedback-title"
+        >
+          ¡Correcto!
+        </h2>
       </div>
-      <p id="correct-answer-reveal" class="correct-reveal-text font-bold text-[#FF007A] mb-4 leading-snug js-correct-answer-reveal"></p>
-      <div class="history-context bg-gray-100 bento-border p-4 mb-6 max-h-40 overflow-y-auto">
-        <h4 class="font-label-mono text-xs text-secondary uppercase font-bold mb-2">Historia de la camiseta</h4>
-        <p id="shirt-description" class="text-sm leading-relaxed text-on-surface-variant js-shirt-description"></p>
+      <p
+        id="correct-answer-reveal"
+        class="correct-reveal-text font-bold text-[#FF007A] mb-4 leading-snug js-correct-answer-reveal"
+      >
+      </p>
+      <div
+        class="history-context bg-gray-100 bento-border p-4 mb-6 max-h-40 overflow-y-auto"
+      >
+        <h4
+          class="font-label-mono text-xs text-secondary uppercase font-bold mb-2"
+        >
+          Historia de la camiseta
+        </h4>
+        <p
+          id="shirt-description"
+          class="text-sm leading-relaxed text-on-surface-variant js-shirt-description"
+        >
+        </p>
       </div>
-      <button id="btn-next" class="w-full bg-primary text-on-primary font-headline-md text-lg uppercase py-4 bento-border brutalist-shadow button-shift flex items-center justify-center gap-2 js-btn-next">
-        <span class="text-white">Siguiente camiseta</span> <span class="material-symbols-outlined text-white">arrow_forward</span>
+      <button
+        id="btn-next"
+        class="w-full bg-primary text-on-primary font-headline-md text-lg uppercase py-4 bento-border brutalist-shadow button-shift flex items-center justify-center gap-2 js-btn-next"
+      >
+        <span class="text-white">Siguiente camiseta</span>
+        <span class="material-symbols-outlined text-white">arrow_forward</span>
       </button>
     </div>
   </div>
@@ -306,127 +632,145 @@
 
 <!-- ==================== LOGICA Y SCRIPTS ==================== -->
 <script>
-  import shirtsData from '../data/shirts.json';
-  import type { Shirt } from '../data/shirts';
-  import { getShirtImageCandidates, searchShirtImageUrl } from '../data/shirts';
+  import shirtsData from '../data/shirts.json'
+  import type { Shirt } from '../data/shirts'
+  import { getShirtImageCandidates, searchShirtImageUrl } from '../data/shirts'
 
-  const shirts = shirtsData as Shirt[];
-  const LETTERS = ['A', 'B', 'C', 'D'];
+  const shirts = shirtsData as Shirt[]
+  const LETTERS = ['A', 'B', 'C', 'D']
 
   interface OptimizedShirtImage {
-    src: string;
-    width: number;
-    height: number;
-    webpSrcset: string;
-    avifSrcset: string;
-    sizes: string;
+    src: string
+    width: number
+    height: number
+    webpSrcset: string
+    avifSrcset: string
+    sizes: string
   }
 
-  let optimizedImageMap: Record<number, OptimizedShirtImage> = {};
+  let optimizedImageMap: Record<number, OptimizedShirtImage> = {}
   try {
-    const mapEl = document.getElementById('shirt-image-map');
-    if (mapEl?.textContent) optimizedImageMap = JSON.parse(mapEl.textContent);
+    const mapEl = document.getElementById('shirt-image-map')
+    if (mapEl?.textContent) optimizedImageMap = JSON.parse(mapEl.textContent)
   } catch {
-    optimizedImageMap = {};
+    optimizedImageMap = {}
   }
 
-  let currentMode = 'team';
-  let currentQuestionIndex = 0;
-  let score = 0;
-  let streak = 0;
-  let maxStreak = 0;
-  let lives = 3;
-  let currentShirt: Shirt | null = null;
-  let selectedShirts: Shirt[] = [];
-  let isAnswered = false;
+  let currentMode = 'team'
+  let currentQuestionIndex = 0
+  let score = 0
+  let streak = 0
+  let maxStreak = 0
+  let lives = 3
+  let currentShirt: Shirt | null = null
+  let selectedShirts: Shirt[] = []
+  let isAnswered = false
 
   // Pantallas
-  const startScreens = document.querySelectorAll('.js-start-screen');
-  const gameScreens = document.querySelectorAll('.js-game-screen');
-  const feedbackModals = document.querySelectorAll('.js-feedback-modal');
-  const gameOverScreens = document.querySelectorAll('.js-game-over-screen');
+  const startScreens = document.querySelectorAll('.js-start-screen')
+  const gameScreens = document.querySelectorAll('.js-game-screen')
+  const feedbackModals = document.querySelectorAll('.js-feedback-modal')
+  const gameOverScreens = document.querySelectorAll('.js-game-over-screen')
 
   // Funciones de utilidad para actualizar en lote
   function showScreen(screenType: 'start' | 'game' | 'gameover') {
-    startScreens.forEach(el => screenType === 'start' ? el.classList.remove('hidden') : el.classList.add('hidden'));
-    gameScreens.forEach(el => screenType === 'game' ? el.classList.remove('hidden') : el.classList.add('hidden'));
-    gameOverScreens.forEach(el => screenType === 'gameover' ? el.classList.remove('hidden') : el.classList.add('hidden'));
+    startScreens.forEach((el) =>
+      screenType === 'start'
+        ? el.classList.remove('hidden')
+        : el.classList.add('hidden')
+    )
+    gameScreens.forEach((el) =>
+      screenType === 'game'
+        ? el.classList.remove('hidden')
+        : el.classList.add('hidden')
+    )
+    gameOverScreens.forEach((el) =>
+      screenType === 'gameover'
+        ? el.classList.remove('hidden')
+        : el.classList.add('hidden')
+    )
   }
 
   function updateTextContent(selector: string, text: string) {
-    document.querySelectorAll(selector).forEach(el => el.textContent = text);
+    document.querySelectorAll(selector).forEach((el) => (el.textContent = text))
   }
 
   function updateHeartsUI() {
-    const hearts = document.querySelectorAll('.js-heart');
+    const hearts = document.querySelectorAll('.js-heart')
     hearts.forEach((heart, idx) => {
-      const heartIdx = idx % 3;
+      const heartIdx = idx % 3
       if (heartIdx < lives) {
-        (heart as HTMLElement).style.setProperty("font-variation-settings", "'FILL' 1");
-        (heart as HTMLElement).classList.remove('opacity-30');
+        ;(heart as HTMLElement).style.setProperty(
+          'font-variation-settings',
+          "'FILL' 1"
+        )
+        ;(heart as HTMLElement).classList.remove('opacity-30')
       } else {
-        (heart as HTMLElement).style.setProperty("font-variation-settings", "'FILL' 0");
-        (heart as HTMLElement).classList.add('opacity-30');
+        ;(heart as HTMLElement).style.setProperty(
+          'font-variation-settings',
+          "'FILL' 0"
+        )
+        ;(heart as HTMLElement).classList.add('opacity-30')
       }
-    });
+    })
   }
 
   function updateProgress() {
-    const pct = (currentQuestionIndex / selectedShirts.length) * 100;
-    document.querySelectorAll('.js-progress-fill').forEach(el => {
-      (el as HTMLElement).style.width = `${pct}%`;
-    });
-    const soccerIcon = document.getElementById('soccer-indicator-tablet');
+    const pct = (currentQuestionIndex / selectedShirts.length) * 100
+    document.querySelectorAll('.js-progress-fill').forEach((el) => {
+      ;(el as HTMLElement).style.width = `${pct}%`
+    })
+    const soccerIcon = document.getElementById('soccer-indicator-tablet')
     if (soccerIcon) {
-      soccerIcon.style.left = `${pct}%`;
+      soccerIcon.style.left = `${pct}%`
     }
   }
 
   function playSound(type: 'correct' | 'incorrect' | 'gameover' | 'hint') {
     try {
-      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
-      if (!AudioCtx) return;
-      const ctx = new AudioCtx();
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain);
-      gain.connect(ctx.destination);
+      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext
+      if (!AudioCtx) return
+      const ctx = new AudioCtx()
+      const osc = ctx.createOscillator()
+      const gain = ctx.createGain()
+      osc.connect(gain)
+      gain.connect(ctx.destination)
 
       if (type === 'correct') {
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(523.25, ctx.currentTime);
-        osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.08);
-        osc.frequency.setValueAtTime(783.99, ctx.currentTime + 0.16);
-        osc.frequency.setValueAtTime(1046.5, ctx.currentTime + 0.24);
-        gain.gain.setValueAtTime(0.12, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.45);
-        osc.start(ctx.currentTime);
-        osc.stop(ctx.currentTime + 0.45);
+        osc.type = 'sine'
+        osc.frequency.setValueAtTime(523.25, ctx.currentTime)
+        osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.08)
+        osc.frequency.setValueAtTime(783.99, ctx.currentTime + 0.16)
+        osc.frequency.setValueAtTime(1046.5, ctx.currentTime + 0.24)
+        gain.gain.setValueAtTime(0.12, ctx.currentTime)
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.45)
+        osc.start(ctx.currentTime)
+        osc.stop(ctx.currentTime + 0.45)
       } else if (type === 'incorrect') {
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(220, ctx.currentTime);
-        osc.frequency.linearRampToValueAtTime(110, ctx.currentTime + 0.3);
-        gain.gain.setValueAtTime(0.1, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
-        osc.start(ctx.currentTime);
-        osc.stop(ctx.currentTime + 0.35);
+        osc.type = 'sawtooth'
+        osc.frequency.setValueAtTime(220, ctx.currentTime)
+        osc.frequency.linearRampToValueAtTime(110, ctx.currentTime + 0.3)
+        gain.gain.setValueAtTime(0.1, ctx.currentTime)
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35)
+        osc.start(ctx.currentTime)
+        osc.stop(ctx.currentTime + 0.35)
       } else if (type === 'hint') {
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(440, ctx.currentTime);
-        osc.frequency.setValueAtTime(554.37, ctx.currentTime + 0.1);
-        gain.gain.setValueAtTime(0.08, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
-        osc.start(ctx.currentTime);
-        osc.stop(ctx.currentTime + 0.25);
+        osc.type = 'triangle'
+        osc.frequency.setValueAtTime(440, ctx.currentTime)
+        osc.frequency.setValueAtTime(554.37, ctx.currentTime + 0.1)
+        gain.gain.setValueAtTime(0.08, ctx.currentTime)
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25)
+        osc.start(ctx.currentTime)
+        osc.stop(ctx.currentTime + 0.25)
       } else {
-        osc.type = 'sine';
-        [392, 349.23, 311.13, 261.63].forEach((f, i) => {
-          osc.frequency.setValueAtTime(f, ctx.currentTime + i * 0.15);
-        });
-        gain.gain.setValueAtTime(0.1, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.8);
-        osc.start(ctx.currentTime);
-        osc.stop(ctx.currentTime + 0.8);
+        osc.type = 'sine'
+        ;[392, 349.23, 311.13, 261.63].forEach((f, i) => {
+          osc.frequency.setValueAtTime(f, ctx.currentTime + i * 0.15)
+        })
+        gain.gain.setValueAtTime(0.1, ctx.currentTime)
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.8)
+        osc.start(ctx.currentTime)
+        osc.stop(ctx.currentTime + 0.8)
       }
     } catch {
       // Ignorar bloqueado
@@ -434,104 +778,115 @@
   }
 
   function getRankTitle(s: number): string {
-    if (s >= 4500) return 'Leyenda del Mundial';
-    if (s >= 3000) return 'Crack historico';
-    if (s >= 1800) return 'Aficionado experto';
-    if (s >= 800) return 'Hincha de cultura';
-    return 'Novato del banquillo';
+    if (s >= 4500) return 'Leyenda del Mundial'
+    if (s >= 3000) return 'Crack historico'
+    if (s >= 1800) return 'Aficionado experto'
+    if (s >= 800) return 'Hincha de cultura'
+    return 'Novato del banquillo'
   }
 
   function init() {
-    const hs = localStorage.getItem('high_score') || '0';
-    const ms = localStorage.getItem('max_streak') || '0';
-    updateTextContent('.js-global-high-score', hs);
-    updateTextContent('.js-global-max-streak', ms);
+    const hs = localStorage.getItem('high_score') || '0'
+    const ms = localStorage.getItem('max_streak') || '0'
+    updateTextContent('.js-global-high-score', hs)
+    updateTextContent('.js-global-max-streak', ms)
   }
 
   // Inicializar botones de modo
   document.querySelectorAll('.js-mode-button').forEach((button) => {
     button.addEventListener('click', (e) => {
-      const mode = (e.currentTarget as HTMLButtonElement).dataset.mode!;
-      startGame(mode);
-    });
-  });
+      const mode = (e.currentTarget as HTMLButtonElement).dataset.mode!
+      startGame(mode)
+    })
+  })
 
   function startGame(mode: string) {
-    currentMode = mode;
-    score = 0;
-    streak = 0;
-    maxStreak = 0;
-    lives = 3;
-    currentQuestionIndex = 0;
-    isAnswered = false;
+    currentMode = mode
+    score = 0
+    streak = 0
+    maxStreak = 0
+    lives = 3
+    currentQuestionIndex = 0
+    isAnswered = false
 
     // Filtrar camisetas según dificultad
-    let filteredShirts = [...shirts];
+    let filteredShirts = [...shirts]
     if (mode === 'easy') {
-      filteredShirts = shirts.filter(s => s.year >= 2000);
+      filteredShirts = shirts.filter((s) => s.year >= 2000)
     } else if (mode === 'medium') {
-      filteredShirts = shirts.filter(s => s.year >= 1970 && s.year < 2000);
+      filteredShirts = shirts.filter((s) => s.year >= 1970 && s.year < 2000)
     } else if (mode === 'hard') {
-      filteredShirts = shirts.filter(s => s.year < 1970);
+      filteredShirts = shirts.filter((s) => s.year < 1970)
     }
 
     // Barajar las filtradas
-    selectedShirts = filteredShirts.sort(() => Math.random() - 0.5);
+    selectedShirts = filteredShirts.sort(() => Math.random() - 0.5)
 
-    updateHeartsUI();
-    updateTextContent('.js-current-score', '0');
-    updateStreakUI();
-    updateProgress();
+    updateHeartsUI()
+    updateTextContent('.js-current-score', '0')
+    updateStreakUI()
+    updateProgress()
 
-    showScreen('game');
-    loadNextQuestion();
+    showScreen('game')
+    loadNextQuestion()
   }
 
   function updateStreakUI() {
-    updateTextContent('.js-current-streak', streak.toString());
-    document.querySelectorAll('.js-streak-badge').forEach(badge => {
+    updateTextContent('.js-current-streak', streak.toString())
+    document.querySelectorAll('.js-streak-badge').forEach((badge) => {
       if (streak >= 3) {
-        badge.classList.remove('hidden');
+        badge.classList.remove('hidden')
       } else {
-        badge.classList.add('hidden');
+        badge.classList.add('hidden')
       }
-    });
+    })
   }
 
   function loadNextQuestion() {
-    isAnswered = false;
-    currentShirt = selectedShirts[currentQuestionIndex];
+    isAnswered = false
+    currentShirt = selectedShirts[currentQuestionIndex]
 
-    updateTextContent('.js-question-index', `${currentQuestionIndex + 1}/${selectedShirts.length}`);
-    updateProgress();
+    updateTextContent(
+      '.js-question-index',
+      `${currentQuestionIndex + 1}/${selectedShirts.length}`
+    )
+    updateProgress()
 
     // Reconstruir slot de imagen en cada pregunta
-    const slots = document.querySelectorAll('.js-shirt-slot');
+    const slots = document.querySelectorAll('.js-shirt-slot')
     slots.forEach((slot) => {
-      slot.innerHTML = '';
+      slot.innerHTML = ''
 
       // Loader: solo el spinner, transparente, encima de la imagen
-      const loader = document.createElement('div');
-      loader.className = 'absolute inset-0 z-10 flex items-center justify-center pointer-events-none js-image-loader';
-      loader.innerHTML = '<div class="w-10 h-10 border-4 border-black border-t-transparent bg-white/70 animate-spin"></div>';
-      slot.appendChild(loader);
+      const loader = document.createElement('div')
+      loader.className =
+        'absolute inset-0 z-10 flex items-center justify-center pointer-events-none js-image-loader'
+      loader.innerHTML =
+        '<div class="w-10 h-10 border-4 border-black border-t-transparent bg-white/70 animate-spin"></div>'
+      slot.appendChild(loader)
 
-      const hideLoader = () => loader.classList.add('hidden');
+      const hideLoader = () => loader.classList.add('hidden')
       const revealLoader = (img: HTMLImageElement) => {
         if (img.complete && img.naturalWidth > 0) {
-          hideLoader();
-          return;
+          hideLoader()
+          return
         }
-        img.onload = hideLoader;
-        img.decode?.().then(hideLoader).catch(() => {});
+        img.onload = hideLoader
+        img
+          .decode?.()
+          .then(hideLoader)
+          .catch(() => {})
         // Fallback: si el navegador difiere onload (lazy intervention), oculta tras 1.2s
-        setTimeout(hideLoader, 1200);
-      };
+        setTimeout(hideLoader, 1200)
+      }
 
-      const optimized = currentShirt ? optimizedImageMap[currentShirt.id] : undefined;
+      const optimized = currentShirt
+        ? optimizedImageMap[currentShirt.id]
+        : undefined
 
       if (optimized) {
-        const picture = document.createElement('picture');
+        const picture = document.createElement('picture')
+        picture.className = 'w-full h-full flex items-center justify-center'
         picture.innerHTML = `
           <source type="image/avif" srcset="${optimized.avifSrcset}" sizes="${optimized.sizes}">
           <source type="image/webp" srcset="${optimized.webpSrcset}" sizes="${optimized.sizes}">
@@ -541,387 +896,442 @@
                height="${optimized.height}"
                decoding="async"
                alt="Camiseta retro del mundial" />
-        `;
-        slot.appendChild(picture);
+        `
+        slot.appendChild(picture)
 
-        const img = picture.querySelector('img') as HTMLImageElement;
-        revealLoader(img);
+        const img = picture.querySelector('img') as HTMLImageElement
+        revealLoader(img)
       } else {
         // Fallback dinámico (sin asset optimizado disponible)
-        const imageCandidates = getShirtImageCandidates(currentShirt!);
-        let candidateIndex = 0;
-        let searchedCommons = false;
-        const imageElement = document.createElement('img');
-        imageElement.className = 'w-full h-full object-contain js-shirt-image';
-        imageElement.alt = 'Camiseta retro del mundial';
-        slot.appendChild(imageElement);
+        const imageCandidates = getShirtImageCandidates(currentShirt!)
+        let candidateIndex = 0
+        let searchedCommons = false
+        const imageElement = document.createElement('img')
+        imageElement.className = 'w-full h-full object-contain js-shirt-image'
+        imageElement.alt = 'Camiseta retro del mundial'
+        slot.appendChild(imageElement)
 
-        imageElement.onload = () => hideLoader();
+        imageElement.onload = () => hideLoader()
         imageElement.onerror = () => {
-          candidateIndex += 1;
+          candidateIndex += 1
           if (candidateIndex < imageCandidates.length) {
-            imageElement.src = imageCandidates[candidateIndex];
-            return;
+            imageElement.src = imageCandidates[candidateIndex]
+            return
           }
           if (!searchedCommons) {
-            searchedCommons = true;
-            searchShirtImageUrl(currentShirt!.team, currentShirt!.year).then((url) => {
-              imageElement.src = url ?? '/favicon.svg';
-            });
-            return;
+            searchedCommons = true
+            searchShirtImageUrl(currentShirt!.team, currentShirt!.year).then(
+              (url) => {
+                imageElement.src = url ?? '/favicon.svg'
+              }
+            )
+            return
           }
-          imageElement.src = '/favicon.svg';
-        };
-        imageElement.src = imageCandidates[0] ?? '/favicon.svg';
-        revealLoader(imageElement);
+          imageElement.src = '/favicon.svg'
+        }
+        imageElement.src = imageCandidates[0] ?? '/favicon.svg'
+        revealLoader(imageElement)
       }
-    });
+    })
 
     // Enunciado
-    let questionText = '¿A qué selección y año pertenece esta camiseta?';
-    let typeBadgeText = 'Fácil';
+    let questionText = '¿A qué selección y año pertenece esta camiseta?'
+    let typeBadgeText = 'Fácil'
     if (currentMode === 'medium') {
-      typeBadgeText = 'Difícil';
+      typeBadgeText = 'Difícil'
     } else if (currentMode === 'hard') {
-      typeBadgeText = 'Extremo';
+      typeBadgeText = 'Extremo'
     }
 
-    updateTextContent('.js-question-text', questionText);
-    updateTextContent('.js-question-type-badge', typeBadgeText);
+    updateTextContent('.js-question-text', questionText)
+    updateTextContent('.js-question-type-badge', typeBadgeText)
 
-    generateOptions();
+    generateOptions()
   }
 
   function generateOptions() {
-    if (!currentShirt) return;
-    
-    const correctValue = `${currentShirt.team} (${currentShirt.year})`;
-    
+    if (!currentShirt) return
+
+    const correctValue = `${currentShirt.team} (${currentShirt.year})`
+
     // Obtener 3 valores incorrectos distintos de forma inteligente
-    const pool = new Set<string>();
-    
+    const pool = new Set<string>()
+
     if (currentMode === 'easy') {
       // Modo fácil: distractores aleatorios de la base de datos
       while (pool.size < 3) {
-        const randomShirt = shirts[Math.floor(Math.random() * shirts.length)];
-        const randomValue = `${randomShirt.team} (${randomShirt.year})`;
+        const randomShirt = shirts[Math.floor(Math.random() * shirts.length)]
+        const randomValue = `${randomShirt.team} (${randomShirt.year})`
         if (randomValue !== correctValue) {
-          pool.add(randomValue);
+          pool.add(randomValue)
         }
       }
     } else {
       // Modos Difícil/Extremo: distractores inteligentes cercanos
-      const WORLD_CUP_YEARS = [1930, 1934, 1938, 1950, 1954, 1958, 1962, 1966, 1970, 1974, 1978, 1982, 1986, 1990, 1994, 1998, 2002, 2006, 2010, 2014, 2018, 2022];
-      const teamsPool = [...new Set(shirts.map(s => s.team))].filter(t => t !== currentShirt!.team);
-      
+      const WORLD_CUP_YEARS = [
+        1930, 1934, 1938, 1950, 1954, 1958, 1962, 1966, 1970, 1974, 1978, 1982,
+        1986, 1990, 1994, 1998, 2002, 2006, 2010, 2014, 2018, 2022,
+      ]
+      const teamsPool = [...new Set(shirts.map((s) => s.team))].filter(
+        (t) => t !== currentShirt!.team
+      )
+
       // Intentar distractor 1: Misma selección, año de mundial alternativo cercano (±24 años)
-      const sameTeamYears = WORLD_CUP_YEARS.filter(y => y !== currentShirt!.year && Math.abs(y - currentShirt!.year) <= 24);
+      const sameTeamYears = WORLD_CUP_YEARS.filter(
+        (y) =>
+          y !== currentShirt!.year && Math.abs(y - currentShirt!.year) <= 24
+      )
       if (sameTeamYears.length > 0) {
-        const randomYear = sameTeamYears[Math.floor(Math.random() * sameTeamYears.length)];
-        pool.add(`${currentShirt.team} (${randomYear})`);
+        const randomYear =
+          sameTeamYears[Math.floor(Math.random() * sameTeamYears.length)]
+        pool.add(`${currentShirt.team} (${randomYear})`)
       }
 
       // Intentar distractor 2: Otra selección del pool, mismo año
       if (teamsPool.length > 0) {
-        const randomTeam = teamsPool[Math.floor(Math.random() * teamsPool.length)];
-        pool.add(`${randomTeam} (${currentShirt.year})`);
+        const randomTeam =
+          teamsPool[Math.floor(Math.random() * teamsPool.length)]
+        pool.add(`${randomTeam} (${currentShirt.year})`)
       }
 
       // Intentar distractor 3: Otra selección del pool, año de mundial cercano (±12 años)
       if (teamsPool.length > 0) {
-        const otherTeams = teamsPool.filter(t => !Array.from(pool).some(p => p.startsWith(t)));
-        const randomTeam = otherTeams.length > 0 ? otherTeams[Math.floor(Math.random() * otherTeams.length)] : teamsPool[Math.floor(Math.random() * teamsPool.length)];
-        const nearYears = WORLD_CUP_YEARS.filter(y => Math.abs(y - currentShirt!.year) <= 12 && y !== currentShirt!.year);
-        const randomYear = nearYears.length > 0 ? nearYears[Math.floor(Math.random() * nearYears.length)] : WORLD_CUP_YEARS[Math.floor(Math.random() * WORLD_CUP_YEARS.length)];
-        pool.add(`${randomTeam} (${randomYear})`);
+        const otherTeams = teamsPool.filter(
+          (t) => !Array.from(pool).some((p) => p.startsWith(t))
+        )
+        const randomTeam =
+          otherTeams.length > 0
+            ? otherTeams[Math.floor(Math.random() * otherTeams.length)]
+            : teamsPool[Math.floor(Math.random() * teamsPool.length)]
+        const nearYears = WORLD_CUP_YEARS.filter(
+          (y) =>
+            Math.abs(y - currentShirt!.year) <= 12 && y !== currentShirt!.year
+        )
+        const randomYear =
+          nearYears.length > 0
+            ? nearYears[Math.floor(Math.random() * nearYears.length)]
+            : WORLD_CUP_YEARS[
+                Math.floor(Math.random() * WORLD_CUP_YEARS.length)
+              ]
+        pool.add(`${randomTeam} (${randomYear})`)
       }
 
       // Relleno de seguridad con distractores genéricos si no hay 3 únicos
-      let safetyCounter = 0;
+      let safetyCounter = 0
       while (pool.size < 3 && safetyCounter < 100) {
-        safetyCounter++;
-        const randomShirt = shirts[Math.floor(Math.random() * shirts.length)];
-        const randomValue = `${randomShirt.team} (${randomShirt.year})`;
+        safetyCounter++
+        const randomShirt = shirts[Math.floor(Math.random() * shirts.length)]
+        const randomValue = `${randomShirt.team} (${randomShirt.year})`
         if (randomValue !== correctValue) {
-          pool.add(randomValue);
+          pool.add(randomValue)
         }
       }
     }
 
-    const options = [correctValue, ...Array.from(pool)].sort(() => Math.random() - 0.5);
+    const options = [correctValue, ...Array.from(pool)].sort(
+      () => Math.random() - 0.5
+    )
 
     // Pintar los grids de opciones (móvil y tablet)
-    const optionGrids = document.querySelectorAll('.js-options-grid');
-    optionGrids.forEach(grid => {
-      grid.innerHTML = '';
+    const optionGrids = document.querySelectorAll('.js-options-grid')
+    optionGrids.forEach((grid) => {
+      grid.innerHTML = ''
       options.forEach((opt, idx) => {
-        const letter = LETTERS[idx];
-        const btn = document.createElement('button');
+        const letter = LETTERS[idx]
+        const btn = document.createElement('button')
         // Usamos las clases del mockup brutalista de Stitch
-        btn.className = 'w-full brutalist-button brutalist-button-shadow bg-white hover:bg-surface-container-high py-1.5 md:py-4 px-2 md:px-6 flex justify-between items-center transition-all group button-shift';
-        btn.type = 'button';
+        btn.className =
+          'w-full brutalist-button brutalist-button-shadow bg-white hover:bg-surface-container-high py-1.5 md:py-4 px-2 md:px-6 flex justify-between items-center transition-all group button-shift'
+        btn.type = 'button'
         btn.innerHTML = `
             <div class="flex items-center gap-2 md:gap-4">
             <span class="font-label-mono text-[10px] md:text-xs border-2 border-primary group-hover:border-on-primary w-6 h-6 md:w-10 md:h-10 flex items-center justify-center">${letter}</span>
             <span class="font-headline-md text-xs md:text-lg uppercase text-left leading-tight">${opt}</span>
           </div>
           <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
-        `;
+        `
 
-        btn.addEventListener('click', () => handleAnswerClick(opt, correctValue, btn));
-        grid.appendChild(btn);
-      });
-    });
+        btn.addEventListener('click', () =>
+          handleAnswerClick(opt, correctValue, btn)
+        )
+        grid.appendChild(btn)
+      })
+    })
   }
 
-  function handleAnswerClick(selected: string, correct: string, clickedBtn: HTMLButtonElement) {
-    if (isAnswered) return;
-    isAnswered = true;
+  function handleAnswerClick(
+    selected: string,
+    correct: string,
+    clickedBtn: HTMLButtonElement
+  ) {
+    if (isAnswered) return
+    isAnswered = true
 
     // Desactivar todos
-    const allButtons = document.querySelectorAll('.js-options-grid button');
-    allButtons.forEach(b => (b as HTMLButtonElement).disabled = true);
+    const allButtons = document.querySelectorAll('.js-options-grid button')
+    allButtons.forEach((b) => ((b as HTMLButtonElement).disabled = true))
 
-    const isCorrect = selected === correct;
-    
+    const isCorrect = selected === correct
+
     if (isCorrect) {
-      playSound('correct');
-      clickedBtn.classList.remove('bg-white');
-      clickedBtn.classList.add('bg-pulse-neon', 'text-white');
-      
+      playSound('correct')
+      clickedBtn.classList.remove('bg-white')
+      clickedBtn.classList.add('bg-pulse-neon', 'text-white')
+
       // Cambiar icono del boton clickeado a check
-      const icon = clickedBtn.querySelector('.material-symbols-outlined');
+      const icon = clickedBtn.querySelector('.material-symbols-outlined')
       if (icon) {
-        icon.classList.remove('opacity-0');
-        icon.textContent = 'check_circle';
+        icon.classList.remove('opacity-0')
+        icon.textContent = 'check_circle'
       }
 
-      streak++;
-      if (streak > maxStreak) maxStreak = streak;
-      
-      // Puntos: 100 base + 20 por racha (max 300)
-      const bonus = Math.min(streak * 20, 200);
-      score += 100 + bonus;
-      updateTextContent('.js-current-score', score.toString());
-      updateStreakUI();
+      streak++
+      if (streak > maxStreak) maxStreak = streak
 
-      showFeedback(true);
+      // Puntos: 100 base + 20 por racha (max 300)
+      const bonus = Math.min(streak * 20, 200)
+      score += 100 + bonus
+      updateTextContent('.js-current-score', score.toString())
+      updateStreakUI()
+
+      showFeedback(true)
     } else {
-      playSound('incorrect');
-      clickedBtn.classList.remove('bg-white');
-      clickedBtn.classList.add('bg-[#ba1a1a]', 'text-white');
-      
-      const icon = clickedBtn.querySelector('.material-symbols-outlined');
+      playSound('incorrect')
+      clickedBtn.classList.remove('bg-white')
+      clickedBtn.classList.add('bg-[#ba1a1a]', 'text-white')
+
+      const icon = clickedBtn.querySelector('.material-symbols-outlined')
       if (icon) {
-        icon.classList.remove('opacity-0');
-        icon.textContent = 'cancel';
+        icon.classList.remove('opacity-0')
+        icon.textContent = 'cancel'
       }
 
       // Buscar el boton correcto para marcarlo
-      allButtons.forEach(b => {
-        const btnText = b.querySelector('.font-headline-md')?.textContent || '';
+      allButtons.forEach((b) => {
+        const btnText = b.querySelector('.font-headline-md')?.textContent || ''
         if (btnText === correct.toUpperCase()) {
-          b.classList.remove('bg-white');
-          b.classList.add('bg-neon-green', 'text-primary');
-          const correctIcon = b.querySelector('.material-symbols-outlined');
+          b.classList.remove('bg-white')
+          b.classList.add('bg-neon-green', 'text-primary')
+          const correctIcon = b.querySelector('.material-symbols-outlined')
           if (correctIcon) {
-            correctIcon.classList.remove('opacity-0');
-            correctIcon.textContent = 'check_circle';
+            correctIcon.classList.remove('opacity-0')
+            correctIcon.textContent = 'check_circle'
           }
         }
-      });
+      })
 
-      streak = 0;
-      lives--;
-      updateHeartsUI();
-      updateStreakUI();
+      streak = 0
+      lives--
+      updateHeartsUI()
+      updateStreakUI()
 
-      showFeedback(false);
+      showFeedback(false)
     }
   }
 
   function showFeedback(isCorrect: boolean) {
-    if (!currentShirt) return;
-    playSound(isCorrect ? 'correct' : 'incorrect');
+    if (!currentShirt) return
+    playSound(isCorrect ? 'correct' : 'incorrect')
 
-    updateTextContent('.js-feedback-icon', isCorrect ? '🎉' : '❌');
-    updateTextContent('.js-feedback-title', isCorrect ? '¡Correcto!' : '¡Fallaste!');
-    updateTextContent('.js-correct-answer-reveal', `La respuesta es: ${currentShirt.team} (${currentShirt.year})`);
-    
+    updateTextContent('.js-feedback-icon', isCorrect ? '🎉' : '❌')
+    updateTextContent(
+      '.js-feedback-title',
+      isCorrect ? '¡Correcto!' : '¡Fallaste!'
+    )
+    updateTextContent(
+      '.js-correct-answer-reveal',
+      `La respuesta es: ${currentShirt.team} (${currentShirt.year})`
+    )
+
     // Generar descripcion
-    let desc = `Camiseta histórica utilizada por ${currentShirt.team} en el Mundial de ${currentShirt.year}.`;
+    let desc = `Camiseta histórica utilizada por ${currentShirt.team} en el Mundial de ${currentShirt.year}.`
     if (currentShirt.desc) {
-      desc += ` ${currentShirt.desc}`;
+      desc += ` ${currentShirt.desc}`
     }
-    updateTextContent('.js-shirt-description', desc);
+    updateTextContent('.js-shirt-description', desc)
 
     // Ajustar boton del modal si se queda sin vidas
-    const nextBtn = document.querySelector('.js-btn-next');
+    const nextBtn = document.querySelector('.js-btn-next')
     if (nextBtn) {
       if (lives === 0) {
-        nextBtn.querySelector('span:first-child')!.textContent = 'Ver resultados';
+        nextBtn.querySelector('span:first-child')!.textContent =
+          'Ver resultados'
       } else {
-        nextBtn.querySelector('span:first-child')!.textContent = 'Siguiente camiseta';
+        nextBtn.querySelector('span:first-child')!.textContent =
+          'Siguiente camiseta'
       }
     }
 
-    feedbackModals.forEach(m => m.classList.remove('hidden'));
+    feedbackModals.forEach((m) => m.classList.remove('hidden'))
   }
 
   // Listener boton next modal
-  document.querySelectorAll('.js-btn-next').forEach(btn => {
+  document.querySelectorAll('.js-btn-next').forEach((btn) => {
     btn.addEventListener('click', () => {
-      feedbackModals.forEach(m => m.classList.add('hidden'));
+      feedbackModals.forEach((m) => m.classList.add('hidden'))
       if (lives === 0) {
-        endGame();
+        endGame()
       } else {
-        currentQuestionIndex++;
+        currentQuestionIndex++
         if (currentQuestionIndex >= selectedShirts.length) {
-          endGame();
+          endGame()
         } else {
-          loadNextQuestion();
+          loadNextQuestion()
         }
       }
-    });
-  });
+    })
+  })
 
   function endGame() {
-    playSound('gameover');
-    showScreen('gameover');
+    playSound('gameover')
+    showScreen('gameover')
 
-    updateTextContent('.js-final-score', score.toString());
-    updateTextContent('.js-final-streak', maxStreak.toString());
-    updateTextContent('.js-final-guessed', `${currentQuestionIndex}/${selectedShirts.length}`);
-    
-    const pct = selectedShirts.length > 0 ? (currentQuestionIndex / selectedShirts.length) * 100 : 0;
-    document.querySelectorAll('.js-final-guessed-progress').forEach(el => {
-      (el as HTMLElement).style.width = `${pct}%`;
-    });
+    updateTextContent('.js-final-score', score.toString())
+    updateTextContent('.js-final-streak', maxStreak.toString())
+    updateTextContent(
+      '.js-final-guessed',
+      `${currentQuestionIndex}/${selectedShirts.length}`
+    )
 
-    const rankTitle = getRankTitle(score);
-    updateTextContent('.js-rank-badge', rankTitle);
+    const pct =
+      selectedShirts.length > 0
+        ? (currentQuestionIndex / selectedShirts.length) * 100
+        : 0
+    document.querySelectorAll('.js-final-guessed-progress').forEach((el) => {
+      ;(el as HTMLElement).style.width = `${pct}%`
+    })
+
+    const rankTitle = getRankTitle(score)
+    updateTextContent('.js-rank-badge', rankTitle)
 
     // Mensajes de fin
-    let message = '¡Buen intento! Sigue entrenando para conocer las equipaciones históricas.';
+    let message =
+      '¡Buen intento! Sigue entrenando para conocer las equipaciones históricas.'
     if (score >= 4500) {
-      message = '¡Increíble! Eres una enciclopedia viviente del fútbol mundial. Récord absoluto.';
+      message =
+        '¡Increíble! Eres una enciclopedia viviente del fútbol mundial. Récord absoluto.'
     } else if (score >= 2500) {
-      message = '¡Excelente partido! Tienes una gran memoria y cultura de mundiales.';
+      message =
+        '¡Excelente partido! Tienes una gran memoria y cultura de mundiales.'
     }
-    updateTextContent('.js-game-over-message', message);
+    updateTextContent('.js-game-over-message', message)
 
     // Guardar Records
-    const hs = parseInt(localStorage.getItem('high_score') || '0', 10);
-    const ms = parseInt(localStorage.getItem('max_streak') || '0', 10);
-    
-    let isNewRecord = false;
+    const hs = parseInt(localStorage.getItem('high_score') || '0', 10)
+    const ms = parseInt(localStorage.getItem('max_streak') || '0', 10)
+
+    let isNewRecord = false
     if (score > hs) {
-      localStorage.setItem('high_score', score.toString());
-      isNewRecord = true;
+      localStorage.setItem('high_score', score.toString())
+      isNewRecord = true
     }
     if (maxStreak > ms) {
-      localStorage.setItem('max_streak', maxStreak.toString());
+      localStorage.setItem('max_streak', maxStreak.toString())
     }
 
-    document.querySelectorAll('.js-new-record-badge').forEach(badge => {
+    document.querySelectorAll('.js-new-record-badge').forEach((badge) => {
       if (isNewRecord) {
-        badge.classList.remove('hidden');
+        badge.classList.remove('hidden')
       } else {
-        badge.classList.add('hidden');
+        badge.classList.add('hidden')
       }
-    });
+    })
 
-    init();
+    init()
   }
 
   // Salida
-  document.querySelectorAll('.js-btn-home').forEach(btn => {
+  document.querySelectorAll('.js-btn-home').forEach((btn) => {
     btn.addEventListener('click', () => {
       if (confirm('¿Abandonar la partida?')) {
-        showScreen('start');
-        init();
+        showScreen('start')
+        init()
       }
-    });
-  });
+    })
+  })
 
   // Reintentar y Menú en GameOver
-  document.querySelectorAll('.js-btn-retry').forEach(btn => {
+  document.querySelectorAll('.js-btn-retry').forEach((btn) => {
     btn.addEventListener('click', () => {
-      startGame(currentMode);
-    });
-  });
+      startGame(currentMode)
+    })
+  })
 
-  document.querySelectorAll('.js-btn-menu').forEach(btn => {
+  document.querySelectorAll('.js-btn-menu').forEach((btn) => {
     btn.addEventListener('click', () => {
-      showScreen('start');
-      init();
-    });
-  });
+      showScreen('start')
+      init()
+    })
+  })
 
   // Inicialización
-    // Lógica del prompt de instalación PWA
-  const pwaPrompt = document.getElementById('pwa-install-prompt');
-  const pwaCloseBtn = document.getElementById('pwa-close-btn');
-  const pwaInstallBtn = document.getElementById('pwa-install-btn');
-  const pwaIosInstructions = document.getElementById('pwa-ios-instructions');
+  // Lógica del prompt de instalación PWA
+  const pwaPrompt = document.getElementById('pwa-install-prompt')
+  const pwaCloseBtn = document.getElementById('pwa-close-btn')
+  const pwaInstallBtn = document.getElementById('pwa-install-btn')
+  const pwaIosInstructions = document.getElementById('pwa-ios-instructions')
 
-  let deferredPrompt: any = null;
+  let deferredPrompt: any = null
 
   // Detectar si ya se ha instalado o si el usuario rechazó el prompt anteriormente
-  const isPwaDismissed = localStorage.getItem('pwa-install-dismissed') === 'true';
-  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone === true;
+  const isPwaDismissed =
+    localStorage.getItem('pwa-install-dismissed') === 'true'
+  const isStandalone =
+    window.matchMedia('(display-mode: standalone)').matches ||
+    (window.navigator as any).standalone === true
 
   // Detectar si es iOS (Safari)
-  const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+  const isIos =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream
 
   if (pwaPrompt && !isPwaDismissed && !isStandalone) {
     // Si es iOS, mostramos las instrucciones específicas para iPhone
     if (isIos) {
-      pwaIosInstructions?.classList.remove('hidden');
+      pwaIosInstructions?.classList.remove('hidden')
       // Mostrar el prompt después de 3 segundos para no abrumar al iniciar
       setTimeout(() => {
-        pwaPrompt.classList.remove('hidden');
-        pwaPrompt.classList.add('flex');
-      }, 3000);
+        pwaPrompt.classList.remove('hidden')
+        pwaPrompt.classList.add('flex')
+      }, 3000)
     }
 
     // Capturar el evento beforeinstallprompt de Android/Chrome
     window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      
+      e.preventDefault()
+      deferredPrompt = e
+
       // Mostrar el botón de instalación
-      pwaInstallBtn?.classList.remove('hidden');
-      pwaInstallBtn?.classList.add('flex');
+      pwaInstallBtn?.classList.remove('hidden')
+      pwaInstallBtn?.classList.add('flex')
 
       // Mostrar el prompt después de 3 segundos
       setTimeout(() => {
-        pwaPrompt.classList.remove('hidden');
-        pwaPrompt.classList.add('flex');
-      }, 3000);
-    });
+        pwaPrompt.classList.remove('hidden')
+        pwaPrompt.classList.add('flex')
+      }, 3000)
+    })
 
     // Acción del botón de instalar
     pwaInstallBtn?.addEventListener('click', async () => {
-      if (!deferredPrompt) return;
+      if (!deferredPrompt) return
       // Mostrar prompt nativo
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
+      deferredPrompt.prompt()
+      const { outcome } = await deferredPrompt.userChoice
       if (outcome === 'accepted') {
-        console.log('El usuario aceptó instalar la PWA');
+        console.log('El usuario aceptó instalar la PWA')
       }
-      deferredPrompt = null;
-      pwaPrompt.classList.add('hidden');
-      pwaPrompt.classList.remove('flex');
-    });
+      deferredPrompt = null
+      pwaPrompt.classList.add('hidden')
+      pwaPrompt.classList.remove('flex')
+    })
 
     // Cerrar el prompt y guardarlo en localStorage para no molestar más
     pwaCloseBtn?.addEventListener('click', () => {
-      pwaPrompt.classList.add('hidden');
-      pwaPrompt.classList.remove('flex');
-      localStorage.setItem('pwa-install-dismissed', 'true');
-    });
+      pwaPrompt.classList.add('hidden')
+      pwaPrompt.classList.remove('flex')
+      localStorage.setItem('pwa-install-dismissed', 'true')
+    })
   }
 
-  init();
+  init()
 </script>
