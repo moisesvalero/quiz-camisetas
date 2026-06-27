@@ -19,7 +19,18 @@
     "download:shirts": "node scripts/download-shirts.mjs",
     "fix:image-urls": "node scripts/fix-image-urls.mjs",
     "import:fka": "node scripts/import-fka.mjs",
-    "download:fka": "node scripts/download-fka-cdn.mjs"
+    "download:fka": "node scripts/download-fka-cdn.mjs",
+    "check": "astro check",
+    "lint": "oxlint",
+    "knip": "knip",
+    "test": "vitest run --passWithNoTests",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,svelte,astro}": [
+      "oxlint",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.1",
@@ -28,8 +39,14 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "husky": "^9.1.7",
+    "knip": "^6.21.0",
+    "lint-staged": "^17.0.8",
+    "oxlint": "^1.71.0",
     "playwright": "^1.52.0",
+    "prettier": "^3.8.5",
     "sharp": "^0.35.2",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
   }
 }

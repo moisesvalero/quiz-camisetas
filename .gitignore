@@ -35,3 +35,8 @@ VERCEL_URL.txt
 # Stitch ZIPs
 *.zip
 *.zip:Zone.Identifier
+
+# local agent harnesses
+.claude/
+.codex/
+
