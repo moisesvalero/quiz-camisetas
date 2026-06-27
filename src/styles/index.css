@@ -222,9 +222,14 @@ h1, h2, h3, .font-display {
   100% { transform: scale(1); }
 }
 
-@keyframes bounce-in {
-  0% { transform: scale(0.9); opacity: 0; }
+@keyframes scale-in {
+  0% { transform: scale(0.95); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 @keyframes shimmer {
@@ -234,7 +239,8 @@ h1, h2, h3, .font-display {
 
 .animate-shake { animation: shake 0.4s ease-in-out; }
 .animate-success { animation: pulse-success 0.4s ease-out; }
-.animate-bounce-in { animation: bounce-in 0.4s var(--ease-spring) forwards; }
+.animate-scale-in { animation: scale-in 0.3s var(--ease-out) forwards; }
+.animate-float-gentle { animation: float-gentle 2s ease-in-out infinite; }
 
 .new-record-badge {
   display: inline-block;
@@ -250,7 +256,7 @@ h1, h2, h3, .font-display {
   color: #ffffff;
   border: 1px solid #000000;
   vertical-align: middle;
-  animation: bounce-in 0.5s var(--ease-spring);
+  animation: scale-in 0.4s var(--ease-out);
 }
 
 ::-webkit-scrollbar { width: 6px; }
