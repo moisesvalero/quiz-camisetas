@@ -715,6 +715,16 @@
     })
   }
 
+  function shakeLostHeart() {
+    const hearts = document.querySelectorAll('.js-heart')
+    const lostIdx = lives
+    if (lostIdx < 0 || lostIdx >= hearts.length) return
+    const heart = hearts[lostIdx] as HTMLElement
+    heart.classList.remove('shake')
+    void heart.offsetWidth
+    heart.classList.add('shake')
+  }
+
   function updateProgress() {
     const pct = (currentQuestionIndex / selectedShirts.length) * 100
     document.querySelectorAll('.js-progress-fill').forEach((el) => {
@@ -1071,6 +1081,13 @@
     const allButtons = document.querySelectorAll('.js-options-grid button')
     allButtons.forEach((b) => ((b as HTMLButtonElement).disabled = true))
 
+    const popButton = (btn: HTMLButtonElement) => {
+      btn.classList.remove('pop-once')
+      void btn.offsetWidth
+      btn.classList.add('pop-once')
+    }
+    popButton(clickedBtn)
+
     const isCorrect = selected === correct
 
     if (isCorrect) {
@@ -1117,12 +1134,14 @@
             correctIcon.classList.remove('opacity-0')
             correctIcon.textContent = 'check_circle'
           }
+          popButton(b as HTMLButtonElement)
         }
       })
 
       streak = 0
       lives--
       updateHeartsUI()
+      shakeLostHeart()
       updateStreakUI()
 
       showFeedback(false)
