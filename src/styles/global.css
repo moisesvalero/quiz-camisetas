@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "./fonts.css";
 
 @theme {
   --color-background: #f9f9f9;
@@ -55,14 +54,14 @@
   --color-neon-green: #00FF41;
   --color-neon-blue: #00E0FF;
 
-  --font-label-mono: 'JetBrains Mono', monospace;
-  --font-headline-md: 'Outfit', sans-serif;
-  --font-headline-lg: 'Outfit', sans-serif;
-  --font-body-md: 'Outfit', sans-serif;
-  --font-body-lg: 'Outfit', sans-serif;
-  --font-headline-lg-mobile: 'Outfit', sans-serif;
-  --font-display-xl: 'Outfit', sans-serif;
-  --font-display-xl-mobile: 'Outfit', sans-serif;
+  --font-label-mono: var(--font-jetbrains-mono), monospace;
+  --font-headline-md: var(--font-outfit), sans-serif;
+  --font-headline-lg: var(--font-outfit), sans-serif;
+  --font-body-md: var(--font-outfit), sans-serif;
+  --font-body-lg: var(--font-outfit), sans-serif;
+  --font-headline-lg-mobile: var(--font-outfit), sans-serif;
+  --font-display-xl: var(--font-outfit), sans-serif;
+  --font-display-xl-mobile: var(--font-outfit), sans-serif;
 
   --font-size-label-mono: 14px;
   --font-size-headline-md: 24px;
@@ -141,7 +140,17 @@ body {
 }
 
 .material-symbols-outlined {
+  font-family: var(--font-material-symbols);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Brutalist details */
