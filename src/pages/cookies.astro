@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout
+  title="Política de Cookies — Shirt Quiz"
+  description="Política de cookies de Retro Shirt Quiz. Información detallada sobre las cookies y tecnologías utilizadas."
+>
+  <main class="legal-page">
+    <article class="legal-content">
+      <header class="legal-header">
+        <a href="/" class="back-link" aria-label="Volver al inicio"
+          >← Volver al juego</a
+        >
+        <h1>Política de Cookies</h1>
+        <p class="legal-meta">Última actualización: 28 de junio de 2026</p>
+      </header>
+
+      <section>
+        <h2>1. ¿Qué son las cookies?</h2>
+        <p>
+          Las cookies son pequeños archivos de texto que un sitio web almacena
+          en tu dispositivo. Permiten recordar tus acciones y preferencias
+          durante un periodo de tiempo.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. ¿Qué cookies utilizamos?</h2>
+        <p>
+          <strong
+            >Retro Shirt Quiz no utiliza cookies de seguimiento ni de terceros
+            con fines comerciales.</strong>
+        </p>
+        <div class="cookie-table-wrapper">
+          <table class="cookie-table">
+            <thead>
+              <tr
+                ><th>Tipo</th><th>Nombre</th><th>Finalidad</th><th>Duración</th
+                ></tr
+              >
+            </thead>
+            <tbody>
+              <tr
+                ><td>localStorage</td><td><code>high_score</code></td><td
+                  >Récord personal de puntuación</td
+                ><td>Persistente</td></tr
+              >
+              <tr
+                ><td>localStorage</td><td><code>max_streak</code></td><td
+                  >Mejor racha de respuestas</td
+                ><td>Persistente</td></tr
+              >
+              <tr
+                ><td>localStorage</td><td><code>pwa-install-dismissed</code></td
+                ><td>Estado del prompt de instalación</td><td>Persistente</td
+                ></tr
+              >
+              <tr
+                ><td>Service Worker</td><td><code>quiz-camisetas-v6</code></td
+                ><td>Cache offline de recursos</td><td
+                  >Gestionada por el navegador</td
+                ></tr
+              >
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Todas son <strong>estrictamente técnicas</strong> y necesarias para el funcionamiento
+          del juego. No se utilizan para crear perfiles ni compartir datos con terceros.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. Cookies de terceros</h2>
+        <p>
+          Este sitio web <strong>no utiliza cookies de terceros</strong> para seguimiento,
+          analítica o publicidad.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Base legal</h2>
+        <p>
+          Las cookies técnicas están exceptuadas del consentimiento expreso
+          según el artículo 22.2 de la LSSI. Al no usar cookies no técnicas, no
+          es necesario banner de consentimiento.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Cómo gestionar las cookies</h2>
+        <p>
+          Puedes eliminar los datos almacenados desde la configuración de tu
+          navegador. Si eliminas los datos, los récords del juego se perderán.
+        </p>
+      </section>
+
+      <footer class="legal-footer">
+        <a href="/aviso-legal" class="back-link">Aviso legal →</a>
+        <a href="/privacidad" class="back-link" style="margin-left:0.5rem"
+          >Política de privacidad →</a
+        >
+      </footer>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .legal-page {
+    min-height: 100dvh;
+    padding: 1.5rem 1rem 4rem;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+  .legal-content {
+    background: #ffffff;
+    border: 2px solid #000000;
+    padding: 2rem 1.5rem;
+    box-shadow: 4px 4px 0 0 #000000;
+  }
+  .legal-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #000000;
+  }
+  .legal-header h1 {
+    font-family: var(--font-outfit), sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 2.25rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 1rem 0 0.5rem;
+  }
+  .legal-meta {
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+  }
+  section {
+    margin-bottom: 1.75rem;
+  }
+  section h2 {
+    font-family: var(--font-outfit), sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  section p,
+  section li {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+  section ul {
+    padding-left: 1.25rem;
+  }
+  section li {
+    margin-bottom: 0.35rem;
+  }
+  section a {
+    color: #ff007a;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  section a:hover {
+    text-decoration-thickness: 2px;
+  }
+  code {
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 0.85em;
+    background: #f3f3f3;
+    padding: 0.1rem 0.35rem;
+    border: 1px solid #e0e0e0;
+  }
+  .cookie-table-wrapper {
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 2px solid #000;
+  }
+  .cookie-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 0.85rem;
+    min-width: 480px;
+  }
+  .cookie-table th,
+  .cookie-table td {
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    vertical-align: top;
+  }
+  .cookie-table th:last-child,
+  .cookie-table td:last-child {
+    border-right: none;
+  }
+  .cookie-table thead th {
+    background: #000;
+    color: #fff;
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .cookie-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .back-link {
+    display: inline-block;
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000;
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border: 2px solid #000;
+    background: #fff;
+  }
+  .back-link:hover {
+    background: #000;
+    color: #fff;
+  }
+  .legal-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #000;
+  }
+  @media (min-width: 640px) {
+    .legal-page {
+      padding: 3rem 2rem 5rem;
+    }
+    .legal-content {
+      padding: 2.5rem;
+    }
+    .legal-header h1 {
+      font-size: 3rem;
+    }
+  }
+</style>

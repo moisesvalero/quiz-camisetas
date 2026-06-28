@@ -292,6 +292,16 @@ const speakableLd = {
   <body class="unity-pulse-bg stadium-mesh flex flex-col font-body-md">
     <slot />
 
+    <footer class="legal-footer">
+      <nav aria-label="Enlaces legales" class="legal-footer__nav">
+        <a href="/aviso-legal">Aviso legal</a>
+        <span aria-hidden="true">·</span>
+        <a href="/privacidad">Privacidad</a>
+        <span aria-hidden="true">·</span>
+        <a href="/cookies">Cookies</a>
+      </nav>
+    </footer>
+
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
@@ -299,5 +309,37 @@ const speakableLd = {
         })
       }
     </script>
+
+    <style is:global>
+      .legal-footer {
+        margin-top: auto;
+        padding: 1.25rem 1rem calc(1.25rem + env(safe-area-inset-bottom, 0px));
+        text-align: center;
+      }
+      .legal-footer__nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: var(--font-jetbrains-mono), monospace;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        opacity: 0.55;
+        transition: opacity 180ms;
+      }
+      .legal-footer__nav:hover {
+        opacity: 0.85;
+      }
+      .legal-footer__nav a {
+        color: #1b1b1b;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 150ms;
+      }
+      .legal-footer__nav a:hover,
+      .legal-footer__nav a:focus-visible {
+        border-bottom-color: #1b1b1b;
+      }
+    </style>
   </body>
 </html>

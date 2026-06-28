@@ -1,0 +1,200 @@
+# Retro Shirt Quiz — Full Context
+
+> Adivina la selección y el año de cada camiseta. Más de 175 equipaciones de selecciones nacionales de todo el mundo y todas las épocas.
+>
+> URL: https://quiz-camisetas.moisesvalero.es/
+
+## Overview
+
+Retro Shirt Quiz (also known as Shirt Quiz) is a single-page, installable Progressive Web App (PWA) that challenges users to identify national football (soccer) team kits from FIFA World Cups spanning from 1930 to 2026. The game is fully client-side: all data is bundled at build time, no backend required, and it works offline once loaded.
+
+The project contains 175+ shirt entries, each with team name, year, color, historical description, and image. Images are optimized at build time using Astro's `getImage()` with responsive WebP/AVIF srcset.
+
+## Gameplay
+
+### Difficulty modes
+
+| Mode | Name | Year range | Shirt count |
+|---|---|---|---|
+| Easy | Modernas | 2000–present | ~50+ |
+| Medium | Clásicas | 1970–1999 | ~60+ |
+| Hard | Históricas | pre-1970 | ~40+ |
+
+### Rules
+
+- Player selects a mode from the start screen
+- Each round shows a shirt image and 4 multiple-choice options (team + year)
+- 3 lives per game (shown as hearts)
+- Correct answer: +100 base points + streak bonus (streak × 20, max +200)
+- Incorrect answer: lose a life, streak resets to 0
+- Game ends when lives reach 0 or all questions in the mode are answered
+- Final score determines rank: Novato (0–799), Hincha (800–1799), Aficionado experto (1800–2999), Crack histórico (3000–4499), Leyenda (4500+)
+- Points and streak are stored in localStorage (`high_score`, `max_streak`)
+
+### Feedback
+
+- Correct: ascending chime (Web Audio API oscillator), neon gradient on button, confetti animation on canvas
+- Incorrect: descending buzz, correct answer highlighted in green, wrong answer in red
+- Modal shows after each answer with historical context about the shirt
+
+### PWA features
+
+- Installs as standalone app on Android (Chrome), iOS (Safari), and desktop (Chrome/Edge)
+- Service worker (`sw.js`) caches shell resources and serves offline
+- `beforeinstallprompt` captured for Android; iOS sees custom install instructions
+- Install prompt shown once per user (dismiss state stored in localStorage)
+
+## User interface
+
+### Design language
+
+- **Brutalist**: hard 2px black borders, zero border-radius, hard shadows (`4px 4px 0 0 #000`)
+- **Neon accents**: pink (`#FF007A`), turquoise (`#00F0FF`), green (`#00FF41`)
+- **Retro-gaming**: Outfit display font, JetBrains Mono for labels, uppercase tracking-heavy typography
+- **Monochromatic surface**: white cards on light gray (`#f9f9f9`) background with subtle mesh/stadium pattern
+- **Masculine, high-contrast**: no gradients, no rounded corners
+
+### Layout
+
+- Single `index.astro` page with `Layout.astro` wrapper
+- QuizGame component controls all three screens (start, game, game-over)
+- Responsive: mobile-first (440px max-width container for game), expands on tablet/desktop with bento grid layout on start screen
+- Safe-area-aware for iPhone notch/island (PWA)
+
+### Screens
+
+1. **Start screen**: hero banner image, three mode cards in bento grid, footer with GitHub link and donation button
+2. **Game screen**: header with streak, lives, score; shirt image (full-width with responsive picture element); 4 option buttons; progress bar; mobile-optimized layout
+3. **Game over screen**: final score, best streak, guessed count with progress bar, rank badge, retry/menu buttons
+
+## Data
+
+### Shirt entries (src/data/shirts.json)
+
+Array of 175+ objects with structure:
+```
+{
+  id: number,
+  team: string,       // National team name (Spanish)
+  year: number,        // World Cup year
+  color: string,       // Jersey color name
+  desc: string,        // Brief historical description (Spanish)
+  filename: string,    // Source filename
+  image: string,       // Local path, e.g. /shirts/1.jpg
+  original_image: string
+}
+```
+
+### Images (src/assets/shirts/)
+
+- 175 JPEG images (various resolutions, typically 800×800 to 1600×1600)
+- Optimized at build time via `astro:assets` `getImage()` into WebP + AVIF at 480w and 800w
+- Generated image map injected as `<script type="application/json">` in the page
+
+## Technology stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Astro 7 |
+| CSS | Tailwind CSS v4 |
+| Typography | Outfit (Google Fonts, self-hosted via Astro Font API), JetBrains Mono, Material Symbols |
+| Icons | Material Symbols Outlined (variable font) |
+| Image optimization | `astro:assets` with sharp |
+| Linting | oxlint |
+| Formatting | Prettier |
+| Type checking | TypeScript 6 + astro check |
+| Deployment | Vercel (static export) |
+| Package manager | pnpm |
+| Git hooks | husky + lint-staged |
+
+## Security headers (set via vercel.json on /(.*))
+
+- Content-Security-Policy
+- X-Frame-Options: DENY
+- X-Content-Type-Options: nosniff
+- Referrer-Policy: strict-origin-when-cross-origin
+- Permissions-Policy (restrictive: no camera, mic, geolocation, etc.)
+- Cross-Origin-Resource-Policy: same-origin
+- Cross-Origin-Embedder-Policy: require-corp
+- Cross-Origin-Opener-Policy: same-origin-allow-popups
+
+## Source code structure
+
+```
+/
+├── public/
+│   ├── sw.js                    # Service Worker (v6)
+│   ├── manifest.json            # PWA manifest
+│   ├── robots.txt               # Search engine + AI crawler rules
+│   ├── sitemap.xml              # XML sitemap
+│   ├── llms.txt                 # AI assistant summary
+│   ├── .well-known/security.txt # Security disclosure policy
+│   └── fonts/                   # (present in git but removed in build)
+├── src/
+│   ├── components/
+│   │   └── QuizGame.astro       # Main game component (1337 lines)
+│   ├── data/
+│   │   ├── shirts.ts            # Shirt type + helpers
+│   │   ├── shirts.json          # 175+ shirt entries
+│   │   └── shirts-images.ts     # Image optimization pipeline
+│   ├── layouts/
+│   │   └── Layout.astro         # HTML shell with SEO/JSON-LD
+│   ├── pages/
+│   │   ├── index.astro          # Home page
+│   │   ├── privacidad.astro     # Privacy policy (RGPD)
+│   │   └── cookies.astro        # Cookie policy (LSSI)
+│   └── styles/
+│       ├── global.css           # Tailwind + custom brutalist styles
+│       ├── index.css            # Legacy CSS (unused)
+│       └── fonts.css            # @font-face declarations (removed, replaced by Astro Font API)
+└── vercel.json                  # Build config + security headers
+```
+
+## All routes
+
+| Route | Description |
+|---|---|
+| `/` | Main game page |
+| `/privacidad` | Privacy policy |
+| `/cookies` | Cookie policy |
+| `/robots.txt` | Robots exclusion standard |
+| `/sitemap.xml` | XML sitemap |
+| `/llms.txt` | AI assistant summary |
+| `/manifest.json` | PWA manifest |
+| `/sw.js` | Service Worker |
+| `/.well-known/security.txt` | Security disclosure |
+| `/fonts/*.woff2` | Self-hosted font files |
+| `/_astro/*` | Astro-built assets |
+| `/favicon.svg` / `/favicon.ico` / `/favicon.png` | Favicons |
+| `/icon-192.png` / `/icon-512.png` | PWA icons |
+| `/images/og-image.png` | Social share image |
+| `/images/hero_banner.png` | Start screen banner |
+
+## How the game loads images
+
+1. On page load, `buildShirtImageMap()` processes all 175 JPGs via `getImage()`, generating WebP and AVIF variants at 480w and 800w
+2. The resulting map is serialized as JSON and injected as a `<script id="shirt-image-map" type="application/json">`
+3. At runtime, `QuizGame.astro` reads this map and injects `<picture>` elements with AVIF/WebP sources pointing to optimized `/_astro/*.webp` URLs
+4. If a shirt has no optimized variant (fallback), the code uses `shirt.image` path with progressive loading
+
+## How difficulty filtering works
+
+- Navigable via mode buttons (data-mode="easy" | "medium" | "hard")
+- `startGame(mode)` filters `shirts[]` by year range
+- Shirts are shuffled with `Array.sort(() => Math.random() - 0.5)` (Fisher-Yates would be more robust)
+- Distractors are generated differently per mode: easy uses random pool, hard uses smart distractors (same team different year, different team same year, etc.)
+
+## Audio system
+
+- Uses Web Audio API (`OscillatorNode` + `GainNode`), no external audio files
+- Four sound profiles: correct (ascending sine), incorrect (descending sawtooth), hint (triangle), game over (descending sine)
+- Gracefully handles blocked audio context (silent catch block)
+
+## Important notes for AI assistants
+
+- The site is entirely in Spanish (content, labels, descriptions)
+- The canonical domain is `quiz-camisetas.moisesvalero.es`
+- The game requires JavaScript, Canvas API, Web Audio API, and Service Worker
+- No cookies are used for tracking; only localStorage for game state
+- No registration, login, or data collection
+- The project is open source on GitHub

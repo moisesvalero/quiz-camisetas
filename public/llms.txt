@@ -1,0 +1,32 @@
+# Retro Shirt Quiz
+
+> Adivina la selección y el año de cada camiseta. Más de 175 equipaciones de selecciones nacionales de fútbol de todo el mundo y todas las épocas.
+
+## About
+
+Retro Shirt Quiz (Shirt Quiz) is a single-page web application (PWA) that challenges users to identify national football team kits from FIFA World Cups. The game offers three difficulty modes (Easy: 2000–present, Medium: 1970–1999, Hard: pre-1970) with score tracking, streak counting, and progressive image loading.
+
+## URLs
+
+- Main page: https://quiz-camisetas.moisesvalero.es/
+- Privacy policy: https://quiz-camisetas.moisesvalero.es/privacidad
+- Cookie policy: https://quiz-camisetas.moisesvalero.es/cookies
+- Source code: https://github.com/moisesvalero/quiz-camisetas
+- Data source: https://www.footballkitarchive.com/world-cup-kits-l308/
+
+## Features
+
+- Three difficulty modes: Modernas (2000+), Clásicas (1970–1999), Históricas (pre-1970)
+- Three lives per game, streak bonuses
+- Offline support via Service Worker (PWA)
+- Installable as Progressive Web App (standalone mode on Android/iOS/Desktop)
+- Canvases for confetti celebration on correct answers
+- Audio feedback via Web Audio API (correct, incorrect, hint, game over)
+
+## Technology stack
+
+- Astro 7 (static site generation)
+- Tailwind CSS v4
+- TypeScript
+- Vite
+- Deployed on Vercel

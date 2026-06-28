@@ -1,0 +1,246 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout
+  title="Política de Privacidad — Shirt Quiz"
+  description="Política de privacidad de Retro Shirt Quiz. Cómo tratamos los datos personales según el RGPD y la LOPDGDD."
+>
+  <main class="legal-page">
+    <article class="legal-content">
+      <header class="legal-header">
+        <a href="/" class="back-link" aria-label="Volver al inicio"
+          >← Volver al juego</a
+        >
+        <h1>Política de Privacidad</h1>
+        <p class="legal-meta">Última actualización: 28 de junio de 2026</p>
+      </header>
+
+      <section>
+        <h2>1. Responsable del tratamiento</h2>
+        <p>
+          <strong>Titular:</strong> Moisés Valero<br />
+          <strong>Sitio web:</strong>
+          <a href="https://quiz-camisetas.moisesvalero.es"
+            >quiz-camisetas.moisesvalero.es</a
+          ><br />
+          <strong>Email de contacto:</strong>
+          <a href="mailto:moi6@outlook.com">moi6@outlook.com</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>2. ¿Qué datos personales recopilamos?</h2>
+        <p>
+          Retro Shirt Quiz es un juego web gratuito y <strong
+            >no requiere registro de usuarios</strong
+          >. No solicitamos nombre, correo electrónico, contraseña ni ningún
+          dato identificativo para jugar.
+        </p>
+        <p>Los únicos datos que podemos tratar son:</p>
+        <ul>
+          <li>
+            <strong>Datos de juego almacenados localmente</strong> (récord de puntuación
+            y mejor racha), guardados en <em>localStorage</em> de tu navegador. Nunca
+            salen de tu dispositivo.
+          </li>
+          <li>
+            <strong>Datos técnicos de navegación</strong> (dirección IP, tipo de navegador,
+            sistema operativo) tratados por el proveedor de hosting (Vercel) con fines
+            de seguridad y entrega del contenido.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Finalidad del tratamiento</h2>
+        <ul>
+          <li>
+            Permitir el funcionamiento del juego y guardar tus récords
+            personales.
+          </li>
+          <li>
+            Garantizar la seguridad, estabilidad y disponibilidad del sitio.
+          </li>
+          <li>Cumplir con obligaciones legales aplicables.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. Base legal</h2>
+        <p>
+          La base legal es el <strong>consentimiento del usuario</strong> (al continuar
+          usando el juego) y el <strong>interés legítimo</strong> del titular en mantener
+          el servicio seguro y operativo, conforme al artículo 6 del RGPD.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Destinatarios de los datos</h2>
+        <p>
+          No cedemos datos personales a terceros. Únicamente comparten datos los
+          proveedores de infraestructura:
+        </p>
+        <ul>
+          <li>
+            <strong>Vercel Inc.</strong> — alojamiento y CDN. <a
+              href="https://vercel.com/legal/privacy-policy"
+              rel="noopener noreferrer"
+              target="_blank">Política de privacidad</a>
+          </li>
+        </ul>
+        <p>
+          Estos proveedores cumplen el RGPD y pueden tener transferencias
+          internacionales amparadas por cláusulas contractuales tipo.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Conservación de los datos</h2>
+        <ul>
+          <li>
+            Los <strong>récords del juego</strong> permanecen en tu dispositivo hasta
+            que borres los datos del navegador.
+          </li>
+          <li>
+            Los <strong>logs del servidor</strong> se conservan durante el tiempo
+            mínimo necesario para finalidades de seguridad.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>7. Derechos del usuario</h2>
+        <p>
+          Puedes ejercer tus derechos RGPD (acceso, rectificación, supresión,
+          oposición, limitación, portabilidad) escribiendo a <a
+            href="mailto:moi6@outlook.com">moi6@outlook.com</a
+          >. También puedes reclamar ante la <a
+            href="https://www.aepd.es"
+            rel="noopener noreferrer"
+            target="_blank">AEPD</a
+          >.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Seguridad</h2>
+        <p>
+          Aplicamos medidas técnicas y organizativas: HTTPS obligatorio,
+          encabezados de seguridad HTTP (CSP, HSTS, X-Frame-Options,
+          Permissions-Policy), actualizaciones periódicas y revisión de
+          dependencias.
+        </p>
+      </section>
+
+      <footer class="legal-footer">
+        <a href="/aviso-legal" class="back-link">Aviso legal →</a>
+        <a href="/cookies" class="back-link" style="margin-left:0.5rem"
+          >Política de cookies →</a
+        >
+      </footer>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .legal-page {
+    min-height: 100dvh;
+    padding: 1.5rem 1rem 4rem;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+  .legal-content {
+    background: #ffffff;
+    border: 2px solid #000000;
+    padding: 2rem 1.5rem;
+    box-shadow: 4px 4px 0 0 #000000;
+  }
+  .legal-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #000000;
+  }
+  .legal-header h1 {
+    font-family: var(--font-outfit), sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 2.25rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 1rem 0 0.5rem;
+  }
+  .legal-meta {
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+  }
+  section {
+    margin-bottom: 1.75rem;
+  }
+  section h2 {
+    font-family: var(--font-outfit), sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  section p,
+  section li {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+  section ul {
+    padding-left: 1.25rem;
+  }
+  section li {
+    margin-bottom: 0.35rem;
+  }
+  section a {
+    color: #ff007a;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  section a:hover {
+    text-decoration-thickness: 2px;
+  }
+  .back-link {
+    display: inline-block;
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000;
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border: 2px solid #000;
+    background: #fff;
+  }
+  .back-link:hover {
+    background: #000;
+    color: #fff;
+  }
+  .legal-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #000;
+  }
+  @media (min-width: 640px) {
+    .legal-page {
+      padding: 3rem 2rem 5rem;
+    }
+    .legal-content {
+      padding: 2.5rem;
+    }
+    .legal-header h1 {
+      font-size: 3rem;
+    }
+  }
+</style>
