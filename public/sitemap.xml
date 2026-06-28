@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://quiz-camisetas.moisesvalero.es/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://quiz-camisetas.moisesvalero.es/images/og-image.png</image:loc>
+      <image:title>Retro Shirt Quiz — Camisetas históricas del Mundial</image:title>
+      <image:caption>Quiz de camisetas de selecciones nacionales de fútbol</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://quiz-camisetas.moisesvalero.es/images/hero_banner.png</image:loc>
+      <image:title>National Team Kits Edition</image:title>
+      <image:caption>Equipaciones históricas del Mundial de fútbol</image:caption>
+    </image:image>
+  </url>
+</urlset>

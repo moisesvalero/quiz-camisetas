@@ -1,0 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+# Security Policy
+# https://securitytxt.org/
+
+Contact: https://github.com/moisesvalero/quiz-camisetas/security/advisories/new
+Contact: mailto:moi6@outlook.com
+Expires: 2027-06-28T18:00:00.000Z
+Preferred-Languages: en, es
+Canonical: https://quiz-camisetas.moisesvalero.es/.well-known/security.txt
+Policy: https://github.com/moisesvalero/quiz-camisetas/security/policy
+-----BEGIN PGP SIGNATURE-----
+
+-----END PGP SIGNATURE-----
