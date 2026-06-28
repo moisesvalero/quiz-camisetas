@@ -11,7 +11,8 @@ Adivinar la selección ya no es suficiente. Para coronarte campeón, tendrás qu
 
 ---
 
-<img width="1330" height="893" alt="image" src="https://github.com/user-attachments/assets/bfe24d0c-0400-4b69-9a88-bcb258de4328" />
+![Quiz Camisetas](https://github.com/user-attachments/assets/901557e1-7ed7-4938-9acd-4acd5b42c696)
+
 
 
 ## ⚡ Tres Eras de Historia (Elige tu Dificultad)
