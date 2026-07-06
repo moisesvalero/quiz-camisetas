@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 22
       - run: npm install -g pnpm
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install --no-frozen-lockfile
       - run: pnpm audit --audit-level=high
         continue-on-error: true
         id: audit
