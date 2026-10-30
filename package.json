@@ -40,7 +40,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
     "husky": "^9.1.7",
-    "knip": "^6.42.1",
+    "knip": "^6.43.0",
     "lint-staged": "^17.6.0",
     "oxlint": "^1.90.0",
     "playwright": "^1.64.1",
