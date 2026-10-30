@@ -38,7 +38,7 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.11",
+    "@astrojs/check": "^0.9.12",
     "husky": "^9.1.7",
     "knip": "^6.42.1",
     "lint-staged": "^17.6.0",
