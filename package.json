@@ -41,7 +41,7 @@
     "@astrojs/check": "^0.9.12",
     "husky": "^9.1.7",
     "knip": "^6.44.2",
-    "lint-staged": "^17.6.0",
+    "lint-staged": "^17.6.1",
     "oxlint": "^1.93.0",
     "playwright": "^1.65.0",
     "prettier": "^3.9.10",
