@@ -42,7 +42,7 @@
     "husky": "^9.1.7",
     "knip": "^6.45.1",
     "lint-staged": "^17.6.1",
-    "oxlint": "^1.94.0",
+    "oxlint": "^1.95.0",
     "playwright": "^1.65.1",
     "prettier": "^3.10.1",
     "prettier-plugin-astro": "^0.14.1",
